@@ -9,12 +9,18 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Node",
+"class": "Event",
+"language": "GDScript",
+"path": "res://data_models/event.gd"
+}, {
 "base": "TileMap",
 "class": "EventTiles",
 "language": "GDScript",
 "path": "res://misc/event_tiles.gd"
 } ]
 _global_script_class_icons={
+"Event": "",
 "EventTiles": ""
 }
 
@@ -25,7 +31,8 @@ config/icon="res://icon.png"
 
 [autoload]
 
-GridTranslator="*res://misc/grid_translator.gd"
+GridTranslator="*res://singletons/grid_translator.gd"
+EventsRepository="*res://singletons/events_repository.gd"
 
 [gui]
 
