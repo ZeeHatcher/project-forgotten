@@ -6,16 +6,22 @@
 [sub_resource type="CircleShape2D" id=1]
 radius = 2.0
 
-[node name="Player" type="Area2D"]
+[node name="Player" type="Node2D"]
 script = ExtResource( 2 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="EventDetector" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EventDetector"]
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
 offset = Vector2( 0, -10 )
 
-[node name="RayCast2D" type="RayCast2D" parent="."]
+[node name="CollisionRay" type="RayCast2D" parent="."]
 
 [node name="Tween" type="Tween" parent="."]
+
+[connection signal="body_entered" from="EventDetector" to="." method="_on_EventDetector_body_entered"]

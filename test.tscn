@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://assets/cube.png" type="Texture" id=1]
 [ext_resource path="res://entities/player/player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://misc/event_tiles.gd" type="Script" id=3]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 6, 12, 0, 24, 6, 12, 12 )
@@ -43,6 +44,32 @@ points = PoolVector2Array( 0, 6, 12, 0, 24, 6, 12, 12 )
 } ]
 1/z_index = 0
 
+[sub_resource type="ConvexPolygonShape2D" id=4]
+points = PoolVector2Array( 0, 6, 12, 0, 24, 6, 12, 12 )
+
+[sub_resource type="TileSet" id=3]
+0/name = "event"
+0/texture = ExtResource( 1 )
+0/tex_offset = Vector2( 0, -12 )
+0/modulate = Color( 1, 0.890196, 0, 0.596078 )
+0/region = Rect2( 0, 0, 24, 24 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 12 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 12 )
+0/shape = SubResource( 4 )
+0/shape_one_way = false
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 4 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 12 )
+} ]
+0/z_index = 0
+
 [node name="Node2D" type="Node2D"]
 
 [node name="Terrain" type="TileMap" parent="."]
@@ -50,17 +77,27 @@ mode = 1
 tile_set = SubResource( 2 )
 cell_size = Vector2( 24, 12 )
 cell_tile_origin = 1
+cell_y_sort = true
 format = 1
 tile_data = PoolIntArray( -131079, 1, 0, -131078, 1, 0, -131077, 1, 0, -131076, 1, 0, -131075, 1, 0, -131074, 1, 0, -131073, 1, 0, -196608, 1, 0, -196607, 1, 0, -196606, 1, 0, -196605, 1, 0, -196604, 1, 0, -65543, 1, 0, -65542, 0, 0, -65541, 0, 0, -65540, 0, 0, -65539, 0, 0, -65538, 0, 0, -65537, 0, 0, -131072, 0, 0, -131071, 0, 0, -131070, 0, 0, -131069, 0, 0, -131068, 1, 0, -7, 1, 0, -6, 0, 0, -5, 0, 0, -4, 0, 0, -3, 0, 0, -2, 0, 0, -1, 0, 0, -65536, 0, 0, -65535, 0, 0, -65534, 0, 0, -65533, 0, 0, -65532, 1, 0, 65529, 1, 0, 65530, 0, 0, 65531, 0, 0, 65532, 0, 0, 65533, 0, 0, 65534, 0, 0, 65535, 0, 0, 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 1, 0, 131065, 1, 0, 131066, 0, 0, 131067, 0, 0, 131068, 0, 0, 131069, 0, 0, 131070, 0, 0, 131071, 0, 0, 65536, 0, 0, 65537, 0, 0, 65538, 0, 0, 65539, 0, 0, 65540, 1, 0, 196601, 1, 0, 196602, 0, 0, 196603, 0, 0, 196604, 0, 0, 196605, 0, 0, 196606, 0, 0, 196607, 0, 0, 131072, 0, 0, 131073, 0, 0, 131074, 0, 0, 131075, 0, 0, 131076, 1, 0, 262137, 1, 0, 262138, 0, 0, 262139, 0, 0, 262140, 0, 0, 262141, 0, 0, 262142, 0, 0, 262143, 0, 0, 196608, 0, 0, 196609, 0, 0, 196610, 0, 0, 196611, 0, 0, 196612, 1, 0, 327673, 1, 0, 327674, 1, 0, 327675, 1, 0, 327676, 1, 0, 327677, 1, 0, 327678, 1, 0, 327679, 1, 0, 262144, 1, 0, 262145, 1, 0, 262146, 1, 0, 262147, 1, 0, 262148, 1, 0 )
 
 [node name="EventTiles" type="TileMap" parent="."]
+mode = 1
+tile_set = SubResource( 3 )
+cell_size = Vector2( 24, 12 )
+cell_tile_origin = 1
+cell_y_sort = true
+collision_layer = 2
+collision_mask = 0
 format = 1
+tile_data = PoolIntArray( 65534, 0, 0 )
+script = ExtResource( 3 )
 
-[node name="Player" parent="." instance=ExtResource( 2 )]
+[node name="Player" parent="EventTiles" instance=ExtResource( 2 )]
 position = Vector2( 0, 6 )
 
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
-remote_path = NodePath("../../Camera2D")
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="EventTiles/Player"]
+remote_path = NodePath("../../../Camera2D")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 0, 6 )

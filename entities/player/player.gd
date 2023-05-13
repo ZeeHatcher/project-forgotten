@@ -1,7 +1,8 @@
-extends Area2D
+extends Node2D
 
 
 signal moved
+signal event_triggered(event_name)
 
 const INPUTS = {
 	"move_up": Vector2.UP,
@@ -10,7 +11,7 @@ const INPUTS = {
 	"move_left": Vector2.LEFT,
 }
 
-onready var _ray := $RayCast2D
+onready var _ray := $CollisionRay
 onready var _tween := $Tween
 
 
@@ -39,3 +40,8 @@ func _animate_movement(dir: Vector2) -> void:
 		position, position + dir,
 		0.1, Tween.TRANS_SINE, Tween.EASE_IN_OUT)
 	_tween.start()
+
+
+func _on_EventDetector_body_entered(body):
+	if body as EventTiles:
+		body.trigger_event_at(global_position)

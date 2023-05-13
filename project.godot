@@ -8,6 +8,16 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "TileMap",
+"class": "EventTiles",
+"language": "GDScript",
+"path": "res://misc/event_tiles.gd"
+} ]
+_global_script_class_icons={
+"EventTiles": ""
+}
+
 [application]
 
 config/name="Project Forgotten"
