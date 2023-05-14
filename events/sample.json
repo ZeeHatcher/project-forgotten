@@ -12,12 +12,15 @@
             },
             "global": {
               "cookie_obtained": true
+            },
+            "stats": {
+              "health": 1
             }
           },
           "next_page": 1,
           "conditions": {
-            "global": {
-              "cookie_obtained": false
+            "items": {
+              "cookie": "<=0"
             }
           },
           "help_text": "You already have a cookie!"

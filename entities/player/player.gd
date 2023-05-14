@@ -12,6 +12,10 @@ const INPUTS = {
 	"move_left": Vector2.LEFT,
 }
 
+var health := 100
+var food := 20
+var inventory := {}
+
 onready var _ray := $CollisionRay
 onready var _tween := $Tween
 
