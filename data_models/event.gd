@@ -1,5 +1,5 @@
-extends Node
 class_name Event
+extends Resource
 
 
 var title: String
