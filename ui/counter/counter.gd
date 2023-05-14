@@ -12,6 +12,7 @@ onready var _label := $Label
 func _ready() -> void:
 	_icon.texture = icon_texture
 
+
 func set_value(val: int) -> void:
 	value = clamp(val, 0, max_value)
 	_label.text = "%s/%s" % [value, max_value]
