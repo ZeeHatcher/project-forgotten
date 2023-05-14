@@ -12,8 +12,9 @@ const INPUTS = {
 	"move_left": Vector2.LEFT,
 }
 
+export(Resource) var food
+
 var health := 100
-var food := 20
 var inventory := {}
 
 onready var _ray := $CollisionRay
@@ -47,6 +48,10 @@ func _animate_movement(dir: Vector2) -> void:
 	_tween.start()
 
 
-func _on_EventDetector_body_entered(body):
+func _on_EventDetector_body_entered(body: Node):
 	if body as EventTiles:
 		body.trigger_event_at(global_position)
+
+
+func _on_Player_moved(_new_pos: Vector2):
+	food.consume()
