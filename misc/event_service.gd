@@ -30,12 +30,8 @@ func end_event():
 
 func apply_outcome(outcome: Event.State) -> void:
 	for item in outcome.items:
-		var change: int = outcome.items[item]
-		if _player.inventory.has(item):
-			_player.inventory[item] += change
-		else:
-			_player.inventory[item] = change
-		_player.inventory[item] = max(_player.inventory[item], 0)
+		var qty: int = outcome.items[item]
+		_player.inventory.add(item, qty)
 	
 	for flag in outcome.global:
 		_flags[flag] = outcome.global[flag]
@@ -65,7 +61,7 @@ func are_conditions_met(conditions: Event.State) -> bool:
 func _is_inventory_match(items: Dictionary) -> bool:
 	for item in items:
 		var tokens := _tokenize(items[item])
-		var existing: int = _player.inventory.get(item, 0)
+		var existing: int = _player.inventory.get(item)
 		var valid := _evaluate_expression(
 				existing,
 				tokens["value"],

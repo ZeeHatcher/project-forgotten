@@ -15,8 +15,7 @@ const INPUTS = {
 
 export(Resource) var health
 export(Resource) var food
-
-var inventory := {}
+export(Resource) var inventory
 
 onready var _ray := $CollisionRay
 onready var _tween := $Tween

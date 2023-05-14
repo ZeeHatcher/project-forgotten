@@ -24,9 +24,6 @@
             },
             "global": {
               "cookie_obtained": false
-            },
-            "stats": {
-              "health": ">=100"
             }
           },
           "help_text": "You already have a cookie!"
