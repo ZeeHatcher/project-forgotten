@@ -1,5 +1,5 @@
 {
-  "title": "A New Event",
+  "title": "Box of Cookies",
   "pages": [
     {
       "description": "While walking about, you find a box.\n\nYou peek inside the box, and you find a cookie.",
@@ -26,7 +26,12 @@
       ]
     },
     {
-      "description": "You take the cookie, and feel slightly happier about your current circumstance."
+      "description": "You take the cookie, and feel slightly happier about your current circumstance.",
+      "choices": [
+        {
+          "description": "Yay!"
+        }
+      ]
     },
     {
       "description": "You decide to leave the cookie where it is, not knowing how long it has been in there."

@@ -1,8 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://assets/cube.png" type="Texture" id=1]
 [ext_resource path="res://entities/player/player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://misc/event_tiles.gd" type="Script" id=3]
+[ext_resource path="res://ui/event_board/event_board.tscn" type="PackedScene" id=4]
+[ext_resource path="res://test.gd" type="Script" id=5]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 6, 12, 0, 24, 6, 12, 12 )
@@ -48,7 +50,7 @@ points = PoolVector2Array( 0, 6, 12, 0, 24, 6, 12, 12 )
 points = PoolVector2Array( 0, 6, 12, 0, 24, 6, 12, 12 )
 
 [sub_resource type="TileSet" id=3]
-0/name = "event"
+0/name = "sample"
 0/texture = ExtResource( 1 )
 0/tex_offset = Vector2( 0, -12 )
 0/modulate = Color( 1, 0.890196, 0, 0.596078 )
@@ -70,7 +72,8 @@ points = PoolVector2Array( 0, 6, 12, 0, 24, 6, 12, 12 )
 } ]
 0/z_index = 0
 
-[node name="Node2D" type="Node2D"]
+[node name="Test" type="Node2D"]
+script = ExtResource( 5 )
 
 [node name="Terrain" type="TileMap" parent="."]
 mode = 1
@@ -103,3 +106,21 @@ remote_path = NodePath("../../../Camera2D")
 position = Vector2( 0, 6 )
 current = true
 zoom = Vector2( 0.5, 0.5 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="EventBoard" parent="CanvasLayer/CenterContainer" instance=ExtResource( 4 )]
+pause_mode = 2
+visible = false
+margin_left = 508.0
+margin_top = 282.0
+margin_right = 516.0
+margin_bottom = 318.0
+
+[connection signal="event_triggered" from="EventTiles" to="." method="_on_EventTiles_event_triggered"]
+[connection signal="event_ended" from="CanvasLayer/CenterContainer/EventBoard" to="." method="_on_EventBoard_event_ended"]
