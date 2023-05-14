@@ -1,0 +1,52 @@
+{
+  "title": "Event Title",
+  "pages": [ // Each event can have multiple pages. Must have at least 1 page.
+    {
+      "description": "Page text",
+      "choices": [ // Each page can have multiple choices. Optional.
+        {
+          "description": "Choice text",
+          "outcome": { // Optional.
+            "items": {
+              // Inventory items. Key-value pairs of string-int. Positive values to add, negative values to remove.
+              // eg:
+              //    "cookie": -5
+              //    "wrench": 1
+            },
+            "stats": {
+              // Same as inventory items. Only "health" and "food" stats currently.
+              // eg:
+              //    "health": 1
+              //    "food": -2
+            },
+            "global": {
+              // Global event flags. Key-value pairs of string-boolean.
+              // eg:
+              //    "gate_opened": true
+            }
+          },
+          "next_page": 1, // Next page shown after selecting this choice.
+          "conditions": { // Checks whether the player can select this choice. Optional. 
+            "items": {
+              // Checks inventory items. Key-value pairs of string-string. Values are expressions (eg. "<5", ">=2", "=100")
+              // eg:
+              //    "wrench": ">0"
+            },
+            "stats": {
+              // Same as inventory items. Only "health" and "food" stats currently.
+              // eg:
+              //    "health": ">3"
+              //    "food": "<=2"
+            },
+            "global": {
+              // Checks global event flags. Key-value pairs of string-boolean.
+              // eg:
+              //    "pipe_fixed": false
+            }
+          },
+          "help_text": "Need a wrench." // Shown when player is unable to select this choice due to not meeting conditions
+        }
+      ]
+    }
+  ]
+}
