@@ -44,9 +44,9 @@ func apply_outcome(outcome: Event.State) -> void:
 		var change: int = outcome.stats[stat]
 		match stat:
 			"health":
-				_player.health += change
+				_player.health.value += change
 			"food":
-				_player.food += change
+				_player.food.value += change
 
 
 func are_conditions_met(conditions: Event.State) -> bool:
@@ -92,9 +92,9 @@ func _are_stats_match(stats: Dictionary) -> bool:
 		var existing := 0
 		match stat:
 			"health":
-				existing = _player.health
+				existing = _player.health.value
 			"food":
-				existing = _player.food
+				existing = _player.food.value
 		var valid := _evaluate_expression(
 				existing,
 				tokens["value"],
