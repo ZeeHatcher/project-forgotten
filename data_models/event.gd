@@ -31,6 +31,7 @@ class Page:
 
 class Choice:
 	var description: String
+	var conditions: Dictionary
 	var outcome: Outcome
 	var next_page: int
 	

@@ -1,5 +1,5 @@
-extends TileMap
 class_name EventTiles
+extends TileMap
 
 
 signal event_triggered(event_name)

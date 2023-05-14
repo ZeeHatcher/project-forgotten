@@ -14,14 +14,32 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://data_models/event.gd"
 }, {
+"base": "TabContainer",
+"class": "EventBoard",
+"language": "GDScript",
+"path": "res://ui/event_board/event_board.gd"
+}, {
+"base": "Node",
+"class": "EventService",
+"language": "GDScript",
+"path": "res://misc/event_service.gd"
+}, {
 "base": "TileMap",
 "class": "EventTiles",
 "language": "GDScript",
 "path": "res://misc/event_tiles.gd"
+}, {
+"base": "Node2D",
+"class": "Player",
+"language": "GDScript",
+"path": "res://entities/player/player.gd"
 } ]
 _global_script_class_icons={
 "Event": "",
-"EventTiles": ""
+"EventBoard": "",
+"EventService": "",
+"EventTiles": "",
+"Player": ""
 }
 
 [application]
