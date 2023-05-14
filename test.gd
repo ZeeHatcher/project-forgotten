@@ -2,8 +2,13 @@ extends Node2D
 
 
 onready var _board := $CanvasLayer/CenterContainer/EventBoard
+onready var _player := $Player
 
 signal unfog_cell(cell, radius)
+
+
+func _ready():
+	unfog_tilemap(_player.global_position, 5)
 
 
 func _on_EventTiles_event_triggered(event_name: String):

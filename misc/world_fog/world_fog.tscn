@@ -4,4 +4,3 @@
 
 [node name="WorldFog" type="Node"]
 script = ExtResource( 1 )
-tilemap_path = NodePath("../Terrain")
