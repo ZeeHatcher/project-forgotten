@@ -5,7 +5,7 @@
 [ext_resource path="res://misc/event_tiles.gd" type="Script" id=3]
 [ext_resource path="res://ui/event_board/event_board.tscn" type="PackedScene" id=4]
 [ext_resource path="res://test.gd" type="Script" id=5]
-[ext_resource path="res://world_fog.gd" type="Script" id=6]
+[ext_resource path="res://misc/event_service.gd" type="Script" id=6]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 6, 12, 0, 24, 6, 12, 12 )
@@ -137,9 +137,11 @@ margin_top = 282.0
 margin_right = 516.0
 margin_bottom = 318.0
 
-[node name="WorldFog" type="Node" parent="."]
+[node name="EventService" type="Node" parent="."]
 script = ExtResource( 6 )
-tilemap_path = NodePath("../Terrain")
+player = NodePath("../EventTiles/Player")
+board = NodePath("../CanvasLayer/CenterContainer/EventBoard")
 
-[connection signal="event_triggered" from="EventTiles" to="." method="_on_EventTiles_event_triggered"]
-[connection signal="event_ended" from="CanvasLayer/CenterContainer/EventBoard" to="." method="_on_EventBoard_event_ended"]
+[connection signal="event_triggered" from="EventTiles" to="EventService" method="start_event"]
+[connection signal="choice_selected" from="CanvasLayer/CenterContainer/EventBoard" to="EventService" method="apply_outcome"]
+[connection signal="event_ended" from="CanvasLayer/CenterContainer/EventBoard" to="EventService" method="end_event"]

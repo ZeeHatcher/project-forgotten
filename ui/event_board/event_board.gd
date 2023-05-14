@@ -1,3 +1,4 @@
+class_name EventBoard
 extends TabContainer
 
 
@@ -5,6 +6,7 @@ signal choice_selected(outcome)
 signal event_ended
 
 var event: Event setget set_event
+var are_conditions_met_handler: FuncRef
 
 onready var _container := $VBoxContainer
 onready var _description := $VBoxContainer/EventDescription
@@ -46,6 +48,7 @@ func _create_choice_button(choice: Event.Choice) -> Button:
 	var button := Button.new()
 	button.text = choice.description
 	button.connect("pressed", self, "_on_choice_selected", [choice])
+	button.disabled = not are_conditions_met_handler.call_func(choice.conditions)
 	return button
 
 

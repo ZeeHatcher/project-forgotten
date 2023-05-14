@@ -31,24 +31,34 @@ class Page:
 
 class Choice:
 	var description: String
-	var outcome: Outcome
+	var outcome: State
 	var next_page: int
+	var conditions: State
+	var help_text: String
 	
 	
-	func _init(desc := "", outcome_: Outcome = null, next := -1) -> void:
+	func _init(
+			desc := "", outcome_: State = null, next := -1,
+			conditions_: State = null, help := ""
+	) -> void:
 		description = desc
-		outcome = outcome_ if not outcome_ == null else Outcome.new()
+		outcome = outcome_ if not outcome_ == null else State.new()
 		next_page = next
+		conditions = conditions_ if not conditions_ == null else State.new() 
+		help_text = help
 	
 	
 	func populate_from_json(json: Dictionary) -> void:
 		description = json.get("description", "")
 		next_page = json.get("next_page", -1)
-		outcome = Outcome.new()
+		outcome = State.new()
 		outcome.populate_from_json(json.get("outcome", {}))
+		conditions = State.new()
+		conditions.populate_from_json(json.get("conditions", {}))
+		help_text = json.get("help_text", "")
 
 
-class Outcome:
+class State:
 	var items: Dictionary
 	var stats: Dictionary
 	var global: Dictionary
