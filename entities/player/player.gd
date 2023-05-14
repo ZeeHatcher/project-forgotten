@@ -2,7 +2,7 @@ class_name Player
 extends Node2D
 
 
-signal moved
+signal moved(new_pos)
 signal event_triggered(event_name)
 
 const INPUTS = {
@@ -31,7 +31,7 @@ func _unhandled_input(event: InputEvent) -> void:
 func move(dir: Vector2) -> void:
 	var move_dir := GridTranslator.step_isometric(dir)
 	_animate_movement(move_dir)
-	emit_signal("moved")
+	emit_signal("moved", position + move_dir)
 
 
 func _will_collide(dir: Vector2) -> bool:
