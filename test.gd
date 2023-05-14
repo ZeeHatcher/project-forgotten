@@ -12,3 +12,5 @@ func _on_EventTiles_event_triggered(event_name: String):
 
 func _on_EventBoard_event_ended():
 	get_tree().paused = false
+
+
