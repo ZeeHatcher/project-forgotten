@@ -4,6 +4,7 @@ extends Node2D
 
 signal moved(new_pos)
 signal event_triggered(event_name)
+signal dead
 
 const INPUTS = {
 	"move_up": Vector2.UP,
@@ -12,14 +13,19 @@ const INPUTS = {
 	"move_left": Vector2.LEFT,
 }
 
+export(Resource) var health
 export(Resource) var food
 
-var health := 100
 var inventory := {}
 
 onready var _ray := $CollisionRay
 onready var _tween := $Tween
 
+
+func _ready() -> void:
+	food.connect("depleted", self, "_on_food_depleted")
+	health.connect("depleted", self, "_on_health_depleted")
+	
 
 func _unhandled_input(event: InputEvent) -> void:
 	for action in INPUTS.keys():
@@ -48,10 +54,18 @@ func _animate_movement(dir: Vector2) -> void:
 	_tween.start()
 
 
-func _on_EventDetector_body_entered(body: Node):
+func _on_EventDetector_body_entered(body: Node) -> void:
 	if body as EventTiles:
 		body.trigger_event_at(global_position)
 
 
-func _on_Player_moved(_new_pos: Vector2):
+func _on_Player_moved(_new_pos: Vector2) -> void:
 	food.consume()
+
+
+func _on_food_depleted() -> void:
+	health.value -= 1
+
+
+func _on_health_depleted() -> void:
+	emit_signal("dead")
