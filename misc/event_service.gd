@@ -66,7 +66,6 @@ func _is_inventory_match(items: Dictionary) -> bool:
 	for item in items:
 		var tokens := _tokenize(items[item])
 		var existing: int = _player.inventory.get(item, 0)
-		print(item)
 		var valid := _evaluate_expression(
 				existing,
 				tokens["value"],
@@ -81,6 +80,7 @@ func _are_flags_match(flags: Dictionary) -> bool:
 	for flag in flags:
 		var desired: bool = flags[flag]
 		var existing: bool = _flags.get(flag, false)
+		print_debug("%s: %s == %s" % [flag, existing, desired])
 		if existing != desired:
 			return false
 	return true
