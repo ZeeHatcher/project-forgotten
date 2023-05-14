@@ -21,4 +21,6 @@ func add(name: String, qty: int) -> void:
 	else:
 		_items[name] = qty
 	_items[name] = max(_items[name], 0)
+	if _items[name] <= 0:
+		_items.erase(name)
 	emit_signal("quantity_changed")

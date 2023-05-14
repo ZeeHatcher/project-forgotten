@@ -3,6 +3,7 @@ extends Resource
 
 
 signal depleted
+signal value_changed
 
 export var counter: int
 export var max_value: int
@@ -19,6 +20,10 @@ func consume() -> void:
 
 
 func set_value(val: int) -> void:
-	value = max(val, 0)
+	var original := value
+	value = clamp(val, 0, max_value)
 	if value == 0:
 		emit_signal("depleted")
+	
+	if original != value:
+		emit_signal("value_changed")

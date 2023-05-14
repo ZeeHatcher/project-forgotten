@@ -3,12 +3,17 @@ extends Resource
 
 
 signal depleted
+signal value_changed
 
-export(int) var max_value
-export(int) var value setget set_value
+export var max_value: int
+export var value: int setget set_value
 
 
 func set_value(val: int) -> void:
+	var original := value
 	value = clamp(val, 0, max_value)
 	if value == 0:
 		emit_signal("depleted")
+	
+	if original != value:
+		emit_signal("value_changed")
