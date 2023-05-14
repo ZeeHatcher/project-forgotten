@@ -129,4 +129,5 @@ player = NodePath("../EventTiles/Player")
 board = NodePath("../CanvasLayer/CenterContainer/EventBoard")
 
 [connection signal="event_triggered" from="EventTiles" to="EventService" method="start_event"]
+[connection signal="choice_selected" from="CanvasLayer/CenterContainer/EventBoard" to="EventService" method="apply_outcome"]
 [connection signal="event_ended" from="CanvasLayer/CenterContainer/EventBoard" to="EventService" method="end_event"]

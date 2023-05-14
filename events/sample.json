@@ -10,14 +10,17 @@
             "items": {
               "cookie": 1
             },
-            "stats": {
-              "health": 1
-            },
             "global": {
               "cookie_obtained": true
             }
           },
-          "next_page": 1
+          "next_page": 1,
+          "conditions": {
+            "global": {
+              "cookie_obtained": false
+            }
+          },
+          "help_text": "You already have a cookie!"
         },
         {
           "description": "Leave the cookie.",
