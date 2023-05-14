@@ -14,7 +14,7 @@ var _counter := 0
 func consume() -> void:
 	_counter += 1
 	if _counter == counter:
-		value -= 1
+		self.value -= 1
 		_counter = 0
 
 
