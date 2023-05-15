@@ -10,7 +10,7 @@
 [sub_resource type="Animation" id=1]
 length = 0.001
 tracks/0/type = "value"
-tracks/0/path = NodePath("StartMenu/TitleCard:modulate")
+tracks/0/path = NodePath("StartMenu/TitleCard/CenterContainer:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -22,7 +22,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("StartMenu/TitleCard/Label:rect_position")
+tracks/1/path = NodePath("StartMenu/TitleCard/CenterContainer/Label:rect_position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -32,6 +32,18 @@ tracks/1/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 206, 273 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("StartMenu/TitleCard/Label:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
 }
 
 [sub_resource type="Animation" id=3]
@@ -43,7 +55,7 @@ loop = true
 resource_name = "title_card_start"
 length = 4.0
 tracks/0/type = "value"
-tracks/0/path = NodePath("StartMenu/TitleCard:modulate")
+tracks/0/path = NodePath("StartMenu/TitleCard/CenterContainer:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -53,6 +65,18 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("StartMenu/TitleCard/Label:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
 }
 
 [node name="StartScreen" type="Node"]
@@ -71,14 +95,18 @@ anims/title_card_start = SubResource( 2 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 
-[node name="TitleCard" type="CenterContainer" parent="StartMenu"]
+[node name="TitleCard" type="Control" parent="StartMenu"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="CenterContainer" type="CenterContainer" parent="StartMenu/TitleCard"]
 modulate = Color( 1, 1, 1, 0 )
 margin_right = 1024.0
 margin_bottom = 600.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 
-[node name="Label" type="Label" parent="StartMenu/TitleCard"]
+[node name="Label" type="Label" parent="StartMenu/TitleCard/CenterContainer"]
 margin_left = 206.0
 margin_top = 273.0
 margin_right = 916.0
@@ -87,6 +115,23 @@ size_flags_horizontal = 0
 size_flags_vertical = 0
 theme = ExtResource( 2 )
 text = "Project Forgotten"
+align = 1
+valign = 1
+
+[node name="Label" type="Label" parent="StartMenu/TitleCard"]
+visible = false
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = 137.0
+margin_top = 498.0
+margin_right = 847.0
+margin_bottom = 560.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme = ExtResource( 6 )
+text = "Press any button"
 align = 1
 valign = 1
 
