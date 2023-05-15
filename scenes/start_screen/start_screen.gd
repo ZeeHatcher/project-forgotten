@@ -38,9 +38,9 @@ func _input(event):
 		SCREENS.MAIN:
 			_process_main_screen(event)
 		SCREENS.OPTION:
-			pass
+			_process_main_screen(event)
 		SCREENS.CREDIT:
-			pass
+			_process_main_screen(event)
 
 
 func _process_title_screen(event):
@@ -70,7 +70,7 @@ func _on_Exit_pressed():
 
 
 func _on_Start_pressed():
-	get_tree().change_scene("res://test2.tscn")
+	get_tree().change_scene("res://main.tscn")
 
 
 func _on_Credits_pressed():
