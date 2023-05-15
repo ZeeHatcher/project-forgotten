@@ -27,3 +27,7 @@ func unfog_tilemap(global_pos, radius = 0):
 
 func _on_Player_moved(new_pos):
 	unfog_tilemap(new_pos, 5)
+
+
+func _on_Player_dead():
+	pass # Replace with function body.
