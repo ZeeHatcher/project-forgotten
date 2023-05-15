@@ -6,6 +6,7 @@ export(NodePath) var player
 export(NodePath) var board
 
 var _flags: Dictionary
+var _completed := {}
 
 onready var _player: Player = get_node(player)
 onready var _board: EventBoard = get_node(board)
@@ -19,12 +20,18 @@ func start_event(event_name: String):
 	if not _board:
 		return
 	
+	var event = EventRepository.get_event(event_name)
+	if _completed.has(event):
+		return
+	
 	get_tree().paused = true
-	_board.event = EventRepository.get_event(event_name)
+	_board.event = event
 	_board.show()
 
 
-func end_event():
+func end_event(event: Event, complete: bool):
+	if complete:
+		_completed[event] = true
 	get_tree().paused = false
 
 

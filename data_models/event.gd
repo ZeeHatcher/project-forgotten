@@ -35,17 +35,19 @@ class Choice:
 	var next_page: int
 	var conditions: State
 	var help_text: String
+	var complete: bool
 	
 	
 	func _init(
 			desc := "", outcome_: State = null, next := -1,
-			conditions_: State = null, help := ""
+			conditions_: State = null, help := "", complete_ := false
 	) -> void:
 		description = desc
 		outcome = outcome_ if not outcome_ == null else State.new()
 		next_page = next
 		conditions = conditions_ if not conditions_ == null else State.new() 
 		help_text = help
+		complete = complete_
 	
 	
 	func populate_from_json(json: Dictionary) -> void:
@@ -56,6 +58,7 @@ class Choice:
 		conditions = State.new()
 		conditions.populate_from_json(json.get("conditions", {}))
 		help_text = json.get("help_text", "")
+		complete = json.get("complete", false)
 
 
 class State:

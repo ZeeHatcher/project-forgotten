@@ -3,7 +3,7 @@ extends TabContainer
 
 
 signal choice_selected(outcome)
-signal event_ended
+signal event_ended(event_name, complete)
 
 var event: Event setget set_event
 var are_conditions_met_handler: FuncRef
@@ -57,6 +57,6 @@ func _on_choice_selected(choice: Event.Choice) -> void:
 	
 	if choice.next_page == -1:
 		hide()
-		emit_signal("event_ended")
+		emit_signal("event_ended", event, choice.complete)
 	else:
 		_show_page(choice.next_page)

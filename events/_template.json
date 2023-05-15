@@ -45,7 +45,8 @@
               //    "pipe_fixed": false
             }
           },
-          "help_text": "Need a wrench." // Shown when player is unable to select this choice due to not meeting conditions
+          "help_text": "Need a wrench." // Shown when player is unable to select this choice due to not meeting conditions,
+          "complete": true // Determines whether the event is deleted when choosing this selection. Only matters if it is the final selection (no next page).
         }
       ]
     }

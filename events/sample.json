@@ -38,7 +38,8 @@
       "description": "You take the cookie, and feel slightly happier about your current circumstance.",
       "choices": [
         {
-          "description": "Yay!"
+          "description": "Yay!",
+          "complete": true
         }
       ]
     },
