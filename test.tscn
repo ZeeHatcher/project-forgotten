@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://assets/cube.png" type="Texture" id=1]
 [ext_resource path="res://entities/player/player.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://test.gd" type="Script" id=5]
 [ext_resource path="res://misc/event_service.gd" type="Script" id=6]
 [ext_resource path="res://ui/top_bar/top_bar.tscn" type="PackedScene" id=7]
+[ext_resource path="res://misc/gameover_service.gd" type="Script" id=8]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 6, 12, 0, 24, 6, 12, 12 )
@@ -145,6 +146,11 @@ script = ExtResource( 6 )
 player = NodePath("../Player")
 board = NodePath("../CanvasLayer/CenterContainer/EventBoard")
 
+[node name="GameOverService" type="Node" parent="."]
+script = ExtResource( 8 )
+final_event_name = "sample"
+
 [connection signal="event_triggered" from="EventTiles" to="EventService" method="start_event"]
 [connection signal="choice_selected" from="CanvasLayer/CenterContainer/EventBoard" to="EventService" method="apply_outcome"]
 [connection signal="event_ended" from="CanvasLayer/CenterContainer/EventBoard" to="EventService" method="end_event"]
+[connection signal="event_ended" from="CanvasLayer/CenterContainer/EventBoard" to="GameOverService" method="_on_EventBoard_event_ended"]

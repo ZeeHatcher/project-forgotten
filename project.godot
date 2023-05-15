@@ -34,6 +34,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://data_models/food.gd"
 }, {
+"base": "Node",
+"class": "GameOverService",
+"language": "GDScript",
+"path": "res://misc/gameover_service.gd"
+}, {
 "base": "Resource",
 "class": "Health",
 "language": "GDScript",
@@ -55,6 +60,7 @@ _global_script_class_icons={
 "EventService": "",
 "EventTiles": "",
 "Food": "",
+"GameOverService": "",
 "Health": "",
 "Inventory": "",
 "Player": ""

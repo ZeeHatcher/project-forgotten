@@ -3,7 +3,7 @@ extends TabContainer
 
 
 signal choice_selected(outcome)
-signal event_ended(event_name, complete)
+signal event_ended(event, complete)
 
 var event: Event setget set_event
 var are_conditions_met_handler: FuncRef
