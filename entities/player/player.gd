@@ -38,6 +38,7 @@ func move(dir: Vector2) -> void:
 	var move_dir := GridTranslator.step_isometric(dir)
 	_animate_movement(move_dir)
 	emit_signal("moved", position + move_dir)
+	print(inventory.get_all())
 
 
 func _will_collide(dir: Vector2) -> bool:

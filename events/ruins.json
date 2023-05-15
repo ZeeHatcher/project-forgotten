@@ -1,0 +1,58 @@
+{
+  "title": "Ruins",
+  "pages": [
+    {
+      "description": "You stand before an ancient ruin. Clay statues stand guard before the entrance.",
+      "choices": [
+        {
+          "description": "Go towards the entrance.",
+          "next_page": 1
+        },
+        {
+          "description": "Leave."
+        }
+      ]
+    },
+    {
+      "description": "The entrance is locked, but you notice a keyhole and a slot.",
+      "choices": [
+        {
+          "description": "Insert the key and the ancient tablet into the slot.",
+          "conditions": {
+            "items": {
+              "key": "=1",
+              "tablet": "=1"
+            }
+          },
+          "next_page": 2
+        },
+        {
+          "description": "Force the entrance open.",
+          "next_page": 3
+        }
+      ]
+    },
+    {
+      "description": "The entrance opens, revealing a dark passage that leads further down into the unknown...",
+      "choices": [
+        {
+          "description": "Enter.",
+          "complete": true
+        }
+      ]
+    },
+    {
+      "description": "The entrance forces you open instead. Arrows fire from the statues beside you, piercing your body.",
+      "choices": [
+        {
+          "description": "Leave, defeated.",
+          "outcome": {
+            "stats": {
+              "health": -5
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

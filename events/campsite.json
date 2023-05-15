@@ -17,8 +17,10 @@
           "description": "Camp here",
           "next_page": 2,
           "outcome": {
-            "health": 1,
-            "food": -1
+            "stats": {
+              "health": 1,
+              "food": 1
+            }
           }
         },
         {
