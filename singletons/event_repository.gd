@@ -2,6 +2,7 @@ extends Node
 
 
 const EVENTS_DIR := "res://events/"
+const IGNORE := "_template.json"
 
 var _events: Dictionary
 
@@ -24,7 +25,10 @@ func _load_events_from_dir() -> void:
 		
 		var file_name := dir.get_next()
 		while file_name != "":
-			var is_json_file := not dir.current_is_dir() and file_name.ends_with(".json")
+			var is_json_file := (
+					not dir.current_is_dir()
+					and file_name.ends_with(".json")
+					and file_name != IGNORE)
 			if is_json_file:
 				var raw_data := _load_json_file(EVENTS_DIR + file_name)
 				var event := _deserialize(raw_data)

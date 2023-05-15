@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://ui/top_bar/top_bar.gd" type="Script" id=1]
+[ext_resource path="res://ui/counter/counter.tscn" type="PackedScene" id=2]
+[ext_resource path="res://resources/player_health.tres" type="Resource" id=3]
+[ext_resource path="res://resources/player_food.tres" type="Resource" id=4]
+
+[node name="TopBar" type="PanelContainer"]
+anchor_right = 1.0
+script = ExtResource( 1 )
+player_health = ExtResource( 3 )
+player_food = ExtResource( 4 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 1017.0
+margin_bottom = 21.0
+
+[node name="HealthCounter" parent="HBoxContainer" instance=ExtResource( 2 )]
+unique_name_in_owner = true
+margin_right = 41.0
+margin_bottom = 14.0
+
+[node name="FoodCounter" parent="HBoxContainer" instance=ExtResource( 2 )]
+unique_name_in_owner = true
+margin_left = 45.0
+margin_right = 86.0
+margin_bottom = 14.0
