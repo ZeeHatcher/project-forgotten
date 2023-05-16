@@ -70,16 +70,16 @@ points = PoolVector2Array( 0, 6, 12, 0, 24, 6, 12, 12 )
 2/z_index = 0
 
 [sub_resource type="ConvexPolygonShape2D" id=4]
-points = PoolVector2Array( 0, 6, 12, 0, 24, 6, 12, 12 )
+points = PoolVector2Array( 10, 6, 12, 5, 14, 6, 12, 7 )
 
 [sub_resource type="ConvexPolygonShape2D" id=7]
-points = PoolVector2Array( 22.7932, 5.4321, 11.7014, 11.2191, 1.57407, 6.87888, 12.6659, 0.127319 )
+points = PoolVector2Array( 14, 6, 12, 7, 10, 6, 12, 5 )
 
 [sub_resource type="ConvexPolygonShape2D" id=8]
-points = PoolVector2Array( 16.783, 5.34302, 12.207, 8.57313, 6.6889, 5.34302, 11.9378, 2.92044 )
+points = PoolVector2Array( 14, 6, 12, 7, 10, 6, 12, 5 )
 
 [sub_resource type="ConvexPolygonShape2D" id=9]
-points = PoolVector2Array( 15.7063, 5.34303, 12.3416, 7.22726, 7.9002, 5.20844, 11.9378, 3.45879 )
+points = PoolVector2Array( 14, 6, 12, 7, 10, 6, 12, 5 )
 
 [sub_resource type="TileSet" id=6]
 0/name = "sample"
