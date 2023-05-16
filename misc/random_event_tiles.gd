@@ -4,8 +4,11 @@ extends TileMap
 
 export(int, 0, 100) var trigger_chance
 export var tile_events := {}
+export var grace_period := 5
 
 signal event_triggered(event_name)
+
+var _grace := grace_period
 
 
 func trigger_event_at(global_pos: Vector2) -> void:
@@ -22,6 +25,7 @@ func trigger_event_at(global_pos: Vector2) -> void:
 		return
 	
 	emit_signal("event_triggered", event_name)
+	_grace = grace_period
 
 
 func _random_event(tile_type: String) -> String:
@@ -31,5 +35,9 @@ func _random_event(tile_type: String) -> String:
 
 
 func _can_trigger() -> bool:
+	if _grace > 0:
+		_grace -= 1
+		return false
+	
 	var roll := randi() % 100 + 1
 	return roll <= trigger_chance
