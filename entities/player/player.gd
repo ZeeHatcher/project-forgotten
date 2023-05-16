@@ -14,6 +14,7 @@ const INPUTS = {
 	"move_left": Vector2.LEFT,
 }
 
+var buffered_move = null
 
 export(Resource) var health
 export(Resource) var food
@@ -31,12 +32,17 @@ func _ready() -> void:
 	temperature.connect("take_cold_damage", self, "_on_temperature_take_cold_damage")
 
 
-func _unhandled_input(event: InputEvent) -> void:
+func _physics_process(delta) -> void:
 	for action in INPUTS.keys():
-		if event.is_action(action):
-			var dir: Vector2 = INPUTS[action]
-			if not _tween.is_active() and not _will_collide(dir):
-				move(dir)
+		var dir: Vector2 = INPUTS[action]
+		if _will_collide(dir):
+			continue
+		
+		if _tween.is_active():
+			continue
+		
+		if InputBuffer.is_action_press_buffered(action):
+			move(dir)
 
 
 func move(dir: Vector2) -> void:
@@ -44,6 +50,16 @@ func move(dir: Vector2) -> void:
 	_animate_movement(move_dir)
 	emit_signal("moved", position + move_dir)
 	_tick_timer.start()
+
+
+func move_buffered() -> void:
+	if buffered_move:
+		if _will_collide(buffered_move):
+			return
+		
+		if not _tween.is_active():
+			move(buffered_move)
+			buffered_move = null
 
 
 func _will_collide(dir: Vector2) -> bool:
@@ -85,3 +101,7 @@ func _on_temperature_take_cold_damage() -> void:
 func _on_TickTimer_timeout():
 	temperature.tick()
 	emit_signal("temperature_updated", temperature.percentage)
+
+
+func _on_Tween_tween_all_completed():
+	move_buffered()
