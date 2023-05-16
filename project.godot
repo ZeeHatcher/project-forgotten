@@ -86,9 +86,9 @@ config/icon="res://icon.png"
 
 [autoload]
 
-InputBuffer="*res://addons/input_buffer.gd"
 GridTranslator="*res://singletons/grid_translator.gd"
 EventRepository="*res://singletons/event_repository.gd"
+InputBuffer="*res://addons/input_buffer.gd"
 
 [display]
 
