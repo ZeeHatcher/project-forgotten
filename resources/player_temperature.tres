@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://data_models/temperature.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+cold_tickrate = 1
+damage_tickrate = 5
+max_value = 10
+value = 10
+percentage = 0

@@ -13,10 +13,10 @@ var current_screen = SCREENS.TITLE
 
 onready var _animation_player := $AnimationPlayer
 onready var screens = {
-	SCREENS.TITLE: $StartMenu/TitleCard,
-	SCREENS.MAIN: $StartMenu/MarginContainer/MainMenu,
-	SCREENS.OPTION: $StartMenu/MarginContainer/OptionsMenu,
-	SCREENS.CREDIT: $StartMenu/MarginContainer/CreditsMenu,
+	SCREENS.TITLE: $CanvasLayer/StartMenu/TitleCard,
+	SCREENS.MAIN: $CanvasLayer/StartMenu/MarginContainer/MainMenu,
+	SCREENS.OPTION: $CanvasLayer/StartMenu/MarginContainer/OptionsMenu,
+	SCREENS.CREDIT: $CanvasLayer/StartMenu/MarginContainer/CreditsMenu,
 }
 
 

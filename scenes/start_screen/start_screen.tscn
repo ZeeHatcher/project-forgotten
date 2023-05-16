@@ -10,7 +10,7 @@
 [sub_resource type="Animation" id=1]
 length = 0.001
 tracks/0/type = "value"
-tracks/0/path = NodePath("StartMenu/TitleCard/CenterContainer:modulate")
+tracks/0/path = NodePath("CanvasLayer/StartMenu/TitleCard/CenterContainer:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -22,7 +22,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("StartMenu/TitleCard/CenterContainer/Label:rect_position")
+tracks/1/path = NodePath("CanvasLayer/StartMenu/TitleCard/CenterContainer/Label:rect_position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -34,7 +34,7 @@ tracks/1/keys = {
 "values": [ Vector2( 206, 273 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("StartMenu/TitleCard/Label:visible")
+tracks/2/path = NodePath("CanvasLayer/StartMenu/TitleCard/Label:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -55,7 +55,7 @@ loop = true
 resource_name = "title_card_start"
 length = 4.0
 tracks/0/type = "value"
-tracks/0/path = NodePath("StartMenu/TitleCard/CenterContainer:modulate")
+tracks/0/path = NodePath("CanvasLayer/StartMenu/TitleCard/CenterContainer:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -67,7 +67,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("StartMenu/TitleCard/Label:visible")
+tracks/1/path = NodePath("CanvasLayer/StartMenu/TitleCard/Label:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -91,26 +91,28 @@ anims/RESET = SubResource( 1 )
 anims/title_card_idle = SubResource( 3 )
 anims/title_card_start = SubResource( 2 )
 
-[node name="StartMenu" type="Control" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="StartMenu" type="Control" parent="CanvasLayer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 
-[node name="TitleCard" type="Control" parent="StartMenu"]
-margin_right = 40.0
-margin_bottom = 40.0
+[node name="TitleCard" type="Control" parent="CanvasLayer/StartMenu"]
+anchor_right = 1.0
+anchor_bottom = 1.0
 
-[node name="CenterContainer" type="CenterContainer" parent="StartMenu/TitleCard"]
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer/StartMenu/TitleCard"]
 modulate = Color( 1, 1, 1, 0 )
-margin_right = 1024.0
-margin_bottom = 600.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 
-[node name="Label" type="Label" parent="StartMenu/TitleCard/CenterContainer"]
-margin_left = 206.0
-margin_top = 273.0
-margin_right = 916.0
-margin_bottom = 335.0
+[node name="Label" type="Label" parent="CanvasLayer/StartMenu/TitleCard/CenterContainer"]
+margin_left = 157.0
+margin_top = 269.0
+margin_right = 867.0
+margin_bottom = 331.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 theme = ExtResource( 2 )
@@ -118,7 +120,7 @@ text = "Project Forgotten"
 align = 1
 valign = 1
 
-[node name="Label" type="Label" parent="StartMenu/TitleCard"]
+[node name="Label" type="Label" parent="CanvasLayer/StartMenu/TitleCard"]
 visible = false
 anchor_left = 0.5
 anchor_top = 1.0
@@ -135,7 +137,7 @@ text = "Press any button"
 align = 1
 valign = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="StartMenu"]
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/StartMenu"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 100.0
@@ -143,12 +145,12 @@ margin_top = 100.0
 margin_right = -100.0
 margin_bottom = -100.0
 
-[node name="MainMenu" type="Control" parent="StartMenu/MarginContainer"]
+[node name="MainMenu" type="Control" parent="CanvasLayer/StartMenu/MarginContainer"]
 visible = false
 margin_right = 824.0
 margin_bottom = 400.0
 
-[node name="MainMenuOptions" type="VBoxContainer" parent="StartMenu/MarginContainer/MainMenu"]
+[node name="MainMenuOptions" type="VBoxContainer" parent="CanvasLayer/StartMenu/MarginContainer/MainMenu"]
 anchor_top = 0.5
 anchor_bottom = 0.5
 margin_top = -200.0
@@ -158,7 +160,7 @@ size_flags_horizontal = 0
 theme = ExtResource( 5 )
 alignment = 1
 
-[node name="Start" type="Button" parent="StartMenu/MarginContainer/MainMenu/MainMenuOptions"]
+[node name="Start" type="Button" parent="CanvasLayer/StartMenu/MarginContainer/MainMenu/MainMenuOptions"]
 margin_top = 116.0
 margin_right = 196.0
 margin_bottom = 155.0
@@ -168,7 +170,7 @@ size_flags_vertical = 0
 text = "Start"
 align = 0
 
-[node name="Options" type="Button" parent="StartMenu/MarginContainer/MainMenu/MainMenuOptions"]
+[node name="Options" type="Button" parent="CanvasLayer/StartMenu/MarginContainer/MainMenu/MainMenuOptions"]
 margin_top = 159.0
 margin_right = 196.0
 margin_bottom = 198.0
@@ -180,7 +182,7 @@ size_flags_vertical = 0
 text = "Options"
 align = 0
 
-[node name="Credits" type="Button" parent="StartMenu/MarginContainer/MainMenu/MainMenuOptions"]
+[node name="Credits" type="Button" parent="CanvasLayer/StartMenu/MarginContainer/MainMenu/MainMenuOptions"]
 margin_top = 202.0
 margin_right = 196.0
 margin_bottom = 241.0
@@ -191,7 +193,7 @@ size_flags_vertical = 0
 text = "Credits"
 align = 0
 
-[node name="Exit" type="Button" parent="StartMenu/MarginContainer/MainMenu/MainMenuOptions"]
+[node name="Exit" type="Button" parent="CanvasLayer/StartMenu/MarginContainer/MainMenu/MainMenuOptions"]
 margin_top = 245.0
 margin_right = 196.0
 margin_bottom = 284.0
@@ -201,12 +203,12 @@ size_flags_vertical = 0
 text = "Exit"
 align = 0
 
-[node name="OptionsMenu" type="Control" parent="StartMenu/MarginContainer"]
+[node name="OptionsMenu" type="Control" parent="CanvasLayer/StartMenu/MarginContainer"]
 visible = false
 margin_right = 824.0
 margin_bottom = 400.0
 
-[node name="Label" type="Label" parent="StartMenu/MarginContainer/OptionsMenu"]
+[node name="Label" type="Label" parent="CanvasLayer/StartMenu/MarginContainer/OptionsMenu"]
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -221.0
@@ -221,7 +223,7 @@ text = "Options"
 align = 1
 valign = 1
 
-[node name="Options" type="VBoxContainer" parent="StartMenu/MarginContainer/OptionsMenu"]
+[node name="Options" type="VBoxContainer" parent="CanvasLayer/StartMenu/MarginContainer/OptionsMenu"]
 anchor_top = 0.5
 anchor_bottom = 0.5
 margin_top = -200.0
@@ -232,7 +234,7 @@ size_flags_vertical = 0
 theme = ExtResource( 6 )
 alignment = 1
 
-[node name="Label2" type="Label" parent="StartMenu/MarginContainer/OptionsMenu/Options"]
+[node name="Label2" type="Label" parent="CanvasLayer/StartMenu/MarginContainer/OptionsMenu/Options"]
 margin_top = 140.0
 margin_right = 224.0
 margin_bottom = 179.0
@@ -245,7 +247,7 @@ theme = ExtResource( 5 )
 text = "Game by"
 align = 1
 
-[node name="Label3" type="Label" parent="StartMenu/MarginContainer/OptionsMenu/Options"]
+[node name="Label3" type="Label" parent="CanvasLayer/StartMenu/MarginContainer/OptionsMenu/Options"]
 margin_top = 183.0
 margin_right = 224.0
 margin_bottom = 199.0
@@ -255,7 +257,7 @@ size_flags_vertical = 0
 text = "SirSunstone"
 align = 1
 
-[node name="Label5" type="Label" parent="StartMenu/MarginContainer/OptionsMenu/Options"]
+[node name="Label5" type="Label" parent="CanvasLayer/StartMenu/MarginContainer/OptionsMenu/Options"]
 margin_top = 203.0
 margin_right = 224.0
 margin_bottom = 219.0
@@ -265,7 +267,7 @@ size_flags_vertical = 0
 text = "IcyLily"
 align = 1
 
-[node name="Label4" type="Label" parent="StartMenu/MarginContainer/OptionsMenu/Options"]
+[node name="Label4" type="Label" parent="CanvasLayer/StartMenu/MarginContainer/OptionsMenu/Options"]
 margin_top = 223.0
 margin_right = 224.0
 margin_bottom = 239.0
@@ -275,7 +277,7 @@ size_flags_vertical = 0
 text = "ZeeHatcher"
 align = 1
 
-[node name="Label6" type="Label" parent="StartMenu/MarginContainer/OptionsMenu/Options"]
+[node name="Label6" type="Label" parent="CanvasLayer/StartMenu/MarginContainer/OptionsMenu/Options"]
 margin_top = 243.0
 margin_right = 224.0
 margin_bottom = 259.0
@@ -285,12 +287,12 @@ size_flags_vertical = 0
 text = "Zircon332"
 align = 1
 
-[node name="CreditsMenu" type="Control" parent="StartMenu/MarginContainer"]
+[node name="CreditsMenu" type="Control" parent="CanvasLayer/StartMenu/MarginContainer"]
 visible = false
 margin_right = 824.0
 margin_bottom = 400.0
 
-[node name="Label" type="Label" parent="StartMenu/MarginContainer/CreditsMenu"]
+[node name="Label" type="Label" parent="CanvasLayer/StartMenu/MarginContainer/CreditsMenu"]
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -221.0
@@ -305,7 +307,7 @@ text = "Credits"
 align = 1
 valign = 1
 
-[node name="Credits" type="VBoxContainer" parent="StartMenu/MarginContainer/CreditsMenu"]
+[node name="Credits" type="VBoxContainer" parent="CanvasLayer/StartMenu/MarginContainer/CreditsMenu"]
 anchor_top = 0.5
 anchor_bottom = 0.5
 margin_top = -200.0
@@ -316,7 +318,7 @@ size_flags_vertical = 0
 theme = ExtResource( 6 )
 alignment = 1
 
-[node name="Label2" type="Label" parent="StartMenu/MarginContainer/CreditsMenu/Credits"]
+[node name="Label2" type="Label" parent="CanvasLayer/StartMenu/MarginContainer/CreditsMenu/Credits"]
 margin_top = 140.0
 margin_right = 224.0
 margin_bottom = 179.0
@@ -329,7 +331,7 @@ theme = ExtResource( 5 )
 text = "Game by"
 align = 1
 
-[node name="Label3" type="Label" parent="StartMenu/MarginContainer/CreditsMenu/Credits"]
+[node name="Label3" type="Label" parent="CanvasLayer/StartMenu/MarginContainer/CreditsMenu/Credits"]
 margin_top = 183.0
 margin_right = 224.0
 margin_bottom = 199.0
@@ -339,7 +341,7 @@ size_flags_vertical = 0
 text = "SirSunstone"
 align = 1
 
-[node name="Label5" type="Label" parent="StartMenu/MarginContainer/CreditsMenu/Credits"]
+[node name="Label5" type="Label" parent="CanvasLayer/StartMenu/MarginContainer/CreditsMenu/Credits"]
 margin_top = 203.0
 margin_right = 224.0
 margin_bottom = 219.0
@@ -349,7 +351,7 @@ size_flags_vertical = 0
 text = "IcyLily"
 align = 1
 
-[node name="Label4" type="Label" parent="StartMenu/MarginContainer/CreditsMenu/Credits"]
+[node name="Label4" type="Label" parent="CanvasLayer/StartMenu/MarginContainer/CreditsMenu/Credits"]
 margin_top = 223.0
 margin_right = 224.0
 margin_bottom = 239.0
@@ -359,7 +361,7 @@ size_flags_vertical = 0
 text = "ZeeHatcher"
 align = 1
 
-[node name="Label6" type="Label" parent="StartMenu/MarginContainer/CreditsMenu/Credits"]
+[node name="Label6" type="Label" parent="CanvasLayer/StartMenu/MarginContainer/CreditsMenu/Credits"]
 margin_top = 243.0
 margin_right = 224.0
 margin_bottom = 259.0
@@ -369,11 +371,11 @@ size_flags_vertical = 0
 text = "Zircon332"
 align = 1
 
-[node name="57-All-Cards" type="Sprite" parent="StartMenu/MarginContainer/CreditsMenu"]
+[node name="57-All-Cards" type="Sprite" parent="CanvasLayer/StartMenu/MarginContainer/CreditsMenu"]
 position = Vector2( 584, 216 )
 scale = Vector2( 0.143958, 0.143958 )
 texture = ExtResource( 4 )
 
-[connection signal="pressed" from="StartMenu/MarginContainer/MainMenu/MainMenuOptions/Start" to="." method="_on_Start_pressed"]
-[connection signal="pressed" from="StartMenu/MarginContainer/MainMenu/MainMenuOptions/Credits" to="." method="_on_Credits_pressed"]
-[connection signal="pressed" from="StartMenu/MarginContainer/MainMenu/MainMenuOptions/Exit" to="." method="_on_Exit_pressed"]
+[connection signal="pressed" from="CanvasLayer/StartMenu/MarginContainer/MainMenu/MainMenuOptions/Start" to="." method="_on_Start_pressed"]
+[connection signal="pressed" from="CanvasLayer/StartMenu/MarginContainer/MainMenu/MainMenuOptions/Credits" to="." method="_on_Credits_pressed"]
+[connection signal="pressed" from="CanvasLayer/StartMenu/MarginContainer/MainMenu/MainMenuOptions/Exit" to="." method="_on_Exit_pressed"]
