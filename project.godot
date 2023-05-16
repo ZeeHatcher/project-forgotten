@@ -54,6 +54,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://entities/player/player.gd"
 }, {
+"base": "TileMap",
+"class": "RandomEventTiles",
+"language": "GDScript",
+"path": "res://misc/random_event_tiles.gd"
+}, {
 "base": "Resource",
 "class": "Temperature",
 "language": "GDScript",
@@ -69,6 +74,7 @@ _global_script_class_icons={
 "Health": "",
 "Inventory": "",
 "Player": "",
+"RandomEventTiles": "",
 "Temperature": ""
 }
 
