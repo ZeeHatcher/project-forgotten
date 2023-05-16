@@ -43,6 +43,8 @@ func _physics_process(delta) -> void:
 		
 		if InputBuffer.is_action_press_buffered(action):
 			move(dir)
+		elif Input.is_action_pressed(action):
+			move(dir)
 
 
 func move(dir: Vector2) -> void:

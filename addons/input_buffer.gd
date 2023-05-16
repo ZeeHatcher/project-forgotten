@@ -5,7 +5,7 @@ extends Node
 
 # How many milliseconds ahead of time the player can make an input and have it still be recognized.
 # I chose the value 150 because it imitates the 9-frame buffer window in the Super Smash Bros. Ultimate game.
-const BUFFER_WINDOW: int = 200
+const BUFFER_WINDOW: int = 500
 # The godot default deadzone is 0.2 so I chose to have it the same
 const JOY_DEADZONE: float = 0.2
 
@@ -26,8 +26,7 @@ func _ready() -> void:
 # Called whenever the player makes an input.
 func _input(event: InputEvent) -> void:
 	if event is InputEventKey:
-#		if !event.pressed or event.is_echo():
-		if !event.pressed:
+		if !event.pressed or event.is_echo():
 			return
 			
 		var scancode: int = event.scancode
