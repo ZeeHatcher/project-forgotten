@@ -1,0 +1,21 @@
+{
+  "title": "Berry Bush",
+  "pages": [
+    {
+      "description": "You find a berry bush, bountiful with tasty-looking berries.",
+      "choices": [
+        {
+          "description": "Take the berries.",
+          "outcome": {
+            "stats": {
+              "food": 1
+            }
+          }
+        },
+        {
+          "description": "Leave them."
+        }
+      ]
+    }
+  ]
+}
