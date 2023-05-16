@@ -33,7 +33,7 @@ func _ready() -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	for action in INPUTS.keys():
-		if event.is_action_pressed(action):
+		if event.is_action(action):
 			var dir: Vector2 = INPUTS[action]
 			if not _tween.is_active() and not _will_collide(dir):
 				move(dir)
@@ -55,7 +55,7 @@ func _will_collide(dir: Vector2) -> bool:
 func _animate_movement(dir: Vector2) -> void:
 	_tween.interpolate_property(self, "position",
 		position, position + dir,
-		0.1, Tween.TRANS_SINE, Tween.EASE_IN_OUT)
+		0.5, Tween.TRANS_SINE, Tween.EASE_OUT)
 	_tween.start()
 
 

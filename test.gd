@@ -8,7 +8,7 @@ signal unfog_cell(cell, radius)
 
 
 func _ready():
-	unfog_tilemap(_player.global_position, 5)
+	unfog_tilemap(_player.global_position, 2)
 
 
 func _on_EventTiles_event_triggered(event_name: String):
@@ -26,7 +26,7 @@ func unfog_tilemap(global_pos, radius = 0):
 
 
 func _on_Player_moved(new_pos):
-	unfog_tilemap(new_pos, 5)
+	unfog_tilemap(new_pos, 2)
 
 
 func _on_Player_dead():
