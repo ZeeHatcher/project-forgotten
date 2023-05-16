@@ -121,15 +121,10 @@ align = 1
 valign = 1
 
 [node name="Label" type="Label" parent="CanvasLayer/StartMenu/TitleCard"]
-visible = false
-anchor_left = 0.5
 anchor_top = 1.0
-anchor_right = 0.5
+anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 137.0
-margin_top = 498.0
-margin_right = 847.0
-margin_bottom = 560.0
+margin_top = -41.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 theme = ExtResource( 6 )

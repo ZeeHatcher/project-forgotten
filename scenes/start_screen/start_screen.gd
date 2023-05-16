@@ -43,8 +43,8 @@ func _input(event):
 			_process_main_screen(event)
 
 
-func _process_title_screen(event):
-	if event.is_action_pressed("ui_select"):
+func _process_title_screen(event: InputEvent):
+	if event.is_pressed():
 		if _animation_player.current_animation == "title_card_start":
 			_animation_player.advance(10)
 		else:
@@ -66,7 +66,8 @@ func load_menu(selected_screen):
 
 
 func _on_Exit_pressed():
-	get_tree().quit()
+	load_menu(SCREENS.TITLE)
+	load_title()
 
 
 func _on_Start_pressed():
