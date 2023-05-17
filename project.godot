@@ -9,6 +9,16 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Label",
+"class": "AnimatedLabel",
+"language": "GDScript",
+"path": "res://ui/animated_label/animated_label.gd"
+}, {
+"base": "Resource",
+"class": "CutsceneFrame",
+"language": "GDScript",
+"path": "res://data_models/cutscene_frame.gd"
+}, {
 "base": "Resource",
 "class": "Event",
 "language": "GDScript",
@@ -75,6 +85,8 @@ _global_script_classes=[ {
 "path": "res://data_models/temperature.gd"
 } ]
 _global_script_class_icons={
+"AnimatedLabel": "",
+"CutsceneFrame": "",
 "Event": "",
 "EventBoard": "",
 "EventService": "",

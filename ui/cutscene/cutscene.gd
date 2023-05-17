@@ -3,49 +3,72 @@ extends Control
 
 signal end()
 
-export(Array, String, MULTILINE) var content: Array
+export(Array, Resource) var content: Array
 
 var _index := -1
+var _frame_controller: FrameController
 
-onready var _label := $CenterContainer/Label
-onready var _animation_player := $AnimationPlayer
-onready var _timer := $Timer
+onready var _image := $"TextureRect"
+onready var _label := $"%AnimatedLabel"
 
 
 func play() -> void:
-	_next()
+	next()
 
 
 func _input(event: InputEvent) -> void:
-	var is_mouse_click: bool = (
-			event is InputEventMouseButton
-			and event.button_index == BUTTON_LEFT
+	var is_pressed: bool = (
+			(event is InputEventMouseButton or event is InputEventKey)
 			and event.pressed
 	)
 	
-	if is_mouse_click:
-		_timer.stop()
-		_next()
+	if is_pressed:
+		next()
 	
 	get_tree().set_input_as_handled()
 
 
-func _next():
-	_animation_player.play("fade_out")
+func next() -> void:
+	if not _frame_controller:
+		_next_frame()
+	else:
+		var completed := _frame_controller.next()
+		if completed:
+			_next_frame()
+
+
+func _next_frame() -> void:
 	_index += 1
-	
-	yield(_animation_player, "animation_finished")
-	_label.text = ""
-	
 	if _index >= content.size():
 		emit_signal("end")
 		return
 	
-	_label.text = content[_index]
-	_animation_player.play("fade_in")
-	yield(_animation_player, "animation_finished")
-	_timer.start()
+	_frame_controller = FrameController.new(_image, _label, content[_index])
 
 
-func _on_Timer_timeout() -> void:
-	_next()
+class FrameController:
+	var _image: TextureRect
+	var _label: AnimatedLabel
+	var _frame: CutsceneFrame
+	var _index := -1
+	
+	
+	func _init(image: TextureRect, label: AnimatedLabel, frame: CutsceneFrame) -> void:
+		_image = image
+		_label = label
+		_frame = frame
+		image.texture = frame.image
+	
+	
+	func next() -> bool:
+		if _label.is_still_animating():
+			_label.skip()
+			return false
+		
+		_index += 1
+		if _index >= _frame.text.size():
+			return true
+		
+		_label.full_text = _frame.text[_index]
+		
+		return false
