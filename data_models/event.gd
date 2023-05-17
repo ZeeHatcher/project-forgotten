@@ -2,12 +2,20 @@ class_name Event
 extends Resource
 
 
+const EVENT_IMAGE_DIR := "res://assets/events/"
+
 var title: String
+var image: Texture
 var pages: Array
 
 
 func populate_from_json(json: Dictionary) -> void:
 	title = json.get("title", "")
+	
+	var image_file = EVENT_IMAGE_DIR + json.get("image", "")
+	var dir := Directory.new()
+	if dir.file_exists(image_file):
+		image = load(image_file)
 	
 	for raw_page in json.get("pages", []):
 		var page := Page.new()
