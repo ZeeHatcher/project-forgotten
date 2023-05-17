@@ -21,7 +21,7 @@ func start_event(event_name: String):
 		return
 	
 	var event = EventRepository.get_event(event_name)
-	if not event or _completed.has(event):
+	if not event or _completed.has(event.title):
 		return
 	
 	get_tree().paused = true
@@ -31,7 +31,7 @@ func start_event(event_name: String):
 
 func end_event(event: Event, complete: bool):
 	if complete:
-		_completed[event] = true
+		_completed[event.title] = true
 	get_tree().paused = false
 
 

@@ -37,5 +37,4 @@ autostart = true
 
 [connection signal="moved" from="." to="." method="_on_Player_moved"]
 [connection signal="body_entered" from="EventDetector" to="." method="_on_EventDetector_body_entered"]
-[connection signal="tween_all_completed" from="Tween" to="." method="_on_Tween_tween_all_completed"]
 [connection signal="timeout" from="TickTimer" to="." method="_on_TickTimer_timeout"]

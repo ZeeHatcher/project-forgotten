@@ -39,6 +39,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://misc/gameover_service.gd"
 }, {
+"base": "Node",
+"class": "GameSaveService",
+"language": "GDScript",
+"path": "res://misc/gamesave_service.gd"
+}, {
 "base": "Resource",
 "class": "Health",
 "language": "GDScript",
@@ -60,6 +65,11 @@ _global_script_classes=[ {
 "path": "res://misc/random_event_tiles.gd"
 }, {
 "base": "Resource",
+"class": "SaveGame",
+"language": "GDScript",
+"path": "res://resources/save_game.gd"
+}, {
+"base": "Resource",
 "class": "Temperature",
 "language": "GDScript",
 "path": "res://data_models/temperature.gd"
@@ -71,10 +81,12 @@ _global_script_class_icons={
 "EventTiles": "",
 "Food": "",
 "GameOverService": "",
+"GameSaveService": "",
 "Health": "",
 "Inventory": "",
 "Player": "",
 "RandomEventTiles": "",
+"SaveGame": "",
 "Temperature": ""
 }
 
