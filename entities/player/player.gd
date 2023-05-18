@@ -16,6 +16,7 @@ const INPUTS = {
 
 var _save
 
+export(float, 1, 5, 0.5) var speed := 3
 export(Resource) var health
 export(Resource) var food
 export(Resource) var inventory
@@ -24,6 +25,8 @@ export(Resource) var temperature
 onready var _ray := $CollisionRay
 onready var _tween := $Tween
 onready var _tick_timer := $TickTimer
+onready var _animation_duration := 1.0 / speed
+
 onready var target_position := global_position
 
 
@@ -65,7 +68,7 @@ func _animate_movement(dir: Vector2) -> void:
 	target_position = position + dir
 	_tween.interpolate_property(self, "position",
 		position, position + dir,
-		0.5, Tween.TRANS_SINE, Tween.EASE_OUT)
+		_animation_duration)
 	_tween.start()
 
 

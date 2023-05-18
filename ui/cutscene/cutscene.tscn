@@ -1,81 +1,50 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://ui/cutscene/cutscene.gd" type="Script" id=1]
-
-[sub_resource type="Animation" id=1]
-resource_name = "RESET"
-tracks/0/type = "value"
-tracks/0/path = NodePath("CenterContainer/Label:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ) ]
-}
-
-[sub_resource type="Animation" id=2]
-resource_name = "fade_in"
-tracks/0/type = "value"
-tracks/0/path = NodePath("CenterContainer/Label:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
-}
-
-[sub_resource type="Animation" id=3]
-resource_name = "fade_out"
-tracks/0/type = "value"
-tracks/0/path = NodePath("CenterContainer/Label:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
-}
+[ext_resource path="res://ui/animated_label/animated_label.gd" type="Script" id=3]
 
 [node name="Cutscene" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
-content = [ "This is the beginning.", "This is the halfway point.", "This is the end." ]
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0, 0, 0, 1 )
+expand = true
+stretch_mode = 6
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_vertical = 0
+custom_constants/margin_right = 32
+custom_constants/margin_left = 32
+custom_constants/margin_bottom = 32
 
-[node name="Label" type="Label" parent="CenterContainer"]
-margin_left = 512.0
-margin_top = 293.0
-margin_right = 512.0
-margin_bottom = 307.0
-align = 1
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
+self_modulate = Color( 1, 1, 1, 0.537255 )
+margin_left = 32.0
+margin_right = 992.0
+margin_bottom = 128.0
+rect_min_size = Vector2( 0, 128 )
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/RESET = SubResource( 1 )
-anims/fade_in = SubResource( 2 )
-anims/fade_out = SubResource( 3 )
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 953.0
+margin_bottom = 121.0
+custom_constants/margin_right = 8
+custom_constants/margin_top = 8
+custom_constants/margin_left = 8
+custom_constants/margin_bottom = 8
 
-[node name="Timer" type="Timer" parent="."]
-wait_time = 5.0
-one_shot = true
-
-[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[node name="AnimatedLabel" type="Label" parent="MarginContainer/PanelContainer/MarginContainer"]
+unique_name_in_owner = true
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 938.0
+margin_bottom = 106.0
+size_flags_vertical = 1
+script = ExtResource( 3 )
