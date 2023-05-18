@@ -15,35 +15,35 @@ margin_right = 40.0
 margin_bottom = 40.0
 
 [node name="Label" type="Label" parent="VBoxContainer"]
-margin_right = 508.0
-margin_bottom = 62.0
+margin_right = 405.0
+margin_bottom = 50.0
 theme = ExtResource( 2 )
 text = "Special Title"
 
 [node name="Label2" type="Label" parent="VBoxContainer"]
-margin_top = 66.0
-margin_right = 508.0
-margin_bottom = 82.0
+margin_top = 54.0
+margin_right = 405.0
+margin_bottom = 62.0
 theme = ExtResource( 1 )
 text = "Default Body"
 
 [node name="Label3" type="Label" parent="VBoxContainer"]
-margin_top = 86.0
-margin_right = 508.0
-margin_bottom = 102.0
+margin_top = 66.0
+margin_right = 405.0
+margin_bottom = 74.0
 theme = ExtResource( 3 )
 text = "Outlined Body"
 
 [node name="Label4" type="Label" parent="VBoxContainer"]
-margin_top = 106.0
-margin_right = 508.0
-margin_bottom = 138.0
+margin_top = 78.0
+margin_right = 405.0
+margin_bottom = 104.0
 theme = ExtResource( 4 )
 text = "Big Body"
 
 [node name="Label5" type="Label" parent="VBoxContainer"]
-margin_top = 142.0
-margin_right = 508.0
-margin_bottom = 180.0
+margin_top = 108.0
+margin_right = 405.0
+margin_bottom = 126.0
 theme = ExtResource( 5 )
 text = "Default Title"

@@ -6,22 +6,23 @@
 
 [node name="Journal" type="TextureRect"]
 pause_mode = 2
-margin_right = 1026.0
-margin_bottom = 597.0
+margin_left = 4.0
+margin_right = 621.0
+margin_bottom = 359.0
 theme = ExtResource( 2 )
 texture = ExtResource( 1 )
 expand = true
 script = ExtResource( 3 )
 
 [node name="LeftPage" type="VBoxContainer" parent="."]
-margin_left = 186.0
-margin_top = 112.0
-margin_right = 458.0
-margin_bottom = 486.0
+margin_left = 110.0
+margin_top = 60.0
+margin_right = 295.0
+margin_bottom = 292.0
 
 [node name="Label" type="Label" parent="LeftPage"]
-margin_right = 272.0
-margin_bottom = 130.0
+margin_right = 185.0
+margin_bottom = 187.0
 custom_colors/font_color = Color( 0.337255, 0.337255, 0.337255, 1 )
 text = "Revisit a previous point in entry. 
 
@@ -30,9 +31,9 @@ Future entries will be erased.
 autowrap = true
 
 [node name="ItemList" type="ItemList" parent="LeftPage"]
-margin_top = 134.0
-margin_right = 272.0
-margin_bottom = 374.0
+margin_top = 191.0
+margin_right = 185.0
+margin_bottom = 232.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource( 2 )
@@ -45,15 +46,15 @@ __meta__ = {
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -487.0
-margin_top = 104.0
-margin_right = -187.0
-margin_bottom = -126.0
+margin_left = -287.0
+margin_top = 65.0
+margin_right = -113.0
+margin_bottom = -66.0
 scroll_horizontal_enabled = false
 
 [node name="RichTextLabel" type="RichTextLabel" parent="RightPage"]
-margin_right = 300.0
-margin_bottom = 367.0
+margin_right = 174.0
+margin_bottom = 228.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_colors/default_color = Color( 0.305882, 0.305882, 0.305882, 1 )
