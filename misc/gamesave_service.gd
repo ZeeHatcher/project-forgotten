@@ -59,7 +59,7 @@ func load_game(index):
 	_player.health.value = _save.player_health
 	_player.food.value = _save.player_food
 	_player.temperature.value = _save.player_temperature
-	_player.inventory._items = _save.inventory_items
+	_player.inventory.set_inventory(_save.inventory_items)
 	_player.cancel_movement()
 	
 	_top_bar.player_health.value  = _save.player_health

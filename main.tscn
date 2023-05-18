@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://resources/events_tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://ui/event_board/event_board.tscn" type="PackedScene" id=2]
@@ -21,6 +21,31 @@
 [ext_resource path="res://assets/cubex4.png" type="Texture" id=19]
 [ext_resource path="res://assets/images/Map_UI.png" type="Texture" id=20]
 [ext_resource path="res://assets/images/Journal_UI.png" type="Texture" id=21]
+[ext_resource path="res://themes/default_body.tres" type="Theme" id=22]
+[ext_resource path="res://ui/inventory_list.gd" type="Script" id=23]
+[ext_resource path="res://resources/player_inventory.tres" type="Resource" id=24]
+
+[sub_resource type="StyleBoxEmpty" id=4]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[sub_resource type="StyleBoxFlat" id=2]
+content_margin_left = 20.0
+content_margin_right = 20.0
+content_margin_top = 20.0
+content_margin_bottom = 20.0
+bg_color = Color( 0.713726, 0.545098, 0.376471, 1 )
+border_width_left = 6
+border_width_top = 6
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color( 0.411765, 0.239216, 0.0196078, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 9 )
@@ -113,39 +138,66 @@ script = ExtResource( 14 )
 
 [node name="Tween" type="Tween" parent="CanvasLayer/TemperatureBar"]
 
+[node name="InventoryList" type="ItemList" parent="CanvasLayer"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -637.0
+margin_top = -377.0
+margin_right = -81.0
+margin_bottom = -177.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 22 )
+custom_colors/guide_color = Color( 1, 1, 1, 0 )
+custom_colors/font_color_selected = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_styles/selected_focus = SubResource( 4 )
+custom_styles/bg_focus = SubResource( 1 )
+custom_styles/selected = SubResource( 3 )
+custom_styles/bg = SubResource( 2 )
+items = [ "Item 0", null, false, "Item 1", null, false, "Climbing Gear", null, false, "Car Battery", null, false ]
+auto_height = true
+fixed_column_width = 526
+script = ExtResource( 23 )
+player_inventory = ExtResource( 24 )
+
 [node name="Icons" type="HBoxContainer" parent="CanvasLayer"]
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -171.0
-margin_top = -72.0
-margin_right = -19.0
-margin_bottom = -24.0
+margin_left = -384.0
+margin_top = -148.0
+margin_right = -88.0
+margin_bottom = -52.0
 grow_horizontal = 0
 grow_vertical = 0
 alignment = 2
 
 [node name="MapButton" type="TextureButton" parent="CanvasLayer/Icons"]
-margin_right = 192.0
-margin_bottom = 192.0
-rect_min_size = Vector2( 192, 192 )
+margin_right = 96.0
+margin_bottom = 96.0
+rect_min_size = Vector2( 96, 96 )
 texture_normal = ExtResource( 20 )
 expand = true
 
 [node name="JournalButton" type="TextureButton" parent="CanvasLayer/Icons"]
-margin_left = 196.0
-margin_right = 388.0
-margin_bottom = 192.0
-rect_min_size = Vector2( 192, 192 )
+margin_left = 100.0
+margin_right = 196.0
+margin_bottom = 96.0
+rect_min_size = Vector2( 96, 96 )
 texture_normal = ExtResource( 21 )
 expand = true
 
 [node name="InventoryButton" type="TextureButton" parent="CanvasLayer/Icons"]
-margin_left = 392.0
-margin_right = 584.0
-margin_bottom = 192.0
-rect_min_size = Vector2( 192, 192 )
+margin_left = 200.0
+margin_right = 296.0
+margin_bottom = 96.0
+rect_min_size = Vector2( 96, 96 )
 texture_normal = ExtResource( 19 )
 expand = true
 
@@ -184,6 +236,7 @@ event_service = NodePath("../EventService")
 [connection signal="event_ended" from="CanvasLayer/CenterContainer/EventBoard" to="EventService" method="end_event"]
 [connection signal="event_ended" from="CanvasLayer/CenterContainer/EventBoard" to="GameOverService" method="_on_EventBoard_event_ended"]
 [connection signal="pressed" from="CanvasLayer/Icons/JournalButton" to="GameSaveService" method="_on_JournalButton_pressed"]
+[connection signal="pressed" from="CanvasLayer/Icons/InventoryButton" to="CanvasLayer/InventoryList" method="_on_InventoryButton_pressed"]
 [connection signal="load_game" from="CanvasLayer/Journal" to="GameSaveService" method="_on_Journal_load_game"]
 [connection signal="show_journal" from="GameSaveService" to="CanvasLayer/Journal" method="_on_GameSaveService_show_journal"]
 [connection signal="update_saves" from="GameSaveService" to="CanvasLayer/Journal" method="_on_GameSaveService_update_saves"]

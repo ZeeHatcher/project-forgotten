@@ -30,20 +30,20 @@ text = "Default Body"
 [node name="Label3" type="Label" parent="VBoxContainer"]
 margin_top = 140.0
 margin_right = 807.0
-margin_bottom = 164.0
+margin_bottom = 172.0
 theme = ExtResource( 3 )
 text = "Outlined Body"
 
 [node name="Label4" type="Label" parent="VBoxContainer"]
-margin_top = 168.0
+margin_top = 176.0
 margin_right = 807.0
-margin_bottom = 226.0
+margin_bottom = 234.0
 theme = ExtResource( 4 )
 text = "Big Body"
 
 [node name="Label5" type="Label" parent="VBoxContainer"]
-margin_top = 230.0
+margin_top = 238.0
 margin_right = 807.0
-margin_bottom = 296.0
+margin_bottom = 304.0
 theme = ExtResource( 5 )
 text = "Default Title"

@@ -24,3 +24,8 @@ func add(name: String, qty: int) -> void:
 	if _items[name] <= 0:
 		_items.erase(name)
 	emit_signal("quantity_changed")
+
+
+func set_inventory(items) -> void:
+	_items = items
+	emit_signal("quantity_changed")	

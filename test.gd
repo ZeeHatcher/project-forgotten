@@ -13,6 +13,7 @@ onready var _event_tiles := $EventTiles
 onready var _event_service := $EventService
 onready var _gamesave_service := $GameSaveService
 
+
 func _ready():
 	unfog_tilemap(_player.global_position, 3)
 	_gamesave_service.save_game()
