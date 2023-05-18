@@ -17,6 +17,7 @@ onready var _buttons := $"%Buttons"
 func set_event(val: Event) -> void:
 	event = val
 	_title.text = val.title
+	_image.texture = val.image
 	_show_page(0)
 
 
