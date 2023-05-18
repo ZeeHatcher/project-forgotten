@@ -6,34 +6,33 @@
 
 [node name="Journal" type="TextureRect"]
 pause_mode = 2
-margin_left = 4.0
-margin_right = 621.0
-margin_bottom = 359.0
+margin_left = 10.0
+margin_right = 1926.0
+margin_bottom = 1115.0
 theme = ExtResource( 2 )
 texture = ExtResource( 1 )
 expand = true
 script = ExtResource( 3 )
 
 [node name="LeftPage" type="VBoxContainer" parent="."]
-margin_left = 110.0
-margin_top = 60.0
-margin_right = 295.0
-margin_bottom = 292.0
+margin_left = 354.0
+margin_top = 197.0
+margin_right = 879.0
+margin_bottom = 913.0
 
 [node name="Label" type="Label" parent="LeftPage"]
-margin_right = 185.0
-margin_bottom = 187.0
+margin_right = 525.0
+margin_bottom = 667.0
 custom_colors/font_color = Color( 0.337255, 0.337255, 0.337255, 1 )
 text = "Revisit a previous point in entry. 
 
-Future entries will be erased.
-"
+Future entries will be erased."
 autowrap = true
 
 [node name="ItemList" type="ItemList" parent="LeftPage"]
-margin_top = 191.0
-margin_right = 185.0
-margin_bottom = 232.0
+margin_top = 671.0
+margin_right = 525.0
+margin_bottom = 716.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource( 2 )
@@ -46,20 +45,20 @@ __meta__ = {
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -287.0
-margin_top = 65.0
-margin_right = -113.0
-margin_bottom = -66.0
+margin_left = -904.0
+margin_top = 186.0
+margin_right = -320.0
+margin_bottom = -210.0
 scroll_horizontal_enabled = false
 
 [node name="RichTextLabel" type="RichTextLabel" parent="RightPage"]
-margin_right = 174.0
-margin_bottom = 228.0
+margin_right = 584.0
+margin_bottom = 719.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_colors/default_color = Color( 0.305882, 0.305882, 0.305882, 1 )
-bbcode_text = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
-text = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+bbcode_text = "Nothing important happened."
+text = "Nothing important happened."
 
 [connection signal="item_activated" from="LeftPage/ItemList" to="." method="_on_ItemList_item_activated"]
 [connection signal="item_selected" from="LeftPage/ItemList" to="." method="_on_ItemList_item_selected"]

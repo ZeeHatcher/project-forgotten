@@ -13,6 +13,7 @@
 [sub_resource type="StyleBoxEmpty" id=6]
 
 [sub_resource type="DynamicFont" id=1]
+size = 48
 extra_spacing_top = 5
 extra_spacing_bottom = 5
 font_data = ExtResource( 1 )

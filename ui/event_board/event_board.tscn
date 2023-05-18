@@ -3,8 +3,14 @@
 [ext_resource path="res://ui/event_board/event_board.gd" type="Script" id=1]
 
 [node name="EventBoard" type="TabContainer"]
+margin_left = -308.0
+margin_top = -146.0
+margin_right = 308.0
+margin_bottom = 146.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 tab_align = 0
 script = ExtResource( 1 )
 
@@ -13,23 +19,25 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
 margin_top = 32.0
-margin_right = -4.0
+margin_right = -3.103
 margin_bottom = -4.0
+rect_min_size = Vector2( 600, 0 )
 
 [node name="EventDescription" type="Label" parent="VBoxContainer"]
-margin_right = 198.0
+margin_right = 608.0
 margin_bottom = 48.0
 text = "asdasdasdasdasdasdasdasdasd
 
 Asd"
+autowrap = true
 
 [node name="Buttons" type="VBoxContainer" parent="VBoxContainer"]
 margin_top = 52.0
-margin_right = 198.0
+margin_right = 608.0
 margin_bottom = 72.0
 
 [node name="Button" type="Button" parent="VBoxContainer/Buttons"]
-margin_right = 198.0
+margin_right = 608.0
 margin_bottom = 20.0
 text = "Choice A"
 align = 0

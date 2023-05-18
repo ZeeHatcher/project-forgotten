@@ -23,8 +23,8 @@ onready var _event_tiles = get_node(event_tiles)
 onready var _event_service = get_node(event_service)
 
 
-func _process(delta):
-	if Input.is_action_just_pressed("journal"):
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("journal"):
 		emit_signal("show_journal")
 
 
@@ -100,3 +100,7 @@ func _on_Player_moved(new_pos):
 	if tiles_moved >= save_after_tiles_moved:
 		tiles_moved = 0
 		save_game()
+
+
+func _on_JournalButton_pressed():
+	emit_signal("show_journal")
