@@ -21,13 +21,16 @@ margin_bottom = 486.0
 
 [node name="Label" type="Label" parent="LeftPage"]
 margin_right = 272.0
-margin_bottom = 35.0
+margin_bottom = 130.0
 custom_colors/font_color = Color( 0.337255, 0.337255, 0.337255, 1 )
-text = "Pick a point to go back to"
+text = "Revisit a previous point in entry. 
+
+Future entries will be erased.
+"
 autowrap = true
 
 [node name="ItemList" type="ItemList" parent="LeftPage"]
-margin_top = 39.0
+margin_top = 134.0
 margin_right = 272.0
 margin_bottom = 374.0
 size_flags_horizontal = 3

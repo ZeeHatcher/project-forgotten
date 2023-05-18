@@ -26,6 +26,7 @@ onready var _ray := $CollisionRay
 onready var _tween := $Tween
 onready var _tick_timer := $TickTimer
 onready var _animation_duration := 1.0 / speed
+onready var _sprite := $AnimatedSprite
 
 onready var target_position := global_position
 
@@ -34,7 +35,7 @@ func _ready() -> void:
 	food.connect("depleted", self, "_on_food_depleted")
 	health.connect("depleted", self, "_on_health_depleted")
 	temperature.connect("take_cold_damage", self, "_on_temperature_take_cold_damage")
-
+	_sprite.play("idle")
 
 func _process(delta) -> void:
 	for action in INPUTS.keys():
@@ -56,6 +57,11 @@ func move(dir: Vector2) -> void:
 	_animate_movement(move_dir)
 	emit_signal("moved", position + move_dir)
 	_tick_timer.start()
+	_face_dir(dir)
+
+ 
+func _face_dir(dir:Vector2) -> void:
+	_sprite.flip_h = (dir.x < 0 or dir.y > 0)
 
 
 func _will_collide(dir: Vector2) -> bool:
@@ -70,12 +76,14 @@ func _animate_movement(dir: Vector2) -> void:
 		position, position + dir,
 		_animation_duration)
 	_tween.start()
+	_sprite.play("walk")
 
 
 func cancel_movement():
 	position = target_position
 	_tween.stop_all()
-	
+	_sprite.play("idle")
+
 
 func _on_EventDetector_body_entered(body: Node) -> void:
 	if body as EventTiles:
@@ -103,3 +111,7 @@ func _on_temperature_take_cold_damage() -> void:
 func _on_TickTimer_timeout():
 	temperature.tick()
 	emit_signal("temperature_updated", temperature.percentage)
+
+
+func _on_Tween_tween_all_completed():
+	_sprite.play("idle")
