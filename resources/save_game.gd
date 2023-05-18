@@ -19,17 +19,17 @@ export(Dictionary) var event_completed
 
 
 # For a safe alternative, see the function write/load_as_json() below.
-func write_savegame() -> void:
-	ResourceSaver.save(get_save_path(), self)
+func write_savegame(index: int) -> void:
+	ResourceSaver.save(get_save_path(index), self)
 
 
-static func save_exists() -> bool:
-	return ResourceLoader.exists(get_save_path())
+static func save_exists(index: int) -> bool:
+	return ResourceLoader.exists(get_save_path(index))
 
 
-static func load_savegame() -> Resource:
+static func load_savegame(index: int) -> Resource:
 	print_debug("loading save")
-	var save_path := get_save_path()
+	var save_path := get_save_path(index)
 	if ResourceLoader.has_cached(save_path):
 		# Once the resource caching bug is fixed, you will only need this line of code to load the save game.
 		print_debug("loading from cache")
@@ -67,6 +67,6 @@ static func make_random_path() -> String:
 	return "user://temp_file_" + str(randi()) + ".tres"
 
 
-static func get_save_path() -> String:
+static func get_save_path(index: int) -> String:
 	var extension := ".tres" if OS.is_debug_build() else ".res"
-	return SAVE_GAME_BASE_PATH + extension
+	return SAVE_GAME_BASE_PATH + str(index) + extension

@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://resources/events_tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://ui/event_board/event_board.tscn" type="PackedScene" id=2]
@@ -16,6 +16,7 @@
 [ext_resource path="res://temperature_bar.gd" type="Script" id=14]
 [ext_resource path="res://misc/random_event_tiles.gd" type="Script" id=15]
 [ext_resource path="res://resources/terrain_tileset.tres" type="TileSet" id=16]
+[ext_resource path="res://misc/gamesave_service.gd" type="Script" id=17]
 [ext_resource path="res://ui/journal/journal.tscn" type="PackedScene" id=18]
 
 [node name="Main" type="Node2D"]
@@ -125,12 +126,25 @@ tilemap_paths = [ NodePath("../EventTiles"), NodePath("../Terrain") ]
 script = ExtResource( 8 )
 final_event_name = "ruins"
 
+[node name="GameSaveService" type="Node" parent="."]
+pause_mode = 2
+script = ExtResource( 17 )
+player = NodePath("../Player")
+top_bar = NodePath("../CanvasLayer/TopBar")
+terrain = NodePath("../Terrain")
+event_tiles = NodePath("../EventTiles")
+event_service = NodePath("../EventService")
+
 [connection signal="unfog_cell" from="." to="WorldFog" method="_on_unfog_cell"]
 [connection signal="event_triggered" from="Terrain" to="EventService" method="start_event"]
 [connection signal="event_triggered" from="EventTiles" to="EventService" method="start_event"]
 [connection signal="moved" from="Player" to="." method="_on_Player_moved"]
 [connection signal="moved" from="Player" to="Terrain" method="trigger_event_at"]
+[connection signal="moved" from="Player" to="GameSaveService" method="_on_Player_moved"]
 [connection signal="temperature_updated" from="Player" to="CanvasLayer/TemperatureBar" method="_on_Player_temperature_updated"]
 [connection signal="choice_selected" from="CanvasLayer/CenterContainer/EventBoard" to="EventService" method="apply_outcome"]
 [connection signal="event_ended" from="CanvasLayer/CenterContainer/EventBoard" to="EventService" method="end_event"]
 [connection signal="event_ended" from="CanvasLayer/CenterContainer/EventBoard" to="GameOverService" method="_on_EventBoard_event_ended"]
+[connection signal="load_game" from="CanvasLayer/Journal" to="GameSaveService" method="_on_Journal_load_game"]
+[connection signal="show_journal" from="GameSaveService" to="CanvasLayer/Journal" method="_on_GameSaveService_show_journal"]
+[connection signal="update_saves" from="GameSaveService" to="CanvasLayer/Journal" method="_on_GameSaveService_update_saves"]

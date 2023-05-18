@@ -19,7 +19,7 @@ margin_top = 112.0
 margin_right = 458.0
 margin_bottom = 486.0
 
-[node name="Label4" type="Label" parent="LeftPage"]
+[node name="Label" type="Label" parent="LeftPage"]
 margin_right = 272.0
 margin_bottom = 35.0
 custom_colors/font_color = Color( 0.337255, 0.337255, 0.337255, 1 )
