@@ -90,18 +90,9 @@ zoom = Vector2( 0.063, 0.063 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-mouse_filter = 2
-
-[node name="EventBoard" parent="CanvasLayer/CenterContainer" instance=ExtResource( 2 )]
+[node name="EventBoard" parent="CanvasLayer" instance=ExtResource( 2 )]
 pause_mode = 2
 visible = false
-margin_left = 956.0
-margin_top = 522.0
-margin_right = 964.0
-margin_bottom = 558.0
 
 [node name="TopBar" parent="CanvasLayer" instance=ExtResource( 7 )]
 margin_bottom = 30.0
@@ -207,7 +198,7 @@ visible = false
 [node name="EventService" type="Node" parent="."]
 script = ExtResource( 5 )
 player = NodePath("../Player")
-board = NodePath("../CanvasLayer/CenterContainer/EventBoard")
+board = NodePath("../CanvasLayer/EventBoard")
 
 [node name="WorldFog" parent="." instance=ExtResource( 3 )]
 tilemap_paths = [ NodePath("../EventTiles"), NodePath("../Terrain") ]
@@ -232,9 +223,9 @@ event_service = NodePath("../EventService")
 [connection signal="moved" from="Player" to="Terrain" method="trigger_event_at"]
 [connection signal="moved" from="Player" to="GameSaveService" method="_on_Player_moved"]
 [connection signal="temperature_updated" from="Player" to="CanvasLayer/TemperatureBar" method="_on_Player_temperature_updated"]
-[connection signal="choice_selected" from="CanvasLayer/CenterContainer/EventBoard" to="EventService" method="apply_outcome"]
-[connection signal="event_ended" from="CanvasLayer/CenterContainer/EventBoard" to="EventService" method="end_event"]
-[connection signal="event_ended" from="CanvasLayer/CenterContainer/EventBoard" to="GameOverService" method="_on_EventBoard_event_ended"]
+[connection signal="choice_selected" from="CanvasLayer/EventBoard" to="EventService" method="apply_outcome"]
+[connection signal="event_ended" from="CanvasLayer/EventBoard" to="EventService" method="end_event"]
+[connection signal="event_ended" from="CanvasLayer/EventBoard" to="GameOverService" method="_on_EventBoard_event_ended"]
 [connection signal="pressed" from="CanvasLayer/Icons/JournalButton" to="GameSaveService" method="_on_JournalButton_pressed"]
 [connection signal="pressed" from="CanvasLayer/Icons/InventoryButton" to="CanvasLayer/InventoryList" method="_on_InventoryButton_pressed"]
 [connection signal="load_game" from="CanvasLayer/Journal" to="GameSaveService" method="_on_Journal_load_game"]

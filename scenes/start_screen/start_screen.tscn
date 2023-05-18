@@ -111,10 +111,10 @@ size_flags_horizontal = 0
 size_flags_vertical = 0
 
 [node name="Label" type="Label" parent="CanvasLayer/StartMenu/TitleCard/CenterContainer"]
-margin_left = 393.0
-margin_top = 490.0
-margin_right = 1527.0
-margin_bottom = 590.0
+margin_left = 206.0
+margin_top = 273.0
+margin_right = 1340.0
+margin_bottom = 373.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 theme = ExtResource( 2 )

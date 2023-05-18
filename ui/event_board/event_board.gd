@@ -1,5 +1,5 @@
 class_name EventBoard
-extends TabContainer
+extends Control
 
 
 signal choice_selected(outcome)
@@ -8,14 +8,15 @@ signal event_ended(event, complete)
 var event: Event setget set_event
 var are_conditions_met_handler: FuncRef
 
-onready var _container := $VBoxContainer
-onready var _description := $VBoxContainer/EventDescription
-onready var _buttons := $VBoxContainer/Buttons
+onready var _image := $"%EventImage"
+onready var _title := $"%Title"
+onready var _description := $"%Description"
+onready var _buttons := $"%Buttons"
 
 
 func set_event(val: Event) -> void:
 	event = val
-	_container.name = val.title # Setting node name also changes tab name
+	_title.text = val.title
 	_show_page(0)
 
 

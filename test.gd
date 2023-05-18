@@ -5,7 +5,7 @@ signal unfog_cell(cell, radius)
 
 var _save
 
-onready var _board := $CanvasLayer/CenterContainer/EventBoard
+onready var _board := $CanvasLayer/EventBoard
 onready var _player := $Player
 onready var _top_bar := $CanvasLayer/TopBar
 onready var _terrain := $Terrain
