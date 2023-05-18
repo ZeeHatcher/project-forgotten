@@ -50,6 +50,7 @@ func _create_choice_button(choice: Event.Choice) -> Button:
 	button.text = choice.description
 	button.connect("pressed", self, "_on_choice_selected", [choice])
 	button.disabled = not are_conditions_met_handler.call_func(choice.conditions)
+	button.align = Button.ALIGN_LEFT
 	return button
 
 
