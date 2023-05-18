@@ -1,8 +1,17 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://assets/images/book.png" type="Texture" id=1]
 [ext_resource path="res://themes/default_body.tres" type="Theme" id=2]
 [ext_resource path="res://ui/journal/journal.gd" type="Script" id=3]
+[ext_resource path="res://themes/default_title.tres" type="Theme" id=4]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0, 0, 0, 0.0392157 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color( 0.27451, 0.27451, 0.27451, 1 )
 
 [node name="Journal" type="TextureRect"]
 pause_mode = 2
@@ -22,15 +31,15 @@ margin_bottom = 913.0
 
 [node name="Label" type="Label" parent="LeftPage"]
 margin_right = 525.0
-margin_bottom = 667.0
+margin_bottom = 66.0
+theme = ExtResource( 4 )
 custom_colors/font_color = Color( 0.337255, 0.337255, 0.337255, 1 )
-text = "Revisit a previous point in entry. 
-
-Future entries will be erased."
+text = "INDEX"
+align = 1
 autowrap = true
 
 [node name="ItemList" type="ItemList" parent="LeftPage"]
-margin_top = 671.0
+margin_top = 70.0
 margin_right = 525.0
 margin_bottom = 716.0
 size_flags_horizontal = 3
@@ -41,24 +50,49 @@ __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="RightPage" type="ScrollContainer" parent="."]
-anchor_left = 1.0
+[node name="Control" type="Control" parent="."]
+margin_left = 1018.0
+margin_top = 184.0
+margin_right = 1580.0
+margin_bottom = 912.0
+
+[node name="Label" type="Label" parent="Control"]
+margin_right = 549.0
+margin_bottom = 66.0
+theme = ExtResource( 4 )
+custom_colors/font_color = Color( 0.313726, 0.313726, 0.313726, 1 )
+text = "EVENTS"
+align = 1
+
+[node name="RightPage" type="ScrollContainer" parent="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -904.0
-margin_top = 186.0
-margin_right = -320.0
-margin_bottom = -210.0
+margin_top = 90.0
+margin_bottom = -81.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 scroll_horizontal_enabled = false
 
-[node name="RichTextLabel" type="RichTextLabel" parent="RightPage"]
-margin_right = 584.0
-margin_bottom = 719.0
+[node name="ContentText" type="RichTextLabel" parent="Control/RightPage"]
+margin_right = 562.0
+margin_bottom = 557.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_colors/default_color = Color( 0.305882, 0.305882, 0.305882, 1 )
 bbcode_text = "Nothing important happened."
 text = "Nothing important happened."
 
-[connection signal="item_activated" from="LeftPage/ItemList" to="." method="_on_ItemList_item_activated"]
+[node name="LoadButton" type="Button" parent="Control"]
+margin_left = 35.0
+margin_top = 688.0
+margin_right = 511.0
+margin_bottom = 741.0
+hint_tooltip = "Future entries will be erased."
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0.529412, 0.529412, 0.529412, 1 )
+custom_styles/normal = SubResource( 1 )
+text = "Revisit entry"
+
 [connection signal="item_selected" from="LeftPage/ItemList" to="." method="_on_ItemList_item_selected"]
+[connection signal="pressed" from="Control/LoadButton" to="." method="_on_LoadSaveLabel_pressed"]
