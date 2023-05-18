@@ -28,10 +28,6 @@ onready var target_position := global_position
 
 
 func _ready() -> void:
-	connect_resource_signals()
-
-
-func connect_resource_signals():
 	food.connect("depleted", self, "_on_food_depleted")
 	health.connect("depleted", self, "_on_health_depleted")
 	temperature.connect("take_cold_damage", self, "_on_temperature_take_cold_damage")

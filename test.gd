@@ -59,10 +59,11 @@ func get_tilemap_data(tilemap) -> Dictionary:
 func save_game():
 	_save = SaveGame.new()
 	_save.player_position = _player.target_position
-	_save.health = _player.health
-	_save.food = _player.food
+	print(_player.health.value)
+	_save.player_health = _player.health.value
+	_save.player_food = _player.food.value
+	_save.player_temperature = _player.temperature.value
 	_save.inventory_items = _player.inventory.get_all()
-	_save.temperature = _player.temperature
 	
 	_save.terrain = get_tilemap_data(_terrain)
 	_save.event_tiles = get_tilemap_data(_event_tiles)
@@ -75,18 +76,19 @@ func save_game():
 
 func load_game():
 	_save = SaveGame.load_savegame()
+	if not _save:
+		return
+	
 	_player.global_position = _save.player_position
 	_player.target_position = _save.player_position
-	_player.health = _save.health
-	_player.food = _save.food
+	_player.health.value = _save.player_health
+	_player.food.value = _save.player_food
+	_player.temperature.value = _save.player_temperature
 	_player.inventory._items = _save.inventory_items
-	_player.temperature = _save.temperature
-	_player.connect_resource_signals()
 	_player.cancel_movement()
 	
-	_top_bar.player_health  = _save.health
-	_top_bar.player_food = _save.food
-	_top_bar.connect_resource_signals()
+	_top_bar.player_health.value  = _save.player_health
+	_top_bar.player_food.value = _save.player_food
 	
 	for tile in _save.terrain:
 		_terrain.set_cellv(tile, _save.terrain[tile])
@@ -95,4 +97,3 @@ func load_game():
 	
 	_event_service._flags = _save.event_flags
 	_event_service._completed = _save.event_completed
-	print(_save.inventory_items)
