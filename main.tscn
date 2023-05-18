@@ -16,7 +16,7 @@
 [ext_resource path="res://temperature_bar.gd" type="Script" id=14]
 [ext_resource path="res://misc/random_event_tiles.gd" type="Script" id=15]
 [ext_resource path="res://resources/terrain_tileset.tres" type="TileSet" id=16]
-[ext_resource path="res://misc/gamesave_service.gd" type="Script" id=17]
+[ext_resource path="res://ui/journal/journal.tscn" type="PackedScene" id=18]
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 9 )
@@ -110,6 +110,9 @@ script = ExtResource( 14 )
 
 [node name="Tween" type="Tween" parent="CanvasLayer/TemperatureBar"]
 
+[node name="Journal" parent="CanvasLayer" instance=ExtResource( 18 )]
+visible = false
+
 [node name="EventService" type="Node" parent="."]
 script = ExtResource( 5 )
 player = NodePath("../Player")
@@ -121,9 +124,6 @@ tilemap_paths = [ NodePath("../EventTiles"), NodePath("../Terrain") ]
 [node name="GameOverService" type="Node" parent="."]
 script = ExtResource( 8 )
 final_event_name = "ruins"
-
-[node name="GameSaveService" type="Node" parent="."]
-script = ExtResource( 17 )
 
 [connection signal="unfog_cell" from="." to="WorldFog" method="_on_unfog_cell"]
 [connection signal="event_triggered" from="Terrain" to="EventService" method="start_event"]

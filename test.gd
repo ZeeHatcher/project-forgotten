@@ -11,6 +11,8 @@ onready var _top_bar := $CanvasLayer/TopBar
 onready var _terrain := $Terrain
 onready var _event_tiles := $EventTiles
 onready var _event_service := $EventService
+onready var _journal := $CanvasLayer/Journal
+
 
 func _ready():
 	unfog_tilemap(_player.global_position, 3)
@@ -43,6 +45,8 @@ func _process(delta):
 		save_game()
 	if Input.is_action_just_pressed("ui_cancel"):
 		load_game()
+	if Input.is_action_just_pressed("journal"):
+		_journal.show()
 
 
 func get_tilemap_data(tilemap) -> Dictionary:

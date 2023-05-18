@@ -1,9 +1,39 @@
-[gd_resource type="Theme" load_steps=3 format=2]
+[gd_resource type="Theme" load_steps=9 format=2]
 
 [ext_resource path="res://assets/fonts/kongtext/kongtext.ttf" type="DynamicFontData" id=1]
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 1 )
 
+[sub_resource type="StyleBoxEmpty" id=8]
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 1, 1, 1, 0 )
+
+[sub_resource type="StyleBoxEmpty" id=4]
+
+[sub_resource type="StyleBoxEmpty" id=5]
+
+[sub_resource type="StyleBoxEmpty" id=6]
+
+[sub_resource type="StyleBoxEmpty" id=7]
+
 [resource]
 default_font = SubResource( 1 )
+Fonts/base_type = "font"
+Fonts/fonts/large = SubResource( 1 )
+Fonts/fonts/normal = SubResource( 1 )
+ItemList/colors/font_color = Color( 0.63, 0.63, 0.63, 1 )
+ItemList/colors/font_color_selected = Color( 1, 1, 1, 1 )
+ItemList/colors/guide_color = Color( 0, 0, 0, 0 )
+ItemList/constants/hseparation = 0
+ItemList/constants/icon_margin = 0
+ItemList/constants/line_separation = 0
+ItemList/constants/vseparation = 4
+ItemList/fonts/font = SubResource( 1 )
+ItemList/styles/bg = SubResource( 8 )
+ItemList/styles/bg_focus = SubResource( 9 )
+ItemList/styles/cursor = SubResource( 4 )
+ItemList/styles/cursor_unfocused = SubResource( 5 )
+ItemList/styles/selected = SubResource( 6 )
+ItemList/styles/selected_focus = SubResource( 7 )
