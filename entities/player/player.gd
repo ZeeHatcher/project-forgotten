@@ -54,7 +54,7 @@ func _process(delta) -> void:
 			move(dir)
 
 
-func attempt_move(dir: Vector2):
+func force_move(dir: Vector2):
 	if _will_collide(dir):
 		return
 	

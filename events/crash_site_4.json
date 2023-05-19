@@ -1,0 +1,28 @@
+{
+  "title": "Crash Site 4",
+  "pages": [
+    {
+      "description": "Description of crash site for unlocking the jacket.",
+      "choices": [
+        {
+          "description": "Salvage the rubble.",
+          "next_page": 1
+        }
+      ]
+    },
+    {
+      "description": "Tutorial for temperature.",
+      "choices": [
+        {
+          "description": "Take it and leave.",
+          "complete": true,
+          "outcome": {
+            "actions": {
+              "call": "unlock_temperature"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

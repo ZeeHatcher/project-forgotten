@@ -1,0 +1,28 @@
+{
+  "title": "Crash Site 1",
+  "pages": [
+    {
+      "description": "Description of crash site for unlocking a journal.",
+      "choices": [
+        {
+          "description": "Salvage the rubble.",
+          "next_page": 1
+        }
+      ]
+    },
+    {
+      "description": "You got an empty journal. Better write down everything in case I lose memory again.",
+      "choices": [
+        {
+          "description": "Take it and leave.",
+          "complete": true,
+          "outcome": {
+            "actions": {
+              "call": "unlock_journal"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

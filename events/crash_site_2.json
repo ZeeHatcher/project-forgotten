@@ -1,0 +1,31 @@
+{
+  "title": "Crash Site 2",
+  "pages": [
+    {
+      "description": "Description of crash site for unlocking the bag.",
+      "choices": [
+        {
+          "description": "Salvage the rubble.",
+          "next_page": 1
+        }
+      ]
+    },
+    {
+      "description": "You got a bag with some food supplies. Handy for carrying useful items.",
+      "choices": [
+        {
+          "description": "Take it and leave.",
+          "complete": true,
+          "outcome": {
+            "actions": {
+              "call": "unlock_bag"
+            },
+            "stats": {
+              "food": 10
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

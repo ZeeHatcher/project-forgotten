@@ -1,0 +1,28 @@
+{
+  "title": "Crash Site 3",
+  "pages": [
+    {
+      "description": "Description of crash site for unlocking the walkie talkie.",
+      "choices": [
+        {
+          "description": "Salvage the rubble.",
+          "next_page": 1
+        }
+      ]
+    },
+    {
+      "description": "Walkie talkie for something.",
+      "choices": [
+        {
+          "description": "Take it and leave.",
+          "complete": true,
+          "outcome": {
+            "items": {
+              "Walkie Talkie": 1
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

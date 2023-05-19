@@ -55,7 +55,7 @@ func apply_outcome(outcome: Event.State) -> void:
 		match action:
 			"move":
 				var dir = Vector2(outcome.actions[action][0], outcome.actions[action][1])
-				_player.attempt_move(dir)
+				_player.force_move(dir)
 			"call":
 				if has_method(outcome.actions[action]):
 					call_deferred(outcome.actions[action])
@@ -147,3 +147,19 @@ func _evaluate_expression(existing: int, desired: int, operator: String) -> bool
 
 func load_next_level():
 	get_tree().change_scene("res://main.tscn")
+
+
+func unlock_map():
+	$"%MapButton".visible = true
+
+
+func unlock_journal():
+	$"%JournalButton".visible = true
+
+
+func unlock_bag():
+	$"%InventoryButton".visible = true
+
+
+func unlock_temperature():
+	$"%TemperatureBar".visible = true

@@ -1,0 +1,46 @@
+{
+  "title": "Tower",
+  "pages": [
+    {
+      "description": "The tower looms over you. It shakes ever so slightly.",
+      "choices": [
+        {
+          "description": "Climb the tower",
+          "next_page": 1
+        },
+        {
+          "description": "Leave"
+        }
+      ]
+    },
+    {
+      "description": "You reach the top of the tower, with the ground far below you. There seems to be a lookout space, albeit rather messy.",
+      "choices": [
+        {
+          "description": "Search the room.",
+          "next_page": 2
+        },
+        {
+          "description": "Go back down and leave."
+        }
+      ]
+    },
+    {
+      "description": "You find a map. This might be useful.",
+      "choices": [
+        {
+          "description": "Take it and leave.",
+          "complete": true,
+          "outcome": {
+            "global": {
+              "map": 1
+            },
+            "actions": {
+              "call": "unlock_map"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
