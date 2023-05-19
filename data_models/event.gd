@@ -73,9 +73,13 @@ class State:
 	var items: Dictionary
 	var stats: Dictionary
 	var global: Dictionary
+	var actions: Dictionary
+	var call: Dictionary
 	
 	
 	func populate_from_json(json: Dictionary) -> void:
 		items = json.get("items", {})
 		stats = json.get("stats", {})
 		global = json.get("global", {})
+		actions = json.get("actions", {})
+		call = json.get("call", {})

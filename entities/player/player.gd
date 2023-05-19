@@ -27,6 +27,7 @@ onready var _tween := $Tween
 onready var _tick_timer := $TickTimer
 onready var _animation_duration := 1.0 / speed
 onready var _sprite := $AnimatedSprite
+onready var _event_detector := $EventDetector
 
 onready var target_position := global_position
 
@@ -36,6 +37,7 @@ func _ready() -> void:
 	health.connect("depleted", self, "_on_health_depleted")
 	temperature.connect("take_cold_damage", self, "_on_temperature_take_cold_damage")
 	_sprite.play("idle")
+
 
 func _process(delta) -> void:
 	for action in INPUTS.keys():
@@ -50,6 +52,16 @@ func _process(delta) -> void:
 			move(dir)
 		elif Input.is_action_pressed(action):
 			move(dir)
+
+
+func attempt_move(dir: Vector2):
+	if _will_collide(dir):
+		return
+	
+	if _tween.is_active():
+		return
+	
+	move(dir)
 
 
 func move(dir: Vector2) -> void:
@@ -76,6 +88,7 @@ func _animate_movement(dir: Vector2) -> void:
 		position, position + dir,
 		_animation_duration)
 	_tween.start()
+	_event_detector.monitoring = false
 	_sprite.play("walk")
 
 
@@ -83,6 +96,7 @@ func cancel_movement():
 	position = target_position
 	_tween.stop_all()
 	_sprite.play("idle")
+	_event_detector.monitoring = true
 
 
 func _on_EventDetector_body_entered(body: Node) -> void:
@@ -115,3 +129,4 @@ func _on_TickTimer_timeout():
 
 func _on_Tween_tween_all_completed():
 	_sprite.play("idle")
+	_event_detector.monitoring = true

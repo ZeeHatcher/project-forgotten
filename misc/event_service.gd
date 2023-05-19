@@ -50,6 +50,15 @@ func apply_outcome(outcome: Event.State) -> void:
 				_player.health.value += change
 			"food":
 				_player.food.value += change
+	
+	for action in outcome.actions:
+		match action:
+			"move":
+				var dir = Vector2(outcome.actions[action][0], outcome.actions[action][1])
+				_player.attempt_move(dir)
+			"call":
+				if has_method(outcome.actions[action]):
+					call_deferred(outcome.actions[action])
 
 
 func are_conditions_met(conditions: Event.State) -> bool:
@@ -134,3 +143,7 @@ func _evaluate_expression(existing: int, desired: int, operator: String) -> bool
 			return existing >= desired
 		_:
 			return existing == desired
+
+
+func load_next_level():
+	get_tree().change_scene("res://main.tscn")

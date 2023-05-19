@@ -1,0 +1,26 @@
+{
+  "title": "Exit Crash Site",
+  "pages": [
+    {
+      "description": "I have to make sure I got everything before leaving.",
+      "choices": [
+        {
+          "description": "I got everything. Let's go.",
+          "outcome": {
+            "actions": {
+              "call": "load_next_level"
+            }
+          }
+        },
+        {
+          "description": "Go back and check.",
+          "outcome": {
+            "actions": {
+              "move": [0,1]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
