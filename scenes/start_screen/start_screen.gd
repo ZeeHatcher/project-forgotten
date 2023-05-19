@@ -71,7 +71,7 @@ func _on_Exit_pressed():
 
 
 func _on_Start_pressed():
-	get_tree().change_scene("res://tutorial.tscn")
+	get_tree().change_scene("res://scenes/game_start/game_start.tscn")
 
 
 func _on_Credits_pressed():

@@ -19,7 +19,6 @@ func _ready():
 	_gamesave_service.save_game()
 
 
-
 func _on_EventTiles_event_triggered(event_name: String):
 	get_tree().paused = true
 	_board.event = EventRepository.get_event(event_name)
