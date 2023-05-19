@@ -86,7 +86,7 @@ remote_path = NodePath("../../Camera2D")
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 0, 6 )
 current = true
-zoom = Vector2( 0.063, 0.063 )
+zoom = Vector2( 0.25, 0.25 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -154,6 +154,7 @@ script = ExtResource( 23 )
 player_inventory = ExtResource( 24 )
 
 [node name="Icons" type="HBoxContainer" parent="CanvasLayer"]
+pause_mode = 2
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
@@ -167,6 +168,7 @@ grow_vertical = 0
 alignment = 2
 
 [node name="MapButton" type="TextureButton" parent="CanvasLayer/Icons"]
+pause_mode = 2
 margin_right = 96.0
 margin_bottom = 96.0
 rect_min_size = Vector2( 96, 96 )
@@ -174,6 +176,7 @@ texture_normal = ExtResource( 20 )
 expand = true
 
 [node name="JournalButton" type="TextureButton" parent="CanvasLayer/Icons"]
+pause_mode = 2
 margin_left = 100.0
 margin_right = 196.0
 margin_bottom = 96.0
@@ -182,6 +185,7 @@ texture_normal = ExtResource( 21 )
 expand = true
 
 [node name="InventoryButton" type="TextureButton" parent="CanvasLayer/Icons"]
+pause_mode = 2
 margin_left = 200.0
 margin_right = 296.0
 margin_bottom = 96.0

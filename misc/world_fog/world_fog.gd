@@ -27,6 +27,11 @@ func save_tilemap_data(tilemap) -> void:
 	tilemaps_data.append(tilemap_data)
 
 
+func fog_all_tilemap() -> void:
+	for tilemap in tilemaps:
+		fog_tilemap(tilemap)
+
+
 func fog_tilemap(tilemap) -> void:
 	var used_cells = tilemap.get_used_cells()
 	var fog_tile_id = tilemap.tile_set.find_tile_by_name("fog")

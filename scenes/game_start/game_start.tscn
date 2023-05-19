@@ -1,8 +1,7 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://ui/cutscene/cutscene.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/game_start/game_start.gd" type="Script" id=2]
-[ext_resource path="res://assets/events/Car_close.png" type="Texture" id=3]
 [ext_resource path="res://data_models/cutscene_frame.gd" type="Script" id=4]
 [ext_resource path="res://themes/default_body.tres" type="Theme" id=5]
 [ext_resource path="res://assets/portraits/pilot.png" type="Texture" id=6]
@@ -10,7 +9,6 @@
 
 [sub_resource type="Resource" id=1]
 script = ExtResource( 4 )
-image = ExtResource( 3 )
 text = [ "0:    \"Hey!\" the pilot scremed across the intercom, fighting the spinning blades. ", "1:                 \"Yeah?\" Hubert answered.", "0: \"Why fly out early?   It will be weeks, maybe months before your shift starts.\"", "1:  \"You can feel it, can't you?\" Retorted seemingly oblivious to the question. ", "0: \"Whats that?\" The pilot strained his neck, peering headlong while keeping an eye on his precarious instruments.", "1: \"Calls of nature. A wilder world. Ripe for plucking. Eager for defenders.\" (Player) said resolutely. He felt his eyes gleaming similarly to the sparkling snow capped mountains they flew towards.", "0: \"You sound a bit new....\" The pilot ventured.    
 < I've been getting old. Still enamored with the job> ", "1: \"Aye, this will be my third watch.\" <Still a novice in many regards>", "0: \"Mark and I usually fly  supplies out and make transfers. Slim picking round here.\" His head tilted, searching for simpathy.", "0: \"Just make sure your at the rendezvous at the right time.\" Finding none after the pause, he straightened in the pilots seat. ", "0: \"Don't want any wild animals eating your rations\" he continued with a subtle smirk. ", "1: \"True indeed.\" rang the solitary answer. ", "0:   \"Get some sleep, I'll let you know when we are an hour out.....\"  
                            <Gladly>       " ]
@@ -24,6 +22,6 @@ theme = ExtResource( 5 )
 script = ExtResource( 2 )
 
 [node name="Cutscene" parent="." instance=ExtResource( 1 )]
-content = [ SubResource( 1 ), null ]
+content = [ SubResource( 1 ) ]
 
 [connection signal="end" from="Cutscene" to="." method="_on_Cutscene_end"]

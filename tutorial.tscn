@@ -74,7 +74,7 @@ cell_y_sort = true
 collision_layer = 2
 collision_mask = 0
 format = 1
-tile_data = PoolIntArray( -393218, 5, 0, -393217, 5, 0, -458752, 5, 0, -458751, 5, 0, -458750, 5, 0, -2, 9, 0, -65535, 11, 0, 65534, 8, 0, 131070, 10, 0, 196607, 7, 0 )
+tile_data = PoolIntArray( -393218, 5, 0, -393217, 5, 0, -458752, 5, 0, -458751, 5, 0, -458750, 5, 0, -65538, 10, 0, -2, 9, 0, -65535, 11, 0, 131070, 8, 0, 196606, 7, 0 )
 script = ExtResource( 6 )
 
 [node name="Player" parent="." instance=ExtResource( 4 )]
@@ -156,6 +156,7 @@ script = ExtResource( 23 )
 player_inventory = ExtResource( 24 )
 
 [node name="Icons" type="HBoxContainer" parent="CanvasLayer"]
+pause_mode = 2
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
@@ -169,6 +170,7 @@ grow_vertical = 0
 alignment = 2
 
 [node name="MapButton" type="TextureButton" parent="CanvasLayer/Icons"]
+pause_mode = 2
 unique_name_in_owner = true
 visible = false
 margin_right = 96.0
@@ -178,6 +180,7 @@ texture_normal = ExtResource( 20 )
 expand = true
 
 [node name="JournalButton" type="TextureButton" parent="CanvasLayer/Icons"]
+pause_mode = 2
 unique_name_in_owner = true
 visible = false
 margin_left = 100.0
@@ -188,6 +191,7 @@ texture_normal = ExtResource( 21 )
 expand = true
 
 [node name="InventoryButton" type="TextureButton" parent="CanvasLayer/Icons"]
+pause_mode = 2
 unique_name_in_owner = true
 visible = false
 margin_left = 200.0

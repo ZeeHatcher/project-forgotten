@@ -65,6 +65,7 @@ func load_game(index):
 	_top_bar.player_health.value  = _save.player_health
 	_top_bar.player_food.value = _save.player_food
 	
+	$"../WorldFog".fog_all_tilemap()
 	for tile in _save.terrain:
 		_terrain.set_cellv(tile, _save.terrain[tile])
 	for tile in _save.event_tiles:
