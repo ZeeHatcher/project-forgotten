@@ -1,0 +1,27 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://ui/cutscene/cutscene.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/game_start/game_start.gd" type="Script" id=2]
+[ext_resource path="res://assets/events/Car_close.png" type="Texture" id=3]
+[ext_resource path="res://data_models/cutscene_frame.gd" type="Script" id=4]
+[ext_resource path="res://themes/default_body.tres" type="Theme" id=5]
+[ext_resource path="res://assets/portraits/pilot.png" type="Texture" id=6]
+[ext_resource path="res://assets/portraits/old_man.png" type="Texture" id=7]
+
+[sub_resource type="Resource" id=1]
+script = ExtResource( 4 )
+image = ExtResource( 3 )
+text = [ "0:Hey!", "1:Yeah?", "0:Why fly out early? It will be weeks, maybe months before your shift starts.", "1:You can feel it, can't you?", "0:Whats that?", "1:Calls of nature. A wilder world. Ripe for plucking. Eager for defenders.", "0:You sound a bit new.", "1:Aye, this will be my third watch.", "0:Hammil and I usually fly through supplies and make transfers.", "1:Just make sure your at the rendezvous at the right time.", "1:Don't want any wild animals eating your rations", "0:True indeed.", "[Get some sleep, I'll let you know when we are an hour out.]" ]
+character_portrait = [ ExtResource( 6 ), ExtResource( 7 ) ]
+character_name = [ "Pilot", "You" ]
+
+[node name="GameStart" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 5 )
+script = ExtResource( 2 )
+
+[node name="Cutscene" parent="." instance=ExtResource( 1 )]
+content = [ SubResource( 1 ), null ]
+
+[connection signal="end" from="Cutscene" to="." method="_on_Cutscene_end"]

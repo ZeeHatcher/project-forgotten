@@ -24,7 +24,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://data_models/event.gd"
 }, {
-"base": "Control",
+"base": "TabContainer",
 "class": "EventBoard",
 "language": "GDScript",
 "path": "res://ui/event_board/event_board.gd"
@@ -181,4 +181,5 @@ common/enable_pause_aware_picking=true
 
 [rendering]
 
+environment/default_clear_color=Color( 0, 0, 0, 1 )
 environment/default_environment="res://default_env.tres"
