@@ -19,6 +19,9 @@
           "outcome": {
             "actions": {
               "call": "unlock_journal"
+            },
+            "global": {
+              "unlocked_journal": true
             }
           }
         }

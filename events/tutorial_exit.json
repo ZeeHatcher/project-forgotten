@@ -6,6 +6,18 @@
       "choices": [
         {
           "description": "I got everything. Let's go.",
+          "conditions": {
+            "items": {
+              "Walkie Talkie" : "=1"
+            },
+            "global": {
+              "unlocked_bag": true,
+              "unlocked_temperature": true,
+              "unlocked_journal": true,
+              "unlocked_map": true
+            }
+            
+          },
           "outcome": {
             "actions": {
               "call": "load_next_level"

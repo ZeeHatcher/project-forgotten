@@ -33,7 +33,7 @@
           "complete": true,
           "outcome": {
             "global": {
-              "map": 1
+              "unlocked_map": true
             },
             "actions": {
               "call": "unlock_map"

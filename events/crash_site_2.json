@@ -22,6 +22,9 @@
             },
             "stats": {
               "food": 10
+            },
+            "global": {
+              "unlocked_bag": true
             }
           }
         }

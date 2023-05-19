@@ -19,6 +19,9 @@
           "outcome": {
             "actions": {
               "call": "unlock_temperature"
+            },
+            "global": {
+              "unlocked_temperature": true
             }
           }
         }
