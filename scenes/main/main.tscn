@@ -74,6 +74,7 @@ cell_y_sort = true
 collision_layer = 2
 collision_mask = 0
 format = 1
+tile_data = PoolIntArray( -917503, 14, 0, -393209, 15, 0, -9, 16, 0, 524284, 13, 0, 589821, 13, 0, 786425, 12, 0 )
 script = ExtResource( 6 )
 
 [node name="Player" parent="." instance=ExtResource( 4 )]
@@ -88,7 +89,6 @@ current = true
 zoom = Vector2( 0.25, 0.25 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
 anchor_right = 1.0
@@ -224,7 +224,7 @@ tilemap_paths = [ NodePath("../EventTiles"), NodePath("../Terrain") ]
 
 [node name="GameOverService" type="Node" parent="."]
 script = ExtResource( 8 )
-final_event_name = "ruins"
+final_event_name = "escape"
 
 [node name="GameSaveService" type="Node" parent="."]
 pause_mode = 2

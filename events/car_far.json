@@ -1,0 +1,15 @@
+{
+  "title": "In the distance",
+  "pages": [
+    {
+      "description": "Squinting past the cascading light bouncing off the snow you see an obscured shape, something glinting in the distance...",
+      "image": "Car_far.png",
+      "choices": [
+        {
+          "description": "Investigate",
+          "complete": true
+        }
+      ]
+    }
+  ]
+}

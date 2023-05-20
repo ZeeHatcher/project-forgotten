@@ -1,0 +1,65 @@
+{
+  "title": "Drop Point",
+  "pages": [
+    {
+      "description": "Beleagured, exhausted, and near death you crest the hill. Its chain link exterior signs of humanity.",
+      "image": "",
+      "choices": [
+        {
+          "description": "Continue...",
+          "next_page": 1
+        }
+      ]
+    },
+    {
+      "description": "Worn to the bone, you thumb the salvaged walkie-talkie. ",
+      "image": "",
+      "choices": [
+        {
+          "description": "Continue...",
+          "next_page": 2
+        }
+      ]
+    },
+    {
+      "description": "\"Papa, Indiana, November, Echo.\"\n\nYou rasp out the code, radioing the current watcher.\n\nMoments drag on as your heart pounds. ",
+      "image": "",
+      "choices": [
+        {
+          "description": "Continue...",
+          "next_page": 3
+        }
+      ]
+    },
+    {
+      "description": "\"Papa, Indiana, November, Echo.\"\n\nYou repeat the passphrase. Seconds pass as an eternity...",
+      "image": "",
+      "choices": [
+        {
+          "description": "Continue...",
+          "next_page": 4
+        }
+      ]
+    },
+    {
+      "description": "Static crackles-\n\n\"Oscar, Alpha, Kilo.\", comes the reply. ",
+      "image": "",
+      "choices": [
+        {
+          "description": "Call for evacuation",
+          "next_page": 5
+        }
+      ]
+    },
+    {
+      "description": "\"Mayday, mayday. I need evacuation immediately. Supplies are running low. My heli crashed. I have been out in the wilderness for days. Over.\"\n\nYou let your rucksack fall to the ground with a weighty thump.\n\nIt's over. Finally, safe at last.",
+      "image": "",
+      "choices": [
+        {
+          "description": "Escape",
+          "complete": true
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "title": "Broken Car",
+  "pages": [
+    {
+      "description": "A car! Your escape! Does it work?",
+      "image": "Car_close.png",
+      "choices": [
+        {
+          "description": "Approach the car",
+          "next_page": 1
+        }
+      ]
+    },
+    {
+      "description": "Lights out, window cracked, snowed in deep, abandoned...",
+      "image": "Car_close.png",
+      "choices": [
+        {
+          "description": "Check the car",
+          "next_page": 2
+        },
+        {
+          "description": "Leave"
+        }
+      ]
+    },
+    {
+      "description": "You don't find much in the car, but you do find a car battery.",
+      "image": "Car_close.png",
+      "choices": [
+        {
+          "description": "Take it",
+          "outcome": {
+            "items": {
+              "car_battery": 1
+            }
+          },
+          "complete": true
+        }
+      ]
+    }
+  ]
+}

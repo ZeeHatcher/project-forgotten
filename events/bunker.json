@@ -1,0 +1,59 @@
+{
+  "title": "Bunker",
+  "pages": [
+    {
+      "description": "You come across a strange metal shape in the ground. It hasn't moved in years. Perhaps there is something to be found.\n\nYour stomach rumbles.",
+      "image": "Bunker_outside.png",
+      "choices": [
+        {
+          "description": "Enter",
+          "next_page": 1
+        },
+        {
+          "description": "Leave"
+        }
+      ]
+    },
+    {
+      "description": "Submerging into the unknown you wander, discovering flaking walls whose metals are succumbing to rust.\n\nYou see dilapidated shelves, barren of treasures to squirell away.",
+      "image": "Bunker_inside.png",
+      "choices": [
+        {
+          "description": "Continue...",
+          "next_page": 2
+        },
+        {
+          "description": "Leave"
+        }
+      ]
+    },
+    {
+      "description": "You comb the subteranean dwelling. Unable to travel deeper into the structure due to unpenetrable shadows.\n\nTucked away, hidden by cobwebs, sits a dull silver box, a single red switch standing out from its dust covered skin.",
+      "image": "Bunker_inside.png",
+      "choices": [
+        {
+          "description": "Check the box",
+          "next_page": 3
+        },
+        {
+          "description": "Leave"
+        }
+      ]
+    },
+    {
+      "description": "\"Ah ha!\"\n\nYou realize the precious cargo you are holding.\n\n\"An alternator!\"\n\nIt can be used to power electronics.",
+      "image": "Bunker_inside.png",
+      "choices": [
+        {
+          "description": "Take it",
+          "outcome": {
+            "items": {
+              "alternator": 1
+            }
+          },
+          "complete": true
+        }
+      ]
+    }
+  ]
+}

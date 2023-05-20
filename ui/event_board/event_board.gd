@@ -17,13 +17,13 @@ onready var _buttons := $"%Buttons"
 func set_event(val: Event) -> void:
 	event = val
 	_title.text = val.title
-	_image.texture = val.image
 	_show_page(0)
 
 
 func _show_page(idx: int) -> void:
 	var page: Event.Page = event.pages[idx]
 	_description.text = page.description
+	_image.texture = page.image
 	_list_choices(page.choices)
 
 

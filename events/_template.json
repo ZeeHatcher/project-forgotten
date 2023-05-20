@@ -1,10 +1,10 @@
 // DELETE ALL OF THESE COMMENTS WHEN YOU'RE DONE
 {
   "title": "Event Title",
-  "image": "placeholder.png",
   "pages": [ // Each event can have multiple pages. Must have at least 1 page.
     {
       "description": "Page text",
+      "image": "placeholder.png",
       "choices": [ // Each page can have multiple choices. Optional.
         {
           "description": "Choice text",

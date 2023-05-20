@@ -1,0 +1,46 @@
+{
+  "title": "Village",
+  "pages": [
+    {
+      "description": "You almost didn't notice it, buried so deep in the snow, structures from a time passed.",
+      "image": "",
+      "choices": [
+        {
+          "description": "Investigate",
+          "next_page": 1
+        },
+        {
+          "description": "Leave"
+        }
+      ]
+    },
+    {
+      "description": "Upon further investigation, you dicover a long abandoned village.",
+      "image": "",
+      "choices": [
+        {
+          "description": "Search the village",
+          "next_page": 2
+        },
+        {
+          "description": "Leave"
+        }
+      ]
+    },
+    {
+      "description": "Searching through the ruins you find old climbing gear.\n\nYou remember how to use the rope, carabiners, and crampons from climbing back in college.",
+      "image": "",
+      "choices": [
+        {
+          "description": "Take it",
+          "outcome": {
+            "items": {
+              "climbing_gear": 1
+            }
+          },
+          "complete": true
+        }
+      ]
+    }
+  ]
+}
