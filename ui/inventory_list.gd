@@ -9,6 +9,11 @@ func _ready():
 	player_inventory.connect("quantity_changed", self, "_on_player_inventory_changed")
 
 
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("inventory"):
+		visible = !visible
+
+
 func update_items(items: Dictionary):
 	clear()
 	for item in items:
