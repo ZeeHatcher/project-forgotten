@@ -11,11 +11,13 @@ onready var _terrain := $Terrain
 onready var _event_tiles := $EventTiles
 onready var _event_service := $EventService
 onready var _gamesave_service := $GameSaveService
+onready var _hud := $"%HUD"
 
 
 func _ready():
 	unfog_tilemap(_player.global_position, 3)
 	_gamesave_service.save_game()
+	_hud.hide_all()
 
 
 func _on_EventTiles_event_triggered(event_name: String):
@@ -38,3 +40,14 @@ func _on_Player_moved(new_pos):
 
 func _on_Player_dead():
 	pass # Replace with function body.
+
+
+func _on_EventService_event_function_call(function_name):
+	if has_method(function_name):
+		call_deferred(function_name)
+	elif _hud.has_method(function_name):
+		_hud.call_deferred(function_name)
+
+
+func load_next_level():
+	get_tree().change_scene("res://scenes/main/main.tscn")

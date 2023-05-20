@@ -54,3 +54,7 @@ func _on_LoadSaveLabel_pressed():
 	print_debug("loading " + str(selected))
 	_load_save(selected)
 	emit_signal("load_game", selected)
+
+
+func _on_JournalButton_pressed():
+	pass # Replace with function body.

@@ -3,6 +3,7 @@ extends Node
 
 
 signal outcome_applied(outcome)
+signal event_function_call(function_name)
 
 export(NodePath) var player
 export(NodePath) var board
@@ -59,8 +60,7 @@ func apply_outcome(outcome: Event.State) -> void:
 				var dir = Vector2(outcome.actions[action][0], outcome.actions[action][1])
 				_player.force_move(dir)
 			"call":
-				if has_method(outcome.actions[action]):
-					call_deferred(outcome.actions[action])
+				emit_signal("event_function_call", outcome.actions[action])
 	
 	emit_signal("outcome_applied", outcome)
 
@@ -147,23 +147,3 @@ func _evaluate_expression(existing: int, desired: int, operator: String) -> bool
 			return existing >= desired
 		_:
 			return existing == desired
-
-
-func load_next_level():
-	get_tree().change_scene("res://scenes/main/main.tscn")
-
-
-func unlock_map():
-	$"%MapButton".visible = true
-
-
-func unlock_journal():
-	$"%JournalButton".visible = true
-
-
-func unlock_bag():
-	$"%InventoryButton".visible = true
-
-
-func unlock_temperature():
-	$"%TemperatureBar".visible = true
