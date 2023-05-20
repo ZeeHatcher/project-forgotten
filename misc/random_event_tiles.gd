@@ -41,3 +41,12 @@ func _can_trigger() -> bool:
 	
 	var roll := randi() % 100 + 1
 	return roll <= trigger_chance
+
+
+func _on_EventService_outcome_applied(outcome: Event.State):
+	if not outcome.items.has("climbing_gear"):
+		return
+		
+	var mountain_id = tile_set.find_tile_by_name("mountain")
+	for i in range(tile_set.tile_get_shape_count(mountain_id)):
+		tile_set.tile_set_shape(mountain_id, i, null)

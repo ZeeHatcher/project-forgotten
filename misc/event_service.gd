@@ -2,6 +2,8 @@ class_name EventService
 extends Node
 
 
+signal outcome_applied(outcome)
+
 export(NodePath) var player
 export(NodePath) var board
 
@@ -59,6 +61,8 @@ func apply_outcome(outcome: Event.State) -> void:
 			"call":
 				if has_method(outcome.actions[action]):
 					call_deferred(outcome.actions[action])
+	
+	emit_signal("outcome_applied", outcome)
 
 
 func are_conditions_met(conditions: Event.State) -> bool:

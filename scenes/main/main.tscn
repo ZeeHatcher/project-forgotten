@@ -247,5 +247,6 @@ event_service = NodePath("../EventService")
 [connection signal="choice_selected" from="CanvasLayer/EventBoard" to="EventService" method="apply_outcome"]
 [connection signal="event_ended" from="CanvasLayer/EventBoard" to="EventService" method="end_event"]
 [connection signal="event_ended" from="CanvasLayer/EventBoard" to="GameOverService" method="_on_EventBoard_event_ended"]
+[connection signal="outcome_applied" from="EventService" to="Terrain" method="_on_EventService_outcome_applied"]
 [connection signal="show_journal" from="GameSaveService" to="CanvasLayer/Journal" method="_on_GameSaveService_show_journal"]
 [connection signal="update_saves" from="GameSaveService" to="CanvasLayer/Journal" method="_on_GameSaveService_update_saves"]
