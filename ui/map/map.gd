@@ -7,4 +7,6 @@ func _input(event: InputEvent) -> void:
 
 
 func _on_HUD_map_button_pressed():
+	if $"../../EventService".is_event_completed("Bunker"):
+		texture = preload("res://assets/images/map1.png")
 	visible = !visible
