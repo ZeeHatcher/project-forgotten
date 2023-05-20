@@ -229,6 +229,7 @@ final_event_name = "escape"
 [node name="GameSaveService" type="Node" parent="."]
 pause_mode = 2
 script = ExtResource( 17 )
+save_after_tiles_moved = 28
 player = NodePath("../Player")
 terrain = NodePath("../Terrain")
 event_tiles = NodePath("../EventTiles")
