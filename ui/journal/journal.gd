@@ -18,6 +18,11 @@ func _ready():
 	_item_list.clear()
 
 
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("journal"):
+		show()
+
+
 func show() -> void:
 	visible = !visible
 	get_tree().paused = visible

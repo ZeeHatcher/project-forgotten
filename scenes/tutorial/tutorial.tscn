@@ -188,5 +188,4 @@ event_service = NodePath("../EventService")
 [connection signal="choice_selected" from="CanvasLayer/EventBoard" to="EventService" method="apply_outcome"]
 [connection signal="event_ended" from="CanvasLayer/EventBoard" to="EventService" method="end_event"]
 [connection signal="event_function_call" from="EventService" to="." method="_on_EventService_event_function_call"]
-[connection signal="show_journal" from="GameSaveService" to="CanvasLayer/Journal" method="_on_GameSaveService_show_journal"]
 [connection signal="update_saves" from="GameSaveService" to="CanvasLayer/Journal" method="_on_GameSaveService_update_saves"]
