@@ -239,7 +239,6 @@ event_service = NodePath("../EventService")
 [connection signal="event_triggered" from="EventTiles" to="EventService" method="start_event"]
 [connection signal="dead" from="Player" to="." method="_on_Player_dead"]
 [connection signal="moved" from="Player" to="." method="_on_Player_moved"]
-[connection signal="moved" from="Player" to="Terrain" method="trigger_event_at"]
 [connection signal="moved" from="Player" to="GameSaveService" method="_on_Player_moved"]
 [connection signal="temperature_updated" from="Player" to="CanvasLayer/TemperatureBar" method="_on_Player_temperature_updated"]
 [connection signal="pressed" from="CanvasLayer/Icons/JournalButton" to="GameSaveService" method="_on_JournalButton_pressed"]
