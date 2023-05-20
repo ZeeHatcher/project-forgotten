@@ -1,0 +1,19 @@
+{
+  "title": "Pine Needles",
+  "pages": [
+    {
+      "description": "While trekking through the forest, you find some pine trees. They could be used to make some nice tea.",
+      "choices": [
+        {
+          "description": "Harvest them",
+          "outcome": {
+            "stats": {
+              "food": 1
+            }
+          },
+          "complete": true
+        }
+      ]
+    }
+  ]
+}

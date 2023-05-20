@@ -1,0 +1,19 @@
+{
+  "title": "Snared Rabbit",
+  "pages": [
+    {
+      "description": "From the corner of your eye, you notice movement.\n\nUpon further checking, you find out it's a rabbit snared in thick bramble.\n\nSeems you're having rabbit stew tonight.",
+      "choices": [
+        {
+          "description": "Take the rabbit",
+          "outcome": {
+            "stats": {
+              "food": 5
+            }
+          },
+          "complete": true
+        }
+      ]
+    }
+  ]
+}

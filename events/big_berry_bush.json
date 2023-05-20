@@ -1,0 +1,19 @@
+{
+  "title": "Berry Bush",
+  "pages": [
+    {
+      "description": "Standing out from the white verdant landscape, you spot a burst of color. It's a berry bush, ripe for harvest!",
+      "choices": [
+        {
+          "description": "Take them",
+          "outcome": {
+            "stats": {
+              "food": 4
+            }
+          },
+          "complete": true
+        }
+      ]
+    }
+  ]
+}

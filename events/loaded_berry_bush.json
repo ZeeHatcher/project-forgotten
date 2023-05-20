@@ -1,0 +1,19 @@
+{
+  "title": "Loaded Berry Bush",
+  "pages": [
+    {
+      "description": "Loaded bushes, briming with juicy fruit! These bushes are fresh and pristine, untouched, eager for de-fruiting...",
+      "choices": [
+        {
+          "description": "Take the berries",
+          "outcome": {
+            "stats": {
+              "food": 8
+            }
+          },
+          "complete": true
+        }
+      ]
+    }
+  ]
+}

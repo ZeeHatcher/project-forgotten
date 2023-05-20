@@ -1,0 +1,19 @@
+{
+  "title": "Clovers",
+  "pages": [
+    {
+      "description": "From the corner of your eye, you notice a bunch of clovers. This can make a fine snack to hold off the hunger a little.",
+      "choices": [
+        {
+          "description": "Pick them",
+          "outcome": {
+            "stats": {
+              "food": 2
+            }
+          },
+          "complete": true
+        }
+      ]
+    }
+  ]
+}

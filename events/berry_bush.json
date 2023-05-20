@@ -1,0 +1,19 @@
+{
+  "title": "Berry Bush",
+  "pages": [
+    {
+      "description": "You stumble across a berry bush. But whatever came before you has taken as much as they could, leaving behind meager pickings.",
+      "choices": [
+        {
+          "description": "Take the berries",
+          "outcome": {
+            "stats": {
+              "food": 1
+            }
+          },
+          "complete": true
+        }
+      ]
+    }
+  ]
+}
