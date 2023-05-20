@@ -126,6 +126,7 @@ script = ExtResource( 10 )
 [node name="Tween" type="Tween" parent="CanvasLayer/TemperatureBar"]
 
 [node name="InventoryList" type="ItemList" parent="CanvasLayer"]
+unique_name_in_owner = true
 visible = false
 anchor_left = 1.0
 anchor_top = 1.0
@@ -154,6 +155,7 @@ script = ExtResource( 23 )
 player_inventory = ExtResource( 16 )
 
 [node name="Journal" parent="CanvasLayer" instance=ExtResource( 19 )]
+unique_name_in_owner = true
 visible = false
 
 [node name="EventBoard" parent="CanvasLayer" instance=ExtResource( 17 )]
@@ -183,7 +185,9 @@ event_service = NodePath("../EventService")
 [connection signal="moved" from="Player" to="GameSaveService" method="_on_Player_moved"]
 [connection signal="temperature_updated" from="Player" to="CanvasLayer/TemperatureBar" method="_on_Player_temperature_updated"]
 [connection signal="inventory_button_pressed" from="CanvasLayer/HUD" to="CanvasLayer/InventoryList" method="_on_InventoryButton_pressed"]
+[connection signal="inventory_unlocked" from="CanvasLayer/HUD" to="." method="_on_HUD_inventory_unlocked"]
 [connection signal="journal_button_pressed" from="CanvasLayer/HUD" to="CanvasLayer/Journal" method="_on_JournalButton_pressed"]
+[connection signal="journal_unlocked" from="CanvasLayer/HUD" to="." method="_on_HUD_journal_unlocked"]
 [connection signal="load_game" from="CanvasLayer/Journal" to="GameSaveService" method="_on_Journal_load_game"]
 [connection signal="choice_selected" from="CanvasLayer/EventBoard" to="EventService" method="apply_outcome"]
 [connection signal="event_ended" from="CanvasLayer/EventBoard" to="EventService" method="end_event"]

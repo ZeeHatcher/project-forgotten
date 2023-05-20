@@ -11,6 +11,8 @@ onready var _terrain := $Terrain
 onready var _event_tiles := $EventTiles
 onready var _event_service := $EventService
 onready var _gamesave_service := $GameSaveService
+onready var _journal := $"%Journal"
+onready var _inventory := $"%InventoryList"
 onready var _hud := $"%HUD"
 
 
@@ -18,6 +20,8 @@ func _ready():
 	unfog_tilemap(_player.global_position, 3)
 	_gamesave_service.save_game()
 	_hud.hide_all()
+	_inventory.set_process_input(false)
+	_journal.set_process_input(false)
 
 
 func _on_EventTiles_event_triggered(event_name: String):
@@ -47,3 +51,11 @@ func _on_EventService_event_function_call(function_name):
 
 func load_next_level():
 	get_tree().change_scene("res://scenes/main/main.tscn")
+
+
+func _on_HUD_journal_unlocked():
+	_journal.set_process_input(true)
+
+
+func _on_HUD_inventory_unlocked():
+	_inventory.set_process_input(true)
