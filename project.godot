@@ -14,6 +14,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://ui/animated_label/animated_label.gd"
 }, {
+"base": "Label",
+"class": "Counter",
+"language": "GDScript",
+"path": "res://ui/counter/counter.gd"
+}, {
 "base": "Resource",
 "class": "CutsceneFrame",
 "language": "GDScript",
@@ -24,7 +29,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://data_models/event.gd"
 }, {
-"base": "TabContainer",
+"base": "Control",
 "class": "EventBoard",
 "language": "GDScript",
 "path": "res://ui/event_board/event_board.gd"
@@ -81,6 +86,7 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "AnimatedLabel": "",
+"Counter": "",
 "CutsceneFrame": "",
 "Event": "",
 "EventBoard": "",

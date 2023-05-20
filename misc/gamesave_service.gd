@@ -11,14 +11,12 @@ var tiles_moved := 0
 export(int) var save_after_tiles_moved := 1
 
 export(NodePath) var player
-export(NodePath) var top_bar
 export(NodePath) var terrain
 export(NodePath) var event_tiles
 export(NodePath) var event_service
 
 onready var _player = get_node(player)
 onready var _terrain = get_node(terrain)
-onready var _top_bar = get_node(top_bar)
 onready var _event_tiles = get_node(event_tiles)
 onready var _event_service = get_node(event_service)
 
@@ -61,9 +59,6 @@ func load_game(index):
 	_player.temperature.value = _save.player_temperature
 	_player.inventory.set_inventory(_save.inventory_items)
 	_player.cancel_movement()
-	
-	_top_bar.player_health.value  = _save.player_health
-	_top_bar.player_food.value = _save.player_food
 	
 	$"../WorldFog".fog_all_tilemap()
 	for tile in _save.terrain:
