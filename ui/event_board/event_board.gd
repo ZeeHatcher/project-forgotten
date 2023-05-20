@@ -8,6 +8,7 @@ signal event_ended(event, complete)
 var event: Event setget set_event
 var are_conditions_met_handler: FuncRef
 
+onready var _image_bg := $EventImageBG
 onready var _image := $"%EventImage"
 onready var _title := $"%Title"
 onready var _description := $"%Description"
@@ -24,6 +25,7 @@ func _show_page(idx: int) -> void:
 	var page: Event.Page = event.pages[idx]
 	_description.text = page.description
 	_image.texture = page.image
+	_image_bg.visible = page.image != null
 	_list_choices(page.choices)
 
 
