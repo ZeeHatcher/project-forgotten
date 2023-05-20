@@ -49,6 +49,7 @@ func _on_GameSaveService_update_saves(save_count):
 	_item_list.clear()
 	for i in range(save_count):
 		_item_list.add_item("Week " + str(i))
+		_item_list.set_item_tooltip_enabled(i, false)
 
 
 func _on_GameSaveService_show_journal():
