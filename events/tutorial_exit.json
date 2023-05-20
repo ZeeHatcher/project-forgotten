@@ -1,36 +1,29 @@
 {
-  "title": "Exit Crash Site",
+  "title": "Pathway Out",
   "pages": [
     {
-      "description": "I have to make sure I got everything before leaving.",
+      "description": "You find a path leading out from the crash site, out into the wilderness.",
       "choices": [
         {
-          "description": "I got everything. Let's go.",
+          "description": "Leave",
           "conditions": {
-            "items": {
-              "Walkie Talkie" : "=1"
-            },
             "global": {
               "unlocked_bag": true,
               "unlocked_temperature": true,
               "unlocked_journal": true,
-              "unlocked_map": true
+              "unlocked_map": true,
+              "gotten_supplies": true
             }
-            
           },
           "outcome": {
             "actions": {
               "call": "load_next_level"
             }
-          }
+          },
+          "help_text": "Requires completion of all tutorial events"
         },
         {
-          "description": "Go back and check.",
-          "outcome": {
-            "actions": {
-              "move": [0,1]
-            }
-          }
+          "description": "Go back"
         }
       ]
     }

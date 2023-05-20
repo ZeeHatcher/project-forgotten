@@ -1,20 +1,20 @@
 {
-  "title": "Crash Site 4",
+  "title": "Jacket",
   "pages": [
     {
-      "description": "Description of crash site for unlocking the jacket.",
+      "description": "You notice a jacket hanging off of one of the rudders, surprisingly unscathed by the crash.\n\nSuddenly, your body shivers as you remember the coldness of the air around you.\n\nBest to take it for more warmth.",
       "choices": [
         {
-          "description": "Salvage the rubble.",
+          "description": "Take it",
           "next_page": 1
         }
       ]
     },
     {
-      "description": "Tutorial for temperature.",
+      "description": "NOTE:\nYour temperature decreases when you're not moving. Stand still for too long, and you start to freeze and take damage.\n\nMove around to reheat yourself.",
       "choices": [
         {
-          "description": "Take it and leave.",
+          "description": "Got it",
           "complete": true,
           "outcome": {
             "actions": {

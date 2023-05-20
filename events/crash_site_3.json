@@ -1,26 +1,38 @@
 {
-  "title": "Crash Site 3",
+  "title": "Box of Supplies",
   "pages": [
     {
-      "description": "Description of crash site for unlocking the walkie talkie.",
+      "description": "You find what remains of the food supplies that were on board the helicopter, scattered around the crash site.",
       "choices": [
         {
-          "description": "Salvage the rubble.",
+          "description": "Search around",
           "next_page": 1
         }
       ]
     },
     {
-      "description": "Walkie talkie for something.",
+      "description": "You manage to pick up a few of the food supplies that survived the crash. It's not much, but it will have to do for the time being.",
       "choices": [
         {
-          "description": "Take it and leave.",
-          "complete": true,
+          "description": "Take them",
           "outcome": {
-            "items": {
-              "Walkie Talkie": 1
+            "actions": {
+              "call": "unlock_food"
+            },
+            "global": {
+              "gotten_supplies": true
             }
-          }
+          },
+          "next_page": 2
+        }
+      ]
+    },
+    {
+      "description": "NOTE:\nFood is consumed after a certain number of moves. Run out of food, and you starve and start taking damage.\n\nFind more food by exploring and looking for anything that stands out.",
+      "choices": [
+        {
+          "description": "Got it",
+          "complete": true
         }
       ]
     }

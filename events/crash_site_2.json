@@ -1,32 +1,38 @@
 {
-  "title": "Crash Site 2",
+  "title": "Backpack",
   "pages": [
     {
-      "description": "Description of crash site for unlocking the bag.",
+      "description": "From among the rubble, you see what looks to be a backpack, in decently usable condition.",
       "choices": [
         {
-          "description": "Salvage the rubble.",
+          "description": "Check it out",
           "next_page": 1
         }
       ]
     },
     {
-      "description": "You got a bag with some food supplies. Handy for carrying useful items.",
+      "description": "The bag is spacious, and can carry quite a few items.\n\nThis could come in handy on the road ahead.",
       "choices": [
         {
-          "description": "Take it and leave.",
-          "complete": true,
+          "description": "Take it",
           "outcome": {
             "actions": {
               "call": "unlock_bag"
             },
-            "stats": {
-              "food": 10
-            },
             "global": {
               "unlocked_bag": true
             }
-          }
+          },
+          "next_page": 2
+        }
+      ]
+    },
+    {
+      "description": "NOTE:\nThe bag allows you to carry any items you find on your journey.\n\nPress \"I\" or click the Bag icon on the left to open/close it.",
+      "choices": [
+        {
+          "description": "Got it",
+          "complete": true
         }
       ]
     }

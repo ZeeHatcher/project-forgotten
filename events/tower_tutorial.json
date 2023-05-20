@@ -1,11 +1,11 @@
 {
-  "title": "Tower",
+  "title": "Watchtower",
   "pages": [
     {
-      "description": "The tower looms over you. It shakes ever so slightly.",
+      "description": "You stand before a watchtower, caked in snow.\n\nThere does not seem to be any signs of life, with the tower standing as still as the air around it.",
       "choices": [
         {
-          "description": "Climb the tower",
+          "description": "Enter the tower",
           "next_page": 1
         },
         {
@@ -14,23 +14,23 @@
       ]
     },
     {
-      "description": "You reach the top of the tower, with the ground far below you. There seems to be a lookout space, albeit rather messy.",
+      "description": "You climb and reach the top of the tower, and you are greeted with a room.\n\nIt seems mostly empty, save for a few bunches of paper and bits of furniture in shambles.",
       "choices": [
         {
-          "description": "Search the room.",
+          "description": "Search the room",
           "next_page": 2
         },
         {
-          "description": "Go back down and leave."
+          "description": "Leave"
         }
       ]
     },
     {
-      "description": "You find a map. This might be useful.",
+      "description": "Quickly scanning through the contents of the papers, you find what seems to be a map of the area. What luck.",
       "choices": [
         {
-          "description": "Take it and leave.",
-          "complete": true,
+          "description": "Take it",
+          "next_page": 3,
           "outcome": {
             "global": {
               "unlocked_map": true
@@ -39,6 +39,15 @@
               "call": "unlock_map"
             }
           }
+        }
+      ]
+    },
+    {
+      "description": "NOTE:\nThe map shows you the layout of the area and any potential points of interest. Press \"M\" or click on the Map icon to the left to open/close it.",
+      "choices": [
+        {
+          "description": "Got it",
+          "complete": true
         }
       ]
     }

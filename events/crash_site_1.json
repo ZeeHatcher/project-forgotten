@@ -1,21 +1,20 @@
 {
-  "title": "Crash Site 1",
+  "title": "Journal",
   "pages": [
     {
-      "description": "Description of crash site for unlocking a journal.",
+      "description": "You notice something poking out from among the debris.",
       "choices": [
         {
-          "description": "Salvage the rubble.",
+          "description": "Search the debris",
           "next_page": 1
         }
       ]
     },
     {
-      "description": "You got an empty journal. Better write down everything in case I lose memory again.",
+      "description": "You find an empty journal.\n\nBest to write down everything, in case you forget things again.",
       "choices": [
         {
-          "description": "Take it and leave.",
-          "complete": true,
+          "description": "Take it",
           "outcome": {
             "actions": {
               "call": "unlock_journal"
@@ -23,7 +22,17 @@
             "global": {
               "unlocked_journal": true
             }
-          }
+          },
+          "next_page": 2
+        }
+      ]
+    },
+    {
+      "description": "NOTE:\nThe game auto-saves from time to time.\n\nThe journal allows you to reload the game from previously saved states.\n\nPress TAB or click the Journal icon on the left side of the screen to open it.\"",
+      "choices": [
+        {
+          "description": "Got it",
+          "complete": true
         }
       ]
     }
