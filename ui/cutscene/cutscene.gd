@@ -32,6 +32,7 @@ func _input(event: InputEvent) -> void:
 
 func next() -> void:
 	if not _frame_controller:
+		print("no")
 		_next_frame()
 	else:
 		var completed := _frame_controller.next()
@@ -64,6 +65,8 @@ class FrameController:
 		_frame = frame
 		_portrait = portrait
 		image.texture = frame.image
+		
+		next()
 	
 	
 	func next() -> bool:

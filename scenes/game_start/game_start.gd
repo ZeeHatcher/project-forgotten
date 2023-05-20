@@ -4,6 +4,7 @@ extends Control
 onready var _cutscene := $Cutscene
 
 func _ready() -> void:
+	print("tes")
 	_cutscene.play()
 
 
