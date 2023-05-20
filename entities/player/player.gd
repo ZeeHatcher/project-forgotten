@@ -21,6 +21,7 @@ export(Resource) var health
 export(Resource) var food
 export(Resource) var inventory
 export(Resource) var temperature
+export var tutorial_mode := false
 
 onready var _ray := $CollisionRay
 onready var _tween := $Tween
@@ -105,12 +106,15 @@ func _on_EventDetector_body_entered(body: Node) -> void:
 
 
 func _on_Player_moved(_new_pos: Vector2) -> void:
-	food.consume()
+	if not tutorial_mode:
+		food.consume()
 	temperature.reset()
 	emit_signal("temperature_updated", temperature.percentage)
 
 
 func _on_food_depleted() -> void:
+	if tutorial_mode:
+		return
 	health.value -= 1
 
 
@@ -119,6 +123,8 @@ func _on_health_depleted() -> void:
 
 
 func _on_temperature_take_cold_damage() -> void:
+	if tutorial_mode:
+		return
 	health.value -= 1
 
 

@@ -75,6 +75,7 @@ script = ExtResource( 22 )
 
 [node name="Player" parent="." instance=ExtResource( 18 )]
 position = Vector2( 0, 6 )
+tutorial_mode = true
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
 remote_path = NodePath("../../Camera2D")
