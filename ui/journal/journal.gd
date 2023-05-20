@@ -57,4 +57,4 @@ func _on_LoadSaveLabel_pressed():
 
 
 func _on_JournalButton_pressed():
-	pass # Replace with function body.
+	show()
