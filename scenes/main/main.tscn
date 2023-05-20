@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://resources/events_tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://ui/event_board/event_board.tscn" type="PackedScene" id=2]
@@ -24,6 +24,7 @@
 [ext_resource path="res://themes/default_body.tres" type="Theme" id=22]
 [ext_resource path="res://ui/inventory_list.gd" type="Script" id=23]
 [ext_resource path="res://resources/player_inventory.tres" type="Resource" id=24]
+[ext_resource path="res://ui/food_counter/food_counter.tscn" type="PackedScene" id=25]
 
 [sub_resource type="StyleBoxEmpty" id=4]
 
@@ -101,11 +102,16 @@ custom_constants/margin_bottom = 16
 margin_left = 16.0
 margin_top = 16.0
 margin_right = 1904.0
-margin_bottom = 70.0
+margin_bottom = 126.0
 
 [node name="HealthBar" parent="CanvasLayer/MarginContainer/VBoxContainer" instance=ExtResource( 7 )]
 margin_right = 1888.0
 margin_bottom = 54.0
+
+[node name="FoodCounter" parent="CanvasLayer/MarginContainer/VBoxContainer" instance=ExtResource( 25 )]
+margin_top = 58.0
+margin_right = 1888.0
+margin_bottom = 110.0
 
 [node name="TextureProgress" type="TextureProgress" parent="CanvasLayer"]
 visible = false
