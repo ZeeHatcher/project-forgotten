@@ -33,7 +33,6 @@ func _input(event: InputEvent) -> void:
 
 func next() -> void:
 	if not _frame_controller:
-		print("no")
 		_next_frame()
 	else:
 		var completed := _frame_controller.next()
@@ -96,6 +95,7 @@ class FrameController:
 			_portrait.visible = false
 			_label.full_text = _frame.text[_index]
 		
-		_title_container.visible = _title.text.empty()
+		print(_title.get_total_character_count(), _title.text)
+		_title_container.visible = not _title.text.empty()
 		
 		return false
