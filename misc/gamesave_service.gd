@@ -70,6 +70,8 @@ func load_game(index):
 	_event_service._completed = _save.event_completed
 	
 	emit_signal("update_saves", get_save_count())
+	
+	set_process_input(true)
 
 
 func get_tilemap_data(tilemap) -> Dictionary:

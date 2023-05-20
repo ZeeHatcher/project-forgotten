@@ -237,6 +237,7 @@ event_service = NodePath("../EventService")
 [connection signal="unfog_cell" from="." to="WorldFog" method="_on_unfog_cell"]
 [connection signal="event_triggered" from="Terrain" to="EventService" method="start_event"]
 [connection signal="event_triggered" from="EventTiles" to="EventService" method="start_event"]
+[connection signal="dead" from="Player" to="." method="_on_Player_dead"]
 [connection signal="moved" from="Player" to="." method="_on_Player_moved"]
 [connection signal="moved" from="Player" to="Terrain" method="trigger_event_at"]
 [connection signal="moved" from="Player" to="GameSaveService" method="_on_Player_moved"]

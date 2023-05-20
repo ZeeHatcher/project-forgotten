@@ -11,12 +11,12 @@ onready var _terrain := $Terrain
 onready var _event_tiles := $EventTiles
 onready var _event_service := $EventService
 onready var _gamesave_service := $GameSaveService
+onready var _journal := $CanvasLayer/Journal
 
 
 func _ready():
 	unfog_tilemap(_player.global_position, 3)
 	_gamesave_service.save_game()
-
 
 
 func _on_EventTiles_event_triggered(event_name: String):
@@ -38,4 +38,5 @@ func _on_Player_moved(new_pos):
 
 
 func _on_Player_dead():
-	pass # Replace with function body.
+	_gamesave_service.set_process_input(false)
+	_journal.show()
