@@ -1,14 +1,14 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://ui/cutscene/cutscene.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/game_end/game_end.gd" type="Script" id=2]
-[ext_resource path="res://icon.png" type="Texture" id=3]
 [ext_resource path="res://data_models/cutscene_frame.gd" type="Script" id=4]
 
 [sub_resource type="Resource" id=1]
 script = ExtResource( 4 )
-image = ExtResource( 3 )
-text = [ "Once upon a time...", "The end." ]
+text = [ "Seeking adventure is a call which echoes in the hearts of all.", "At times, into the wilds we must march. A journey of discovery, slipping into peril, only to emerge the stronger for it.", "Finding human companionship you came to realize why your memories held special warmth in your heart. Happiness is real when shared.", "Just as is nature, some things fade. Holding those memories is how you share happiness with the spirits of others since passed. ", "Hounded by treacherous beasts, drained of sustenance by devouring gales, and perservering through hardship. You have perservered, reaching safety.", "Lets get some fresh clothes. Maybe start a little fire. And enjoy a cup of cocoa. Create shared memories, while others still have time...." ]
+character_portrait = [  ]
+character_name = [  ]
 
 [node name="GameEnd" type="Control"]
 anchor_right = 1.0

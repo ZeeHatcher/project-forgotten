@@ -10,6 +10,7 @@ var _frame_controller: FrameController
 
 onready var _image := $"TextureRect"
 onready var _title := $"%Title"
+onready var _title_container := $"PanelContainer"
 onready var _label := $"%AnimatedLabel"
 onready var _portrait := $"%Portrait"
 
@@ -46,21 +47,23 @@ func _next_frame() -> void:
 		emit_signal("end")
 		return
 	
-	_frame_controller = FrameController.new(_image, _title, _label, _portrait, content[_index])
+	_frame_controller = FrameController.new(_image, _title, _title_container, _label, _portrait, content[_index])
 
 
 class FrameController:
 	var _image: TextureRect
 	var _title: Label
+	var _title_container: Control
 	var _label: AnimatedLabel
 	var _portrait: TextureRect
 	var _frame: CutsceneFrame
 	var _index := -1
 	
 	
-	func _init(image: TextureRect, title: Label, label: AnimatedLabel, portrait: TextureRect, frame: CutsceneFrame) -> void:
+	func _init(image: TextureRect, title: Label, title_container: Control, label: AnimatedLabel, portrait: TextureRect, frame: CutsceneFrame) -> void:
 		_image = image
 		_title = title
+		_title_container = title_container
 		_label = label
 		_frame = frame
 		_portrait = portrait
@@ -92,5 +95,7 @@ class FrameController:
 			_title.visible = false
 			_portrait.visible = false
 			_label.full_text = _frame.text[_index]
+		
+		_title_container.visible = _title.text.empty()
 		
 		return false

@@ -67,6 +67,7 @@ margin_left = 8.0
 margin_top = 8.0
 margin_right = 1834.0
 margin_bottom = 264.0
+rect_min_size = Vector2( 0, 256 )
 custom_constants/separation = 20
 
 [node name="Portrait" type="TextureRect" parent="MarginContainer/PanelContainer/MarginContainer/HBoxContainer"]
