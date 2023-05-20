@@ -38,10 +38,6 @@ func _on_Player_moved(new_pos):
 	unfog_tilemap(new_pos, 3)
 
 
-func _on_Player_dead():
-	pass # Replace with function body.
-
-
 func _on_EventService_event_function_call(function_name):
 	if has_method(function_name):
 		call_deferred(function_name)

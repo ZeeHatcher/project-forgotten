@@ -11,6 +11,7 @@ func hide_all():
 	$"%JournalButton".visible = false
 	$"%InventoryButton".visible = false
 	$"%TemperatureBar".visible = false
+	$"%FoodCounter".visible = false
 
 
 func unlock_map():
@@ -27,6 +28,10 @@ func unlock_bag():
 
 func unlock_temperature():
 	$"%TemperatureBar".visible = true
+
+
+func unlock_food():
+	$"%FoodCounter".visible = true
 
 
 func _on_MapButton_pressed():
