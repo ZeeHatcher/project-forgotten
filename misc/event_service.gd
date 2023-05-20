@@ -146,7 +146,7 @@ func _evaluate_expression(existing: int, desired: int, operator: String) -> bool
 
 
 func load_next_level():
-	get_tree().change_scene("res://main.tscn")
+	get_tree().change_scene("res://scenes/main/main.tscn")
 
 
 func unlock_map():

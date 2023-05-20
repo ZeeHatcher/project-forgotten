@@ -9,4 +9,4 @@ func _ready() -> void:
 
 
 func _on_Cutscene_end():
-	get_tree().change_scene("res://tutorial.tscn")
+	get_tree().change_scene("res://scenes/tutorial/tutorial.tscn")
