@@ -8,12 +8,14 @@
 [ext_resource path="res://themes/default_body.tres" type="Theme" id=6]
 
 [node name="TemperatureBar" type="TextureProgress"]
+step = 0.01
 value = 50.0
 texture_over = ExtResource( 1 )
 texture_progress = ExtResource( 2 )
 texture_progress_offset = Vector2( 40, 0 )
 script = ExtResource( 3 )
 resource = ExtResource( 4 )
+show_counter = false
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 margin_right = 329.0
@@ -29,3 +31,5 @@ theme = ExtResource( 6 )
 text = "test"
 align = 2
 script = ExtResource( 5 )
+
+[node name="Tween" type="Tween" parent="."]

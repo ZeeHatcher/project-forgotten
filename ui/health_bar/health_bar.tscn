@@ -8,6 +8,7 @@
 [ext_resource path="res://themes/default_body.tres" type="Theme" id=6]
 
 [node name="HealthBar" type="TextureProgress"]
+step = 0.01
 value = 50.0
 texture_over = ExtResource( 1 )
 texture_progress = ExtResource( 2 )
@@ -29,3 +30,5 @@ theme = ExtResource( 6 )
 text = "test"
 align = 2
 script = ExtResource( 5 )
+
+[node name="Tween" type="Tween" parent="."]
