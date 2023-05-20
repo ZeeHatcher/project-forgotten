@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/UI_journal_open_.mp3-c7e9b671380ad900bda44abe3b53545f.mp3str"
+
+[deps]
+
+source_file="res://assets/sfx/UI_journal_open_.mp3"
+dest_files=[ "res://.import/UI_journal_open_.mp3-c7e9b671380ad900bda44abe3b53545f.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

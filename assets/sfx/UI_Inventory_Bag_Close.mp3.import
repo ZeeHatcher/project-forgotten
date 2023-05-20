@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/UI_Inventory_Bag_Close.mp3-3045509f182b570228032d89c2d46ebb.mp3str"
+
+[deps]
+
+source_file="res://assets/sfx/UI_Inventory_Bag_Close.mp3"
+dest_files=[ "res://.import/UI_Inventory_Bag_Close.mp3-3045509f182b570228032d89c2d46ebb.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Intro_scene_Crash_sfx.mp3-7dcee0fdb287b7cdc21fa95bac0bf1e0.mp3str"
+
+[deps]
+
+source_file="res://assets/sfx/Intro_scene_Crash_sfx.mp3"
+dest_files=[ "res://.import/Intro_scene_Crash_sfx.mp3-7dcee0fdb287b7cdc21fa95bac0bf1e0.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/UX_snow_player_movement_5.mp3-7a7703c5218937612bc63323c45ff3db.mp3str"
+
+[deps]
+
+source_file="res://assets/sfx/UX_snow_player_movement_5.mp3"
+dest_files=[ "res://.import/UX_snow_player_movement_5.mp3-7a7703c5218937612bc63323c45ff3db.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

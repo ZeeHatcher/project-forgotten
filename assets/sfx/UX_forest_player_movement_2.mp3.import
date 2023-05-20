@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/UX_forest_player_movement_2.mp3-338608a47b9bcb49a926cf8a750e0341.mp3str"
+
+[deps]
+
+source_file="res://assets/sfx/UX_forest_player_movement_2.mp3"
+dest_files=[ "res://.import/UX_forest_player_movement_2.mp3-338608a47b9bcb49a926cf8a750e0341.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

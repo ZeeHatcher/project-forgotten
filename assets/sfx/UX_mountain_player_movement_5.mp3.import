@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/UX_mountain_player_movement_5.mp3-ccf9a06f90ce002a3dfff043ef25fcdd.mp3str"
+
+[deps]
+
+source_file="res://assets/sfx/UX_mountain_player_movement_5.mp3"
+dest_files=[ "res://.import/UX_mountain_player_movement_5.mp3-ccf9a06f90ce002a3dfff043ef25fcdd.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
