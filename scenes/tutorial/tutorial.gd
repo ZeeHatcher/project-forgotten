@@ -13,6 +13,7 @@ onready var _event_service := $EventService
 onready var _gamesave_service := $GameSaveService
 onready var _journal := $"%Journal"
 onready var _inventory := $"%InventoryList"
+onready var _map := $"%Map"
 onready var _hud := $"%HUD"
 
 
@@ -22,6 +23,7 @@ func _ready():
 	_hud.hide_all()
 	_inventory.set_process_input(false)
 	_journal.set_process_input(false)
+	_map.set_process_input(false)
 
 
 func _on_EventTiles_event_triggered(event_name: String):
@@ -59,3 +61,7 @@ func _on_HUD_journal_unlocked():
 
 func _on_HUD_inventory_unlocked():
 	_inventory.set_process_input(true)
+
+
+func _on_HUD_map_unlocked():
+	_map.set_process_input(true)

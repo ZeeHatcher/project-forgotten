@@ -1,6 +1,7 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://ui/hud/hud.tscn" type="PackedScene" id=1]
+[ext_resource path="res://ui/map/map.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/ui/progress_bar.png" type="Texture" id=4]
 [ext_resource path="res://assets/ui/progress_bar_frame_v.png" type="Texture" id=5]
 [ext_resource path="res://scenes/tutorial/tutorial.gd" type="Script" id=6]
@@ -162,6 +163,10 @@ visible = false
 pause_mode = 2
 visible = false
 
+[node name="Map" parent="CanvasLayer" instance=ExtResource( 2 )]
+pause_mode = 2
+unique_name_in_owner = true
+
 [node name="EventService" type="Node" parent="."]
 script = ExtResource( 11 )
 player = NodePath("../Player")
@@ -188,6 +193,8 @@ event_service = NodePath("../EventService")
 [connection signal="inventory_unlocked" from="CanvasLayer/HUD" to="." method="_on_HUD_inventory_unlocked"]
 [connection signal="journal_button_pressed" from="CanvasLayer/HUD" to="CanvasLayer/Journal" method="_on_JournalButton_pressed"]
 [connection signal="journal_unlocked" from="CanvasLayer/HUD" to="." method="_on_HUD_journal_unlocked"]
+[connection signal="map_button_pressed" from="CanvasLayer/HUD" to="CanvasLayer/Map" method="_on_HUD_map_button_pressed"]
+[connection signal="map_unlocked" from="CanvasLayer/HUD" to="." method="_on_HUD_map_unlocked"]
 [connection signal="load_game" from="CanvasLayer/Journal" to="GameSaveService" method="_on_Journal_load_game"]
 [connection signal="choice_selected" from="CanvasLayer/EventBoard" to="EventService" method="apply_outcome"]
 [connection signal="event_ended" from="CanvasLayer/EventBoard" to="EventService" method="end_event"]

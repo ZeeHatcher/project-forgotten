@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://resources/events_tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://ui/event_board/event_board.tscn" type="PackedScene" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://misc/gameover_service.gd" type="Script" id=8]
 [ext_resource path="res://scenes/main/main.gd" type="Script" id=9]
 [ext_resource path="res://assets/ui/progress_bar.png" type="Texture" id=10]
+[ext_resource path="res://ui/map/map.tscn" type="PackedScene" id=11]
 [ext_resource path="res://assets/ui/progress_bar_frame.png" type="Texture" id=13]
 [ext_resource path="res://misc/random_event_tiles.gd" type="Script" id=15]
 [ext_resource path="res://resources/terrain_tileset.tres" type="TileSet" id=16]
@@ -147,6 +148,8 @@ visible = false
 pause_mode = 2
 visible = false
 
+[node name="Map" parent="CanvasLayer" instance=ExtResource( 11 )]
+
 [node name="EventService" type="Node" parent="."]
 script = ExtResource( 5 )
 player = NodePath("../Player")
@@ -176,6 +179,7 @@ event_service = NodePath("../EventService")
 [connection signal="moved" from="Player" to="GameSaveService" method="_on_Player_moved"]
 [connection signal="inventory_button_pressed" from="CanvasLayer/HUD" to="CanvasLayer/InventoryList" method="_on_InventoryButton_pressed"]
 [connection signal="journal_button_pressed" from="CanvasLayer/HUD" to="CanvasLayer/Journal" method="_on_JournalButton_pressed"]
+[connection signal="map_button_pressed" from="CanvasLayer/HUD" to="CanvasLayer/Map" method="_on_HUD_map_button_pressed"]
 [connection signal="load_game" from="CanvasLayer/Journal" to="GameSaveService" method="_on_Journal_load_game"]
 [connection signal="choice_selected" from="CanvasLayer/EventBoard" to="EventService" method="apply_outcome"]
 [connection signal="event_ended" from="CanvasLayer/EventBoard" to="EventService" method="end_event"]

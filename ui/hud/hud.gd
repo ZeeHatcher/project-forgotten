@@ -4,6 +4,7 @@ extends Node
 signal map_button_pressed
 signal inventory_button_pressed
 signal journal_button_pressed
+signal map_unlocked
 signal inventory_unlocked
 signal journal_unlocked
 
@@ -18,6 +19,7 @@ func hide_all():
 
 func unlock_map():
 	$"%MapButton".visible = true
+	emit_signal("map_unlocked")
 
 
 func unlock_journal():
