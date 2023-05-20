@@ -28,7 +28,7 @@
       ]
     },
     {
-      "description": "NOTE:\nThe game auto-saves from time to time.\n\nThe journal allows you to reload the game from previously saved states.\n\nPress TAB or click the Journal icon on the left side of the screen to open it.\"",
+      "description": "NOTE:\nThe game auto-saves from time to time.\n\nThe journal allows you to reload the game from previously saved states.\n\nPress TAB or click the Journal icon on the left side of the screen to open it.",
       "choices": [
         {
           "description": "Got it",

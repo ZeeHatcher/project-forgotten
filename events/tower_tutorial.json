@@ -43,7 +43,7 @@
       ]
     },
     {
-      "description": "NOTE:\nThe map shows you the layout of the area and any potential points of interest. Press \"M\" or click on the Map icon to the left to open/close it.",
+      "description": "NOTE:\nThe map shows you the layout of the area and any potential points of interest.\n\nPress \"M\" or click on the Map icon to the left to open/close it.",
       "choices": [
         {
           "description": "Got it",
