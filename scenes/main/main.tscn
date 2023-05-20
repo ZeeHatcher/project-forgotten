@@ -127,20 +127,6 @@ fixed_column_width = 526
 script = ExtResource( 23 )
 player_inventory = ExtResource( 24 )
 
-[node name="Icons" type="HBoxContainer" parent="CanvasLayer"]
-pause_mode = 2
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -384.0
-margin_top = -148.0
-margin_right = -88.0
-margin_bottom = -52.0
-grow_horizontal = 0
-grow_vertical = 0
-alignment = 2
-
 [node name="Journal" parent="CanvasLayer" instance=ExtResource( 18 )]
 visible = false
 

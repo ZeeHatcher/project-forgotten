@@ -44,7 +44,7 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
-[node name="Main" type="Node2D"]
+[node name="Main2" type="Node2D"]
 script = ExtResource( 6 )
 
 [node name="Terrain" type="TileMap" parent="."]
@@ -194,7 +194,6 @@ event_service = NodePath("../EventService")
 [connection signal="journal_button_pressed" from="CanvasLayer/HUD" to="CanvasLayer/Journal" method="_on_JournalButton_pressed"]
 [connection signal="journal_unlocked" from="CanvasLayer/HUD" to="." method="_on_HUD_journal_unlocked"]
 [connection signal="map_button_pressed" from="CanvasLayer/HUD" to="CanvasLayer/Map" method="_on_HUD_map_button_pressed"]
-[connection signal="map_unlocked" from="CanvasLayer/HUD" to="." method="_on_HUD_map_unlocked"]
 [connection signal="load_game" from="CanvasLayer/Journal" to="GameSaveService" method="_on_Journal_load_game"]
 [connection signal="choice_selected" from="CanvasLayer/EventBoard" to="EventService" method="apply_outcome"]
 [connection signal="event_ended" from="CanvasLayer/EventBoard" to="EventService" method="end_event"]
