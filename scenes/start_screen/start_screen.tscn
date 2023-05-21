@@ -1,16 +1,15 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scenes/start_screen/start_screen.gd" type="Script" id=1]
 [ext_resource path="res://themes/special_titie.tres" type="Theme" id=2]
-[ext_resource path="res://themes/default_title.tres" type="Theme" id=3]
-[ext_resource path="res://assets/gwj/57-All-Cards.png" type="Texture" id=4]
 [ext_resource path="res://themes/big_body.tres" type="Theme" id=5]
 [ext_resource path="res://themes/default_body.tres" type="Theme" id=6]
+[ext_resource path="res://assets/ui/Menu_background.png" type="Texture" id=7]
 
 [sub_resource type="Animation" id=1]
 length = 0.001
 tracks/0/type = "value"
-tracks/0/path = NodePath("CanvasLayer/StartMenu/TitleCard/CenterContainer:modulate")
+tracks/0/path = NodePath("CanvasLayer/StartMenu/TitleCard/Label:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -19,10 +18,10 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 0 ) ]
+"values": [ false ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("CanvasLayer/StartMenu/TitleCard/CenterContainer/Label:rect_position")
+tracks/1/path = NodePath("CanvasLayer/StartMenu/TitleCard/Title:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -31,19 +30,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 206, 273 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("CanvasLayer/StartMenu/TitleCard/Label:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ false ]
+"values": [ Color( 1, 1, 1, 0 ) ]
 }
 
 [sub_resource type="Animation" id=3]
@@ -55,38 +42,32 @@ loop = true
 resource_name = "title_card_start"
 length = 4.0
 tracks/0/type = "value"
-tracks/0/path = NodePath("CanvasLayer/StartMenu/TitleCard/CenterContainer:modulate")
+tracks/0/path = NodePath("CanvasLayer/StartMenu/TitleCard/Label:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 1, 4 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("CanvasLayer/StartMenu/TitleCard/Label:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
 "times": PoolRealArray( 0, 4 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ false, true ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("CanvasLayer/StartMenu/TitleCard/Title:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
 
 [node name="StartScreen" type="Node"]
 script = ExtResource( 1 )
-
-[node name="Polygon2D" type="Polygon2D" parent="."]
-position = Vector2( -0.999992, 5.00003 )
-scale = Vector2( 2.10613, 2.10613 )
-color = Color( 0.0823529, 0.133333, 0.219608, 1 )
-polygon = PoolVector2Array( -251, -456, -248, 1033, 1321, 1028, 1324.99, 288.601, 1329, -454 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 1 )
@@ -95,39 +76,45 @@ anims/title_card_start = SubResource( 2 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="StartMenu" type="Control" parent="CanvasLayer"]
+[node name="BG" type="TextureRect" parent="CanvasLayer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+texture = ExtResource( 7 )
+expand = true
+
+[node name="StartMenu" type="MarginContainer" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 128
+custom_constants/margin_top = 128
+custom_constants/margin_left = 128
+custom_constants/margin_bottom = 128
 
 [node name="TitleCard" type="Control" parent="CanvasLayer/StartMenu"]
-anchor_right = 1.0
-anchor_bottom = 1.0
+unique_name_in_owner = true
+margin_left = 128.0
+margin_top = 128.0
+margin_right = 1792.0
+margin_bottom = 952.0
 
-[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer/StartMenu/TitleCard"]
+[node name="Title" type="Label" parent="CanvasLayer/StartMenu/TitleCard"]
 modulate = Color( 1, 1, 1, 0 )
-anchor_right = 1.0
-anchor_bottom = 1.0
-size_flags_horizontal = 0
-size_flags_vertical = 0
-
-[node name="Label" type="Label" parent="CanvasLayer/StartMenu/TitleCard/CenterContainer"]
-margin_left = 206.0
-margin_top = 273.0
-margin_right = 1340.0
-margin_bottom = 373.0
+margin_right = 1008.0
+margin_bottom = 476.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 theme = ExtResource( 2 )
-text = "Project Forgotten"
-align = 1
-valign = 1
+text = "Mt.
+Recollection"
 
 [node name="Label" type="Label" parent="CanvasLayer/StartMenu/TitleCard"]
 visible = false
+anchor_left = 0.5
 anchor_top = 1.0
-anchor_right = 1.0
+anchor_right = 0.5
 anchor_bottom = 1.0
-margin_top = -75.0
+grow_horizontal = 2
+grow_vertical = 0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 theme = ExtResource( 6 )
@@ -135,240 +122,157 @@ text = "Press any button"
 align = 1
 valign = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/StartMenu"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 200.0
-margin_top = 200.0
-margin_right = -200.0
-margin_bottom = -200.0
-
-[node name="MainMenu" type="Control" parent="CanvasLayer/StartMenu/MarginContainer"]
+[node name="MainMenu" type="Control" parent="CanvasLayer/StartMenu"]
+unique_name_in_owner = true
 visible = false
-margin_right = 1520.0
-margin_bottom = 680.0
+margin_left = 128.0
+margin_top = 128.0
+margin_right = 1792.0
+margin_bottom = 952.0
 
-[node name="MainMenuOptions" type="VBoxContainer" parent="CanvasLayer/StartMenu/MarginContainer/MainMenu"]
-anchor_bottom = 1.0
-margin_right = 112.0
-size_flags_horizontal = 0
-theme = ExtResource( 5 )
-alignment = 1
-
-[node name="Start" type="Button" parent="CanvasLayer/StartMenu/MarginContainer/MainMenu/MainMenuOptions"]
-margin_top = 318.0
-margin_right = 336.0
-margin_bottom = 376.0
-focus_neighbour_bottom = NodePath("../Options")
-focus_next = NodePath("../Options")
-size_flags_vertical = 0
-text = "Start"
-align = 0
-
-[node name="Options" type="Button" parent="CanvasLayer/StartMenu/MarginContainer/MainMenu/MainMenuOptions"]
-margin_top = 380.0
-margin_right = 336.0
-margin_bottom = 438.0
-focus_neighbour_top = NodePath("../Start")
-focus_neighbour_bottom = NodePath("../Credits")
-focus_next = NodePath("../Credits")
-focus_previous = NodePath("../Start")
-size_flags_vertical = 0
-text = "Options"
-align = 0
-
-[node name="Credits" type="Button" parent="CanvasLayer/StartMenu/MarginContainer/MainMenu/MainMenuOptions"]
-margin_top = 442.0
-margin_right = 336.0
-margin_bottom = 500.0
-focus_neighbour_top = NodePath("../Options")
-focus_next = NodePath("../Exit")
-focus_previous = NodePath("../Options")
-size_flags_vertical = 0
-text = "Credits"
-align = 0
-
-[node name="Exit" type="Button" parent="CanvasLayer/StartMenu/MarginContainer/MainMenu/MainMenuOptions"]
-margin_top = 504.0
-margin_right = 336.0
-margin_bottom = 562.0
-focus_neighbour_top = NodePath("../Credits")
-focus_previous = NodePath("../Credits")
-size_flags_vertical = 0
-text = "Exit"
-align = 0
-
-[node name="OptionsMenu" type="Control" parent="CanvasLayer/StartMenu/MarginContainer"]
-visible = false
-margin_right = 1520.0
-margin_bottom = 680.0
-
-[node name="Label" type="Label" parent="CanvasLayer/StartMenu/MarginContainer/OptionsMenu"]
-anchor_left = 0.5
-anchor_right = 0.5
-margin_left = -221.0
-margin_right = 221.0
-margin_bottom = 74.0
-focus_neighbour_bottom = NodePath(".")
-focus_next = NodePath(".")
+[node name="Title" type="Label" parent="CanvasLayer/StartMenu/MainMenu"]
+margin_right = 802.0
+margin_bottom = 203.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
-theme = ExtResource( 3 )
-text = "Options"
-align = 1
-valign = 1
+theme = ExtResource( 2 )
+text = "Mt.
+Recollection"
 
-[node name="Options" type="VBoxContainer" parent="CanvasLayer/StartMenu/MarginContainer/OptionsMenu"]
+[node name="MainMenuOptions" type="VBoxContainer" parent="CanvasLayer/StartMenu/MainMenu"]
 anchor_top = 0.5
 anchor_bottom = 0.5
-margin_top = -200.0
-margin_right = 224.0
-margin_bottom = 200.0
 size_flags_horizontal = 0
-size_flags_vertical = 0
-theme = ExtResource( 6 )
-alignment = 1
-
-[node name="Label2" type="Label" parent="CanvasLayer/StartMenu/MarginContainer/OptionsMenu/Options"]
-margin_top = 153.0
-margin_right = 224.0
-margin_bottom = 179.0
-focus_neighbour_top = NodePath(".")
-focus_neighbour_bottom = NodePath("../../Label")
-focus_next = NodePath("../../Label")
-focus_previous = NodePath(".")
-size_flags_vertical = 0
 theme = ExtResource( 5 )
-text = "Game by"
-align = 1
 
-[node name="Label3" type="Label" parent="CanvasLayer/StartMenu/MarginContainer/OptionsMenu/Options"]
-margin_top = 183.0
-margin_right = 224.0
-margin_bottom = 196.0
-focus_neighbour_top = NodePath(".")
-focus_previous = NodePath(".")
+[node name="Start" type="Button" parent="CanvasLayer/StartMenu/MainMenu/MainMenuOptions"]
+margin_right = 336.0
+margin_bottom = 58.0
 size_flags_vertical = 0
-text = "SirSunstone"
-align = 1
+text = "Play"
+align = 0
 
-[node name="Label5" type="Label" parent="CanvasLayer/StartMenu/MarginContainer/OptionsMenu/Options"]
-margin_top = 200.0
-margin_right = 224.0
-margin_bottom = 213.0
-focus_neighbour_top = NodePath(".")
-focus_previous = NodePath(".")
+[node name="Credits" type="Button" parent="CanvasLayer/StartMenu/MainMenu/MainMenuOptions"]
+margin_top = 62.0
+margin_right = 336.0
+margin_bottom = 120.0
 size_flags_vertical = 0
-text = "IcyLily"
-align = 1
-
-[node name="Label4" type="Label" parent="CanvasLayer/StartMenu/MarginContainer/OptionsMenu/Options"]
-margin_top = 217.0
-margin_right = 224.0
-margin_bottom = 230.0
-focus_neighbour_top = NodePath(".")
-focus_previous = NodePath(".")
-size_flags_vertical = 0
-text = "ZeeHatcher"
-align = 1
-
-[node name="Label6" type="Label" parent="CanvasLayer/StartMenu/MarginContainer/OptionsMenu/Options"]
-margin_top = 234.0
-margin_right = 224.0
-margin_bottom = 247.0
-focus_neighbour_top = NodePath(".")
-focus_previous = NodePath(".")
-size_flags_vertical = 0
-text = "Zircon332"
-align = 1
-
-[node name="CreditsMenu" type="Control" parent="CanvasLayer/StartMenu/MarginContainer"]
-visible = false
-margin_right = 1520.0
-margin_bottom = 680.0
-
-[node name="Label" type="Label" parent="CanvasLayer/StartMenu/MarginContainer/CreditsMenu"]
-anchor_left = 0.5
-anchor_right = 0.5
-margin_left = -221.0
-margin_right = 221.0
-margin_bottom = 74.0
-focus_neighbour_bottom = NodePath(".")
-focus_next = NodePath(".")
-size_flags_horizontal = 0
-size_flags_vertical = 0
-theme = ExtResource( 3 )
 text = "Credits"
-align = 1
-valign = 1
+align = 0
 
-[node name="Credits" type="VBoxContainer" parent="CanvasLayer/StartMenu/MarginContainer/CreditsMenu"]
+[node name="CreditsMenu" type="Control" parent="CanvasLayer/StartMenu"]
+unique_name_in_owner = true
+visible = false
+margin_left = 128.0
+margin_top = 128.0
+margin_right = 1792.0
+margin_bottom = 952.0
+theme = ExtResource( 5 )
+
+[node name="Credits" type="VBoxContainer" parent="CanvasLayer/StartMenu/CreditsMenu"]
 anchor_right = 0.504
 anchor_bottom = 1.0
 margin_right = 0.119995
 size_flags_horizontal = 0
 size_flags_vertical = 0
 theme = ExtResource( 6 )
+custom_constants/separation = 64
 alignment = 1
 
-[node name="Label2" type="Label" parent="CanvasLayer/StartMenu/MarginContainer/CreditsMenu/Credits"]
-margin_top = 355.0
-margin_right = 867.0
-margin_bottom = 413.0
+[node name="Designers" type="VBoxContainer" parent="CanvasLayer/StartMenu/CreditsMenu/Credits"]
+margin_top = 140.0
+margin_right = 838.0
+margin_bottom = 295.0
+
+[node name="Label" type="Label" parent="CanvasLayer/StartMenu/CreditsMenu/Credits/Designers"]
+margin_right = 838.0
+margin_bottom = 119.0
 focus_neighbour_top = NodePath(".")
-focus_neighbour_bottom = NodePath("../../Label")
-focus_next = NodePath("../../Label")
 focus_previous = NodePath(".")
 size_flags_vertical = 0
 theme = ExtResource( 5 )
-text = "Game by"
+text = "Game Design, SFX & Writing"
 align = 1
+autowrap = true
 
-[node name="Label3" type="Label" parent="CanvasLayer/StartMenu/MarginContainer/CreditsMenu/Credits"]
-margin_top = 417.0
-margin_right = 867.0
-margin_bottom = 441.0
-focus_neighbour_top = NodePath(".")
-focus_previous = NodePath(".")
-size_flags_vertical = 0
+[node name="Label2" type="Label" parent="CanvasLayer/StartMenu/CreditsMenu/Credits/Designers"]
+margin_top = 123.0
+margin_right = 838.0
+margin_bottom = 155.0
 text = "SirSunstone"
 align = 1
 
-[node name="Label5" type="Label" parent="CanvasLayer/StartMenu/MarginContainer/CreditsMenu/Credits"]
-margin_top = 445.0
-margin_right = 867.0
-margin_bottom = 469.0
+[node name="Artists" type="VBoxContainer" parent="CanvasLayer/StartMenu/CreditsMenu/Credits"]
+margin_top = 359.0
+margin_right = 838.0
+margin_bottom = 489.0
+
+[node name="Label" type="Label" parent="CanvasLayer/StartMenu/CreditsMenu/Credits/Artists"]
+margin_right = 838.0
+margin_bottom = 58.0
 focus_neighbour_top = NodePath(".")
 focus_previous = NodePath(".")
 size_flags_vertical = 0
-text = "IcyLily"
+theme = ExtResource( 5 )
+text = "Art"
+align = 1
+autowrap = true
+
+[node name="Label2" type="Label" parent="CanvasLayer/StartMenu/CreditsMenu/Credits/Artists"]
+margin_top = 62.0
+margin_right = 838.0
+margin_bottom = 94.0
+text = "icylily"
 align = 1
 
-[node name="Label4" type="Label" parent="CanvasLayer/StartMenu/MarginContainer/CreditsMenu/Credits"]
-margin_top = 473.0
-margin_right = 867.0
-margin_bottom = 497.0
-focus_neighbour_top = NodePath(".")
-focus_previous = NodePath(".")
-size_flags_vertical = 0
-text = "ZeeHatcher"
+[node name="Label3" type="Label" parent="CanvasLayer/StartMenu/CreditsMenu/Credits/Artists"]
+margin_top = 98.0
+margin_right = 838.0
+margin_bottom = 130.0
+text = "Suricato Guerrilheiro"
 align = 1
 
-[node name="Label6" type="Label" parent="CanvasLayer/StartMenu/MarginContainer/CreditsMenu/Credits"]
-margin_top = 501.0
-margin_right = 867.0
-margin_bottom = 525.0
+[node name="Programmers" type="VBoxContainer" parent="CanvasLayer/StartMenu/CreditsMenu/Credits"]
+margin_top = 553.0
+margin_right = 838.0
+margin_bottom = 683.0
+
+[node name="Label" type="Label" parent="CanvasLayer/StartMenu/CreditsMenu/Credits/Programmers"]
+margin_right = 838.0
+margin_bottom = 58.0
 focus_neighbour_top = NodePath(".")
 focus_previous = NodePath(".")
 size_flags_vertical = 0
+theme = ExtResource( 5 )
+text = "Programming"
+align = 1
+autowrap = true
+
+[node name="Label2" type="Label" parent="CanvasLayer/StartMenu/CreditsMenu/Credits/Programmers"]
+margin_top = 62.0
+margin_right = 838.0
+margin_bottom = 94.0
 text = "Zircon332"
 align = 1
 
-[node name="57-All-Cards" type="Sprite" parent="CanvasLayer/StartMenu/MarginContainer/CreditsMenu"]
-position = Vector2( 1214, 483 )
-scale = Vector2( 0.324801, 0.324801 )
-texture = ExtResource( 4 )
+[node name="Label3" type="Label" parent="CanvasLayer/StartMenu/CreditsMenu/Credits/Programmers"]
+margin_top = 98.0
+margin_right = 838.0
+margin_bottom = 130.0
+text = "ZeeHatcher"
+align = 1
 
-[connection signal="pressed" from="CanvasLayer/StartMenu/MarginContainer/MainMenu/MainMenuOptions/Start" to="." method="_on_Start_pressed"]
-[connection signal="pressed" from="CanvasLayer/StartMenu/MarginContainer/MainMenu/MainMenuOptions/Credits" to="." method="_on_Credits_pressed"]
-[connection signal="pressed" from="CanvasLayer/StartMenu/MarginContainer/MainMenu/MainMenuOptions/Exit" to="." method="_on_Exit_pressed"]
+[node name="Back" type="Button" parent="CanvasLayer/StartMenu/CreditsMenu"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 0
+text = "Back"
+align = 0
+
+[connection signal="pressed" from="CanvasLayer/StartMenu/MainMenu/MainMenuOptions/Start" to="." method="_on_Start_pressed"]
+[connection signal="pressed" from="CanvasLayer/StartMenu/MainMenu/MainMenuOptions/Credits" to="." method="_on_Credits_pressed"]
+[connection signal="pressed" from="CanvasLayer/StartMenu/CreditsMenu/Back" to="." method="_on_Back_pressed"]
