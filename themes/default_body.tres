@@ -1,11 +1,33 @@
-[gd_resource type="Theme" load_steps=9 format=2]
+[gd_resource type="Theme" load_steps=13 format=2]
 
 [ext_resource path="res://assets/fonts/kongtext/kongtext.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://assets/ui/filled_circle_small.png" type="Texture" id=2]
 
 [sub_resource type="DynamicFont" id=1]
 size = 32
 outline_color = Color( 0.2, 0.2, 0.2, 1 )
 font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=10]
+bg_color = Color( 0.921569, 0.921569, 0.921569, 1 )
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+corner_detail = 20
+
+[sub_resource type="StyleBoxFlat" id=11]
+bg_color = Color( 0.921569, 0.921569, 0.921569, 1 )
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+
+[sub_resource type="StyleBoxLine" id=12]
+color = Color( 0.231373, 0.231373, 0.231373, 1 )
+grow_begin = 0.0
+grow_end = 0.0
+thickness = 7
 
 [sub_resource type="StyleBoxEmpty" id=8]
 
@@ -25,6 +47,11 @@ default_font = SubResource( 1 )
 Fonts/base_type = "font"
 Fonts/fonts/large = SubResource( 1 )
 Fonts/fonts/normal = SubResource( 1 )
+HSlider/icons/grabber = ExtResource( 2 )
+HSlider/icons/grabber_highlight = ExtResource( 2 )
+HSlider/styles/grabber_area = SubResource( 10 )
+HSlider/styles/grabber_area_highlight = SubResource( 11 )
+HSlider/styles/slider = SubResource( 12 )
 ItemList/colors/font_color = Color( 0.63, 0.63, 0.63, 1 )
 ItemList/colors/font_color_selected = Color( 1, 1, 1, 1 )
 ItemList/colors/guide_color = Color( 0, 0, 0, 0 )

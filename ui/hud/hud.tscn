@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://ui/hud/hud.gd" type="Script" id=1]
 [ext_resource path="res://assets/ui/ui_icon_map.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://ui/health_bar/health_bar.tscn" type="PackedScene" id=5]
 [ext_resource path="res://ui/temperature_bar/temperature_bar.tscn" type="PackedScene" id=6]
 [ext_resource path="res://assets/ui/ui_icon_inventory.png" type="Texture" id=7]
+[ext_resource path="res://ui/settings/settings.tscn" type="PackedScene" id=8]
 
 [node name="HUD" type="MarginContainer"]
 pause_mode = 2
@@ -90,6 +91,21 @@ size_flags_vertical = 0
 texture_normal = ExtResource( 7 )
 expand = true
 stretch_mode = 5
+
+[node name="Control" type="Control" parent="."]
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 1904.0
+margin_bottom = 380.0
+mouse_filter = 2
+
+[node name="Settings" parent="Control" instance=ExtResource( 8 )]
+anchor_left = 1.0
+anchor_bottom = 0.0
+margin_left = -252.0
+margin_right = 0.0
+margin_bottom = 100.0
+grow_horizontal = 0
 
 [connection signal="pressed" from="VBoxContainer/MarginContainer/Icons/MapButton" to="." method="_on_MapButton_pressed"]
 [connection signal="pressed" from="VBoxContainer/MarginContainer/Icons/JournalButton" to="." method="_on_JournalButton_pressed"]
