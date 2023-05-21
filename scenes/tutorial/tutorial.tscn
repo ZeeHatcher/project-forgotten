@@ -88,6 +88,7 @@ margin_left = -1903.0
 margin_top = -688.0
 margin_right = -1347.0
 margin_bottom = -488.0
+items = [ "Item 0", null, false, "Item 1", null, false, "Climbing Gear", null, false, "Car Battery", null, false ]
 
 [node name="TemperatureBar" type="TextureProgress" parent="CanvasLayer"]
 unique_name_in_owner = true

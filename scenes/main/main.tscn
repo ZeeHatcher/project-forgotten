@@ -79,6 +79,11 @@ tint_over = Color( 0.14902, 0.14902, 0.14902, 1 )
 tint_progress = Color( 0.521569, 0.156863, 0.156863, 1 )
 
 [node name="InventoryList" parent="CanvasLayer" instance=ExtResource( 12 )]
+visible = false
+margin_left = -1888.0
+margin_top = -544.0
+margin_right = -1332.0
+margin_bottom = -344.0
 items = [ "Item 0", null, false, "Item 1", null, false, "Climbing Gear", null, false, "Car Battery", null, false ]
 
 [node name="Journal" parent="CanvasLayer" instance=ExtResource( 18 )]
