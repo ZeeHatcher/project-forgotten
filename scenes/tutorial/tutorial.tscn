@@ -35,9 +35,6 @@ tile_data = PoolIntArray( -524293, 3, 1, -458757, 3, 1, -458756, 3, 0, -458755, 
 script = ExtResource( 8 )
 trigger_chance = 10
 _audio_player_path = NodePath("../AudioStreamPlayer")
-tile_events = {
-"forest": [ "wolf_attack", "berry_bush" ]
-}
 
 [node name="EventTiles" type="TileMap" parent="."]
 mode = 1

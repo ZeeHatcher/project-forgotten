@@ -4,7 +4,7 @@ extends TileMap
 
 export(int, 0, 100) var trigger_chance
 export(NodePath) var _audio_player_path
-export var tile_events := {}
+export(Array, String) var random_events := []
 export var grace_period := 5
 
 
@@ -58,8 +58,7 @@ var tile_sounds := {
 
 signal event_triggered(event_name)
 
-var _grace := grace_period
-
+onready var _grace := grace_period
 onready var _audio_player: AudioStreamPlayer = get_node(_audio_player_path)
 
 
@@ -67,12 +66,7 @@ func trigger_event_at(global_pos: Vector2) -> void:
 	if not _can_trigger():
 		return
 	
-	var local_position := to_local(global_pos)
-	var map_position := world_to_map(local_position)
-	var tile_id := get_cellv(map_position)
-	var tile_type := tile_set.tile_get_name(tile_id)
-	
-	var event_name := _random_event(tile_type)
+	var event_name := _random_event()
 	if not event_name:
 		return
 	
@@ -80,8 +74,8 @@ func trigger_event_at(global_pos: Vector2) -> void:
 	_grace = grace_period
 
 
-func _random_event(tile_type: String) -> String:
-	var events: Array = tile_events.get(tile_type, [])
+func _random_event() -> String:
+	var events: Array = random_events
 	events.shuffle()
 	return events.front() if not events.empty() else null
 

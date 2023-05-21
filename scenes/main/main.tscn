@@ -33,9 +33,8 @@ tile_data = PoolIntArray( -983051, 1, 0, -983050, 1, 0, -983049, 1, 0, -983048, 
 script = ExtResource( 15 )
 trigger_chance = 10
 _audio_player_path = NodePath("../AudioStreamPlayer")
-tile_events = {
-"forest": [ "wolf_attack", "berry_bush" ]
-}
+random_events = [ "berry_bush", "big_berry_bush", "loaded_berry_bush", "clovers", "pine_needles", "rabbit" ]
+grace_period = 6
 
 [node name="EventTiles" type="TileMap" parent="."]
 mode = 1
@@ -124,6 +123,7 @@ bus = "SFX"
 [connection signal="event_triggered" from="EventTiles" to="EventService" method="start_event"]
 [connection signal="dead" from="Player" to="." method="_on_Player_dead"]
 [connection signal="moved" from="Player" to="." method="_on_Player_moved"]
+[connection signal="moved" from="Player" to="Terrain" method="trigger_event_at"]
 [connection signal="moved" from="Player" to="Terrain" method="_on_Player_moved"]
 [connection signal="moved" from="Player" to="GameSaveService" method="_on_Player_moved"]
 [connection signal="inventory_button_pressed" from="CanvasLayer/HUD" to="CanvasLayer/InventoryList" method="_on_HUD_inventory_button_pressed"]
