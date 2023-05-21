@@ -139,7 +139,7 @@ tracks/0/keys = {
 
 [sub_resource type="Resource" id=1]
 script = ExtResource( 4 )
-text = [ "Seeking adventure is a call which echoes in the hearts of all.", "At times, into the wilds we must march. A journey of discovery, slipping into peril, only to emerge the stronger for it.", "Finding human companionship you came to realize why your memories held special warmth in your heart. Happiness is real when shared.", "Just as is nature, some things fade. Holding those memories is how you share happiness with the spirits of others since passed. ", "Hounded by treacherous beasts, drained of sustenance by devouring gales, and perservering through hardship. You have perservered, reaching safety.", "Lets get some fresh clothes. Maybe start a little fire. And enjoy a cup of cocoa. Create shared memories, while others still have time...." ]
+text = [ "Seeking adventure is a call which echoes in the hearts of all.", "At times, into the wilds we must march. A journey of discovery, slipping into peril, only to emerge the stronger for it.", "Finding human companionship you came to realize why your memories held special warmth in your heart. Happiness is real when shared.", "Just as is nature, some things fade. Holding those memories is how you share happiness with the spirits of others since passed. ", "Hounded by treacherous beasts, drained of sustenance by devouring gales, and perservering through hardship. You have perservered, reaching safety.", "Let's get some fresh clothes. Maybe start a little fire. And enjoy a cup of cocoa. Create shared memories, while others still have time...." ]
 character_portrait = [  ]
 character_name = [  ]
 
