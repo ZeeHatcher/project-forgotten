@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Heli_sfx.mp3-4dc882851c38df2638c0b303c7723e54.mp3str"
+
+[deps]
+
+source_file="res://assets/sfx/Heli_sfx.mp3"
+dest_files=[ "res://.import/Heli_sfx.mp3-4dc882851c38df2638c0b303c7723e54.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0
