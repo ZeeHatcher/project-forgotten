@@ -3,7 +3,7 @@
   "pages": [
     {
       "description": "Beleaguered, exhausted, and near death you crest the hill. Its chain link exterior signs of humanity.",
-      "image": "",
+      "image": "pickup.png",
       "choices": [
         {
           "description": "Continue...",
@@ -13,7 +13,7 @@
     },
     {
       "description": "Worn to the bone, you thumb the salvaged walkie-talkie. ",
-      "image": "",
+      "image": "pickup.png",
       "choices": [
         {
           "description": "Continue...",
@@ -23,7 +23,7 @@
     },
     {
       "description": "\"Papa, Indiana, November, Echo.\"\n\nYou rasp out the code, radioing the current watcher.\n\nMoments drag on as your heart pounds. ",
-      "image": "",
+      "image": "pickup.png",
       "choices": [
         {
           "description": "Continue...",
@@ -33,7 +33,7 @@
     },
     {
       "description": "\"Papa, Indiana, November, Echo.\"\n\nYou repeat the passphrase. Seconds pass as an eternity...",
-      "image": "",
+      "image": "pickup.png",
       "choices": [
         {
           "description": "Continue...",
@@ -43,7 +43,7 @@
     },
     {
       "description": "Static crackles-\n\n\"Oscar, Alpha, Kilo.\", comes the reply. ",
-      "image": "",
+      "image": "pickup.png",
       "choices": [
         {
           "description": "Call for evacuation",
@@ -53,7 +53,7 @@
     },
     {
       "description": "\"Mayday, mayday. I need evacuation immediately. Supplies are running low. My heli crashed. I have been out in the wilderness for days. Over.\"\n\nYou let your rucksack fall to the ground with a weighty thump.\n\nIt's over. Finally, safe at last.",
-      "image": "",
+      "image": "pickup.png",
       "choices": [
         {
           "description": "Escape",

@@ -3,6 +3,7 @@
   "pages": [
     {
       "description": "You stand before a watchtower, caked in snow.\n\nThere does not seem to be any signs of life, with the tower standing as still as the air around it.",
+      "image": "Watchtower.png",
       "choices": [
         {
           "description": "Enter the tower",
@@ -15,6 +16,7 @@
     },
     {
       "description": "You climb and reach the top of the tower, and you are greeted with a room.\n\nIt seems mostly empty, save for a few bunches of paper and bits of furniture in shambles.",
+      "image": "Watchtower.png",
       "choices": [
         {
           "description": "Search the room",
@@ -27,6 +29,7 @@
     },
     {
       "description": "Quickly scanning through the contents of the papers, you find what seems to be a map of the area. What luck.",
+      "image": "Watchtower.png",
       "choices": [
         {
           "description": "Take it",
@@ -44,6 +47,7 @@
     },
     {
       "description": "NOTE:\nThe map shows you the layout of the area and any potential points of interest.\n\nPress \"M\" or click on the Map icon to the left to open/close it.",
+      "image": "Watchtower.png",
       "choices": [
         {
           "description": "Got it",
