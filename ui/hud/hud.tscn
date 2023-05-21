@@ -22,28 +22,28 @@ script = ExtResource( 1 )
 margin_left = 16.0
 margin_top = 16.0
 margin_right = 1904.0
-margin_bottom = 524.0
+margin_bottom = 544.0
 
 [node name="HealthBar" parent="VBoxContainer" instance=ExtResource( 5 )]
 margin_right = 1888.0
-margin_bottom = 54.0
+margin_bottom = 64.0
 
 [node name="TemperatureBar" parent="VBoxContainer" instance=ExtResource( 6 )]
 unique_name_in_owner = true
-margin_top = 58.0
+margin_top = 68.0
 margin_right = 1888.0
-margin_bottom = 112.0
+margin_bottom = 132.0
 
 [node name="FoodCounter" parent="VBoxContainer" instance=ExtResource( 4 )]
 unique_name_in_owner = true
-margin_top = 116.0
+margin_top = 136.0
 margin_right = 1888.0
-margin_bottom = 168.0
+margin_bottom = 188.0
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
-margin_top = 172.0
+margin_top = 192.0
 margin_right = 96.0
-margin_bottom = 508.0
+margin_bottom = 528.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 custom_constants/margin_top = 32
@@ -96,7 +96,7 @@ stretch_mode = 5
 margin_left = 16.0
 margin_top = 16.0
 margin_right = 1904.0
-margin_bottom = 380.0
+margin_bottom = 544.0
 mouse_filter = 2
 
 [node name="Settings" parent="Control" instance=ExtResource( 8 )]
