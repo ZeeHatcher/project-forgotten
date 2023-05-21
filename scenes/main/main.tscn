@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://resources/events_tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://ui/event_board/event_board.tscn" type="PackedScene" id=2]
@@ -11,36 +11,12 @@
 [ext_resource path="res://scenes/main/main.gd" type="Script" id=9]
 [ext_resource path="res://assets/ui/progress_bar.png" type="Texture" id=10]
 [ext_resource path="res://ui/map/map.tscn" type="PackedScene" id=11]
+[ext_resource path="res://ui/inventory/inventory_list.tscn" type="PackedScene" id=12]
 [ext_resource path="res://assets/ui/progress_bar_frame.png" type="Texture" id=13]
 [ext_resource path="res://misc/random_event_tiles.gd" type="Script" id=15]
 [ext_resource path="res://resources/terrain_tileset.tres" type="TileSet" id=16]
 [ext_resource path="res://misc/gamesave_service.gd" type="Script" id=17]
 [ext_resource path="res://ui/journal/journal.tscn" type="PackedScene" id=18]
-[ext_resource path="res://themes/default_body.tres" type="Theme" id=22]
-[ext_resource path="res://ui/inventory_list.gd" type="Script" id=23]
-[ext_resource path="res://resources/player_inventory.tres" type="Resource" id=24]
-
-[sub_resource type="StyleBoxEmpty" id=4]
-
-[sub_resource type="StyleBoxEmpty" id=1]
-
-[sub_resource type="StyleBoxEmpty" id=3]
-
-[sub_resource type="StyleBoxFlat" id=2]
-content_margin_left = 20.0
-content_margin_right = 20.0
-content_margin_top = 20.0
-content_margin_bottom = 20.0
-bg_color = Color( 0.713726, 0.545098, 0.376471, 1 )
-border_width_left = 6
-border_width_top = 6
-border_width_right = 8
-border_width_bottom = 8
-border_color = Color( 0.411765, 0.239216, 0.0196078, 1 )
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 9 )
@@ -100,33 +76,7 @@ tint_under = Color( 0.188235, 0.188235, 0.188235, 1 )
 tint_over = Color( 0.14902, 0.14902, 0.14902, 1 )
 tint_progress = Color( 0.521569, 0.156863, 0.156863, 1 )
 
-[node name="InventoryList" type="ItemList" parent="CanvasLayer"]
-visible = false
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -1896.0
-margin_top = -682.0
-margin_right = -1340.0
-margin_bottom = -482.0
-grow_horizontal = 0
-grow_vertical = 0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme = ExtResource( 22 )
-custom_colors/guide_color = Color( 1, 1, 1, 0 )
-custom_colors/font_color_selected = Color( 1, 1, 1, 1 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-custom_styles/selected_focus = SubResource( 4 )
-custom_styles/bg_focus = SubResource( 1 )
-custom_styles/selected = SubResource( 3 )
-custom_styles/bg = SubResource( 2 )
-items = [ "Item 0", null, false, "Item 1", null, false, "Climbing Gear", null, false, "Car Battery", null, false ]
-auto_height = true
-fixed_column_width = 526
-script = ExtResource( 23 )
-player_inventory = ExtResource( 24 )
+[node name="InventoryList" parent="CanvasLayer" instance=ExtResource( 12 )]
 
 [node name="Journal" parent="CanvasLayer" instance=ExtResource( 18 )]
 visible = false
@@ -164,7 +114,7 @@ event_service = NodePath("../EventService")
 [connection signal="dead" from="Player" to="." method="_on_Player_dead"]
 [connection signal="moved" from="Player" to="." method="_on_Player_moved"]
 [connection signal="moved" from="Player" to="GameSaveService" method="_on_Player_moved"]
-[connection signal="inventory_button_pressed" from="CanvasLayer/HUD" to="CanvasLayer/InventoryList" method="_on_InventoryButton_pressed"]
+[connection signal="inventory_button_pressed" from="CanvasLayer/HUD" to="CanvasLayer/InventoryList" method="_on_HUD_inventory_button_pressed"]
 [connection signal="journal_button_pressed" from="CanvasLayer/HUD" to="CanvasLayer/Journal" method="_on_JournalButton_pressed"]
 [connection signal="map_button_pressed" from="CanvasLayer/HUD" to="CanvasLayer/Map" method="_on_HUD_map_button_pressed"]
 [connection signal="load_game" from="CanvasLayer/Journal" to="GameSaveService" method="_on_Journal_load_game"]

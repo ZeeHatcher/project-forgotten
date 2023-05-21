@@ -1,0 +1,63 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://themes/default_body.tres" type="Theme" id=1]
+[ext_resource path="res://resources/player_inventory.tres" type="Resource" id=2]
+[ext_resource path="res://ui/inventory/inventory_list.gd" type="Script" id=3]
+[ext_resource path="res://assets/sfx/UI_Bag_Open.mp3" type="AudioStream" id=4]
+[ext_resource path="res://assets/sfx/UI_Inventory_Bag_Close.mp3" type="AudioStream" id=5]
+
+[sub_resource type="StyleBoxEmpty" id=4]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[sub_resource type="StyleBoxFlat" id=2]
+content_margin_left = 20.0
+content_margin_right = 20.0
+content_margin_top = 20.0
+content_margin_bottom = 20.0
+bg_color = Color( 0.713726, 0.545098, 0.376471, 1 )
+border_width_left = 6
+border_width_top = 6
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color( 0.411765, 0.239216, 0.0196078, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="InventoryList" type="ItemList"]
+visible = false
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -1896.0
+margin_top = -682.0
+margin_right = -1340.0
+margin_bottom = -482.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 1 )
+custom_colors/guide_color = Color( 1, 1, 1, 0 )
+custom_colors/font_color_selected = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_styles/selected_focus = SubResource( 4 )
+custom_styles/bg_focus = SubResource( 1 )
+custom_styles/selected = SubResource( 3 )
+custom_styles/bg = SubResource( 2 )
+items = [ "Item 0", null, false, "Item 1", null, false, "Climbing Gear", null, false, "Car Battery", null, false ]
+auto_height = true
+fixed_column_width = 526
+script = ExtResource( 3 )
+player_inventory = ExtResource( 2 )
+
+[node name="AudioOpen" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+
+[node name="AudioClose" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
