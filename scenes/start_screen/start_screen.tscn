@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scenes/start_screen/start_screen.gd" type="Script" id=1]
 [ext_resource path="res://themes/special_titie.tres" type="Theme" id=2]
+[ext_resource path="res://assets/music/Hell_or_High_Water_Master_Titleloop_Export_1.mp3" type="AudioStream" id=3]
 [ext_resource path="res://themes/big_body.tres" type="Theme" id=5]
 [ext_resource path="res://themes/default_body.tres" type="Theme" id=6]
 [ext_resource path="res://assets/ui/Menu_background.png" type="Texture" id=7]
@@ -31,6 +32,18 @@ tracks/1/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CanvasLayer/CanvasModulate:color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ) ]
 }
 
 [sub_resource type="Animation" id=3]
@@ -64,6 +77,18 @@ tracks/1/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CanvasLayer/CanvasModulate:color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
 }
 
 [node name="StartScreen" type="Node"]
@@ -272,6 +297,13 @@ grow_vertical = 0
 size_flags_vertical = 0
 text = "Back"
 align = 0
+
+[node name="CanvasModulate" type="CanvasModulate" parent="CanvasLayer"]
+color = Color( 0, 0, 0, 1 )
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+autoplay = true
 
 [connection signal="pressed" from="CanvasLayer/StartMenu/MainMenu/MainMenuOptions/Start" to="." method="_on_Start_pressed"]
 [connection signal="pressed" from="CanvasLayer/StartMenu/MainMenu/MainMenuOptions/Credits" to="." method="_on_Credits_pressed"]
