@@ -187,7 +187,6 @@ align = 0
 
 [node name="CreditsMenu" type="Control" parent="CanvasLayer/StartMenu"]
 unique_name_in_owner = true
-visible = false
 margin_left = 128.0
 margin_top = 128.0
 margin_right = 1792.0
@@ -205,9 +204,9 @@ custom_constants/separation = 64
 alignment = 1
 
 [node name="Designers" type="VBoxContainer" parent="CanvasLayer/StartMenu/CreditsMenu/Credits"]
-margin_top = 140.0
+margin_top = 61.0
 margin_right = 838.0
-margin_bottom = 295.0
+margin_bottom = 216.0
 
 [node name="Label" type="Label" parent="CanvasLayer/StartMenu/CreditsMenu/Credits/Designers"]
 margin_right = 838.0
@@ -228,9 +227,9 @@ text = "SirSunstone"
 align = 1
 
 [node name="Artists" type="VBoxContainer" parent="CanvasLayer/StartMenu/CreditsMenu/Credits"]
-margin_top = 359.0
+margin_top = 280.0
 margin_right = 838.0
-margin_bottom = 489.0
+margin_bottom = 410.0
 
 [node name="Label" type="Label" parent="CanvasLayer/StartMenu/CreditsMenu/Credits/Artists"]
 margin_right = 838.0
@@ -257,10 +256,33 @@ margin_bottom = 130.0
 text = "Suricato Guerrilheiro"
 align = 1
 
-[node name="Programmers" type="VBoxContainer" parent="CanvasLayer/StartMenu/CreditsMenu/Credits"]
-margin_top = 553.0
+[node name="Music" type="VBoxContainer" parent="CanvasLayer/StartMenu/CreditsMenu/Credits"]
+margin_top = 474.0
 margin_right = 838.0
-margin_bottom = 683.0
+margin_bottom = 568.0
+
+[node name="Label" type="Label" parent="CanvasLayer/StartMenu/CreditsMenu/Credits/Music"]
+margin_right = 838.0
+margin_bottom = 58.0
+focus_neighbour_top = NodePath(".")
+focus_previous = NodePath(".")
+size_flags_vertical = 0
+theme = ExtResource( 5 )
+text = "Music"
+align = 1
+autowrap = true
+
+[node name="Label2" type="Label" parent="CanvasLayer/StartMenu/CreditsMenu/Credits/Music"]
+margin_top = 62.0
+margin_right = 838.0
+margin_bottom = 94.0
+text = "Inkwell_Music"
+align = 1
+
+[node name="Programmers" type="VBoxContainer" parent="CanvasLayer/StartMenu/CreditsMenu/Credits"]
+margin_top = 632.0
+margin_right = 838.0
+margin_bottom = 762.0
 
 [node name="Label" type="Label" parent="CanvasLayer/StartMenu/CreditsMenu/Credits/Programmers"]
 margin_right = 838.0
@@ -299,6 +321,7 @@ text = "Back"
 align = 0
 
 [node name="CanvasModulate" type="CanvasModulate" parent="CanvasLayer"]
+visible = false
 color = Color( 0, 0, 0, 1 )
 
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
