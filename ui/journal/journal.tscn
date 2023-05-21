@@ -99,9 +99,11 @@ text = "Revisit entry"
 
 [node name="AudioOpen" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
+bus = "SFX"
 
 [node name="AudioClose" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
+bus = "SFX"
 
 [connection signal="item_selected" from="LeftPage/ItemList" to="." method="_on_ItemList_item_selected"]
 [connection signal="pressed" from="Control/LoadButton" to="." method="_on_LoadSaveLabel_pressed"]
