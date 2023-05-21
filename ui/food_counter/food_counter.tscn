@@ -1,10 +1,14 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://ui/counter/counter.gd" type="Script" id=1]
-[ext_resource path="res://assets/ui/food.png" type="Texture" id=2]
+[ext_resource path="res://assets/ui/UI-Sheet.png" type="Texture" id=2]
 [ext_resource path="res://themes/default_body.tres" type="Theme" id=3]
 [ext_resource path="res://ui/food_counter/food_counter.gd" type="Script" id=4]
 [ext_resource path="res://resources/player_food.tres" type="Resource" id=5]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 2 )
+region = Rect2( 1, 26, 11, 10 )
 
 [node name="FoodCounter" type="HBoxContainer"]
 margin_right = 40.0
@@ -14,15 +18,18 @@ script = ExtResource( 4 )
 food = ExtResource( 5 )
 
 [node name="TextureRect" type="TextureRect" parent="."]
-margin_right = 47.0
-margin_bottom = 52.0
-texture = ExtResource( 2 )
+margin_right = 64.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 64, 64 )
+texture = SubResource( 1 )
+expand = true
+stretch_mode = 6
 
 [node name="Counter" type="Label" parent="."]
-margin_left = 63.0
-margin_top = 10.0
-margin_right = 223.0
-margin_bottom = 42.0
+margin_left = 80.0
+margin_top = 16.0
+margin_right = 240.0
+margin_bottom = 48.0
 theme = ExtResource( 3 )
 text = "10/20"
 script = ExtResource( 1 )
