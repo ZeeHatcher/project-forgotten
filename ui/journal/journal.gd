@@ -55,7 +55,7 @@ func _on_ItemList_item_selected(index):
 	var content = ""
 	for event in _saves[index].new_completed_events:
 		var e = EventRepository.get_event(event)
-		if not e.empty():
+		if not e.journal_entry.empty():
 			content += e.journal_entry + "\n\n"
 	
 	if content.empty():
@@ -67,7 +67,7 @@ func _on_ItemList_item_selected(index):
 func _on_GameSaveService_update_saves(saves):
 	_item_list.clear()
 	for i in range(saves.size()):
-		_item_list.add_item("Week " + str(i))
+		_item_list.add_item("Entry " + str(i))
 		_item_list.set_item_tooltip_enabled(i, false)
 	
 	_saves = saves

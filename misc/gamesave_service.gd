@@ -111,3 +111,7 @@ func _on_Player_moved(new_pos):
 	if tiles_moved >= save_after_tiles_moved:
 		tiles_moved = 0
 		save_game()
+
+
+func _on_EventService_journal_event_completed():
+	save_game()

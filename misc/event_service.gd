@@ -4,6 +4,7 @@ extends Node
 
 signal outcome_applied(outcome)
 signal event_function_call(function_name)
+signal journal_event_completed()
 
 export(NodePath) var player
 export(NodePath) var board
@@ -39,6 +40,8 @@ func start_event(event_name: String):
 func end_event(event: Event, complete: bool):
 	if complete:
 		_completed[event.id] = true
+		if not event.journal_entry.empty():
+			emit_signal("journal_event_completed")
 	get_tree().paused = false
 
 

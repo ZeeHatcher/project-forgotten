@@ -263,6 +263,7 @@ anims/fade_out = SubResource( 3 )
 [connection signal="choice_selected" from="CanvasLayer/EventBoard" to="EventService" method="apply_outcome"]
 [connection signal="event_ended" from="CanvasLayer/EventBoard" to="EventService" method="end_event"]
 [connection signal="event_ended" from="CanvasLayer/EventBoard" to="GameOverService" method="_on_EventBoard_event_ended"]
+[connection signal="journal_event_completed" from="EventService" to="GameSaveService" method="_on_EventService_journal_event_completed"]
 [connection signal="outcome_applied" from="EventService" to="Terrain" method="_on_EventService_outcome_applied"]
 [connection signal="game_over" from="GameOverService" to="." method="_on_GameOverService_game_over"]
 [connection signal="won" from="GameOverService" to="." method="_on_GameOverService_won"]
