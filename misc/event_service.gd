@@ -19,7 +19,7 @@ func _ready() -> void:
 	_board.are_conditions_met_handler = funcref(self, "are_conditions_met")
 
 
-func is_event_completed(event: String) -> bool:
+func is_event_completed(event_id: String) -> bool:
 	return _completed.has(event)
 
 
