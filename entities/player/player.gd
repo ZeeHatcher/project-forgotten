@@ -113,7 +113,7 @@ func _on_Player_moved(_new_pos: Vector2) -> void:
 func _on_food_depleted() -> void:
 	if tutorial_mode:
 		return
-	health.value -= 1
+	health.hit(-1, "food")
 
 
 func _on_health_depleted() -> void:
@@ -123,7 +123,7 @@ func _on_health_depleted() -> void:
 func _on_temperature_take_cold_damage() -> void:
 	if tutorial_mode:
 		return
-	health.value -= 1
+	health.hit(-1, "cold")
 
 
 func _on_TickTimer_timeout():

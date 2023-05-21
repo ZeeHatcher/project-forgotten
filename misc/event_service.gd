@@ -54,7 +54,7 @@ func apply_outcome(outcome: Event.State) -> void:
 		var change: int = outcome.stats[stat]
 		match stat:
 			"health":
-				_player.health.value += change
+				_player.health.hit(change, "world")
 			"food":
 				_player.food.value += change
 	
