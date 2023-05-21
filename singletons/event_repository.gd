@@ -33,6 +33,7 @@ func _load_events_from_dir() -> void:
 				var raw_data := _load_json_file(EVENTS_DIR + file_name)
 				var event := _deserialize(raw_data)
 				var event_name := _get_name_part(file_name)
+				event.id = event_name
 				_events[event_name] = event
 			
 			file_name = dir.get_next()

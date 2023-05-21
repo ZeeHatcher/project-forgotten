@@ -4,6 +4,7 @@ extends Resource
 
 const EVENT_IMAGE_DIR := "res://assets/events/"
 
+var id: String
 var title: String
 var pages: Array
 
