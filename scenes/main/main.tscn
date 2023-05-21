@@ -118,9 +118,11 @@ event_tiles = NodePath("../EventTiles")
 event_service = NodePath("../EventService")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
 bus = "SFX"
 
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
 stream = ExtResource( 19 )
 bus = "Music"
 script = ExtResource( 14 )

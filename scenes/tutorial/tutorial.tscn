@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://ui/hud/hud.tscn" type="PackedScene" id=1]
 [ext_resource path="res://ui/map/map.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://scenes/tutorial/tutorial.gd" type="Script" id=6]
 [ext_resource path="res://misc/gamesave_service.gd" type="Script" id=7]
 [ext_resource path="res://misc/random_event_tiles.gd" type="Script" id=8]
+[ext_resource path="res://assets/music/forest-with-small-river-birds-and-nature-field-recording-6735.mp3" type="AudioStream" id=9]
 [ext_resource path="res://ui/temperature_bar.gd" type="Script" id=10]
 [ext_resource path="res://misc/event_service.gd" type="Script" id=11]
 [ext_resource path="res://assets/ui/progress_bar_v.png" type="Texture" id=13]
@@ -139,7 +140,13 @@ event_tiles = NodePath("../EventTiles")
 event_service = NodePath("../EventService")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
 bus = "SFX"
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+stream = ExtResource( 9 )
+autoplay = true
 
 [connection signal="unfog_cell" from="." to="WorldFog" method="_on_unfog_cell"]
 [connection signal="event_triggered" from="Terrain" to="EventService" method="start_event"]
