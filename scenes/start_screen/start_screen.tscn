@@ -187,6 +187,7 @@ align = 0
 
 [node name="CreditsMenu" type="Control" parent="CanvasLayer/StartMenu"]
 unique_name_in_owner = true
+visible = false
 margin_left = 128.0
 margin_top = 128.0
 margin_right = 1792.0
@@ -321,7 +322,6 @@ text = "Back"
 align = 0
 
 [node name="CanvasModulate" type="CanvasModulate" parent="CanvasLayer"]
-visible = false
 color = Color( 0, 0, 0, 1 )
 
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
