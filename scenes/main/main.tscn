@@ -61,7 +61,6 @@ tile_events = {
 }
 
 [node name="EventTiles" type="TileMap" parent="."]
-visible = false
 mode = 1
 tile_set = ExtResource( 1 )
 cell_size = Vector2( 24, 12 )
@@ -85,7 +84,6 @@ current = true
 zoom = Vector2( 0.125, 0.125 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="HUD" parent="CanvasLayer" instance=ExtResource( 7 )]
 
