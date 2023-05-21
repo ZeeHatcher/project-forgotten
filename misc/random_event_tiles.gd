@@ -48,5 +48,6 @@ func _on_EventService_outcome_applied(outcome: Event.State):
 		return
 		
 	var mountain_id = tile_set.find_tile_by_name("mountain")
+	print(mountain_id)
 	for i in range(tile_set.tile_get_shape_count(mountain_id)):
 		tile_set.tile_set_shape(mountain_id, i, null)
