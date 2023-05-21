@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Hell_or_High_Water_Master_Edit_1_Export_1.mp3-33929e311f2b86d0d0b34efcab1567b8.mp3str"
+
+[deps]
+
+source_file="res://assets/music/Hell_or_High_Water_Master_Edit_1_Export_1.mp3"
+dest_files=[ "res://.import/Hell_or_High_Water_Master_Edit_1_Export_1.mp3-33929e311f2b86d0d0b34efcab1567b8.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

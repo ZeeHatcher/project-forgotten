@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://resources/events_tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://ui/event_board/event_board.tscn" type="PackedScene" id=2]
@@ -13,10 +13,12 @@
 [ext_resource path="res://ui/map/map.tscn" type="PackedScene" id=11]
 [ext_resource path="res://ui/inventory/inventory_list.tscn" type="PackedScene" id=12]
 [ext_resource path="res://assets/ui/progress_bar_frame.png" type="Texture" id=13]
+[ext_resource path="res://ui/music_player.gd" type="Script" id=14]
 [ext_resource path="res://misc/random_event_tiles.gd" type="Script" id=15]
 [ext_resource path="res://resources/terrain_tileset.tres" type="TileSet" id=16]
 [ext_resource path="res://misc/gamesave_service.gd" type="Script" id=17]
 [ext_resource path="res://ui/journal/journal.tscn" type="PackedScene" id=18]
+[ext_resource path="res://assets/music/Hell_or_High_Water_Master_Edit_1_Export_1.mp3" type="AudioStream" id=19]
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 9 )
@@ -118,13 +120,21 @@ event_service = NodePath("../EventService")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 bus = "SFX"
 
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 19 )
+bus = "Music"
+script = ExtResource( 14 )
+
+[node name="Timer" type="Timer" parent="MusicPlayer"]
+wait_time = 30.0
+
 [connection signal="unfog_cell" from="." to="WorldFog" method="_on_unfog_cell"]
 [connection signal="event_triggered" from="Terrain" to="EventService" method="start_event"]
 [connection signal="event_triggered" from="EventTiles" to="EventService" method="start_event"]
 [connection signal="dead" from="Player" to="." method="_on_Player_dead"]
 [connection signal="moved" from="Player" to="." method="_on_Player_moved"]
-[connection signal="moved" from="Player" to="Terrain" method="trigger_event_at"]
 [connection signal="moved" from="Player" to="Terrain" method="_on_Player_moved"]
+[connection signal="moved" from="Player" to="Terrain" method="trigger_event_at"]
 [connection signal="moved" from="Player" to="GameSaveService" method="_on_Player_moved"]
 [connection signal="inventory_button_pressed" from="CanvasLayer/HUD" to="CanvasLayer/InventoryList" method="_on_HUD_inventory_button_pressed"]
 [connection signal="journal_button_pressed" from="CanvasLayer/HUD" to="CanvasLayer/Journal" method="_on_JournalButton_pressed"]
@@ -135,3 +145,5 @@ bus = "SFX"
 [connection signal="event_ended" from="CanvasLayer/EventBoard" to="GameOverService" method="_on_EventBoard_event_ended"]
 [connection signal="outcome_applied" from="EventService" to="Terrain" method="_on_EventService_outcome_applied"]
 [connection signal="update_saves" from="GameSaveService" to="CanvasLayer/Journal" method="_on_GameSaveService_update_saves"]
+[connection signal="finished" from="MusicPlayer" to="MusicPlayer" method="_on_MusicPlayer_finished"]
+[connection signal="timeout" from="MusicPlayer/Timer" to="MusicPlayer" method="_on_Timer_timeout"]

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Going_up__Going_down_Edit_1_Export_1.mp3-06109bcf196b98f6b64d6344a56cee0f.mp3str"
+
+[deps]
+
+source_file="res://assets/music/Going_up__Going_down_Edit_1_Export_1.mp3"
+dest_files=[ "res://.import/Going_up__Going_down_Edit_1_Export_1.mp3-06109bcf196b98f6b64d6344a56cee0f.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0
