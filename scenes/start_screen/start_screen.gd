@@ -4,7 +4,6 @@ extends Node
 enum SCREENS {
 	TITLE,
 	MAIN,
-	OPTION,
 	CREDIT,
 }
 
@@ -13,10 +12,9 @@ var current_screen = SCREENS.TITLE
 
 onready var _animation_player := $AnimationPlayer
 onready var screens = {
-	SCREENS.TITLE: $CanvasLayer/StartMenu/TitleCard,
-	SCREENS.MAIN: $CanvasLayer/StartMenu/MarginContainer/MainMenu,
-	SCREENS.OPTION: $CanvasLayer/StartMenu/MarginContainer/OptionsMenu,
-	SCREENS.CREDIT: $CanvasLayer/StartMenu/MarginContainer/CreditsMenu,
+	SCREENS.TITLE: $"%TitleCard",
+	SCREENS.MAIN: $"%MainMenu",
+	SCREENS.CREDIT: $"%CreditsMenu",
 }
 
 
@@ -30,17 +28,9 @@ func load_title():
 
 
 func _input(event):
-	event.is_action_pressed("ui_cancel")
-	
 	match current_screen:
 		SCREENS.TITLE:
 			_process_title_screen(event)
-		SCREENS.MAIN:
-			_process_main_screen(event)
-		SCREENS.OPTION:
-			_process_main_screen(event)
-		SCREENS.CREDIT:
-			_process_main_screen(event)
 
 
 func _process_title_screen(event: InputEvent):
@@ -51,12 +41,6 @@ func _process_title_screen(event: InputEvent):
 			load_menu(SCREENS.MAIN)
 
 
-func _process_main_screen(event):
-	if event.is_action_pressed("ui_cancel"):
-		load_menu(SCREENS.TITLE)
-		load_title()
-
-
 func load_menu(selected_screen):
 	for screen in screens:
 		screens[screen].visible = false
@@ -65,14 +49,13 @@ func load_menu(selected_screen):
 	screens[current_screen].visible = true
 
 
-func _on_Exit_pressed():
-	load_menu(SCREENS.TITLE)
-	load_title()
-
-
 func _on_Start_pressed():
 	get_tree().change_scene("res://scenes/game_start/game_start.tscn")
 
 
 func _on_Credits_pressed():
 	load_menu(SCREENS.CREDIT)
+
+
+func _on_Back_pressed():
+	load_menu(SCREENS.MAIN)

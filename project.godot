@@ -105,7 +105,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Project Forgotten"
-run/main_scene="res://scenes/start_screen/start_screen.tscn"
+run/main_scene="res://scenes/pre_start_screen/pre_start_screen.tscn"
 config/icon="res://icon.png"
 
 [autoload]
