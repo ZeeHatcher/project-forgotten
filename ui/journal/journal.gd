@@ -25,7 +25,6 @@ func _input(event: InputEvent) -> void:
 
 func show() -> void:
 	visible = !visible
-	get_tree().paused = visible
 	_load_button.visible = false
 	_content_text.text = unselected_text
 	_content_text.bbcode_text = unselected_text
