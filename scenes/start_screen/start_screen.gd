@@ -50,7 +50,7 @@ func load_menu(selected_screen):
 
 
 func _on_Start_pressed():
-	get_tree().change_scene("res://scenes/game_start/game_start.tscn")
+	_animation_player.play("fade_out")
 
 
 func _on_Credits_pressed():
@@ -59,3 +59,9 @@ func _on_Credits_pressed():
 
 func _on_Back_pressed():
 	load_menu(SCREENS.MAIN)
+
+
+func _on_AnimationPlayer_animation_finished(anim_name):
+	match anim_name:
+		"fade_out":
+			get_tree().change_scene("res://scenes/game_start/game_start.tscn")
