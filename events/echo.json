@@ -1,0 +1,31 @@
+{
+  "title": "Memory 4",
+  "pages": [
+    {
+      "description": "From up high your voice reverberates across the land. Calling back in an undulating echo.\n\n\"ECHO!\" Echo.. echo... ech... ec... e...\n\nYou feel a tugging in the mind.",
+      "choices": [
+        {
+          "description": "Keep thinking",
+          "next_page": 1
+        },
+        {
+          "description": "Shrug it off"
+        }
+      ]
+    },
+    {
+      "description": "The word fights through the fog from the crash.\n\n\"Echo\".\n\nThe fourth part of the passcode.",
+      "choices": [
+        {
+          "description": "Continue...",
+          "outcome": {
+            "global": {
+              "passcode_4": true
+            }
+          },
+          "complete": true
+        }
+      ]
+    }
+  ]
+}

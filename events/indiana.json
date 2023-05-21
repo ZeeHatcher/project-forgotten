@@ -1,0 +1,43 @@
+{
+  "title": "Memory 2",
+  "pages": [
+    {
+      "description": "Wild frontier. This seems like Indian country, to you... That tickles the brain...",
+      "choices": [
+        {
+          "description": "Keep thinking",
+          "next_page": 1
+        },
+        {
+          "description": "Ignore it"
+        }
+      ]
+    },
+    {
+      "description": "India...",
+      "choices": [
+        {
+          "description": "Keep thinking",
+          "next_page": 2
+        },
+        {
+          "description": "Shrug it off"
+        }
+      ]
+    },
+    {
+      "description": "Indiana! The second part of the passcode!",
+      "choices": [
+        {
+          "description": "Continue...",
+          "outcome": {
+            "global": {
+              "passcode_2": true
+            }
+          },
+          "complete": true
+        }
+      ]
+    }
+  ]
+}

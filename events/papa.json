@@ -1,0 +1,31 @@
+{
+  "title": "Memory 1",
+  "pages": [
+    {
+      "description": "Cold and hungry you think back to comfortable times, with the grandkids. They used to call you Papa...\n\n\"Papa\"... It rings a bell... Something about helicopters....",
+      "choices": [
+        {
+          "description": "Focus on the word",
+          "outcome": {
+            "global": {
+              "passcode_1": true
+            }
+          },
+          "next_page": 1
+        },
+        {
+          "description": "Forget it"
+        }
+      ]
+    },
+    {
+      "description": "After a while, you remember, \"Papa\" was the first part of the passcode.",
+      "choices": [
+        {
+          "description": "Continue...",
+          "complete": true
+        }
+      ]
+    }
+  ]
+}

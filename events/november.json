@@ -1,0 +1,26 @@
+{
+  "title": "Memory 3",
+  "pages": [
+    {
+      "description": "A shiver runs through your body. Despite the jacket the wind still manages to penetrate, chilling you. Cold like winter...\n\nThat reminds you...",
+      "choices": [
+        {
+          "description": "Try to recall",
+          "next_page": 1
+        },
+        {
+          "description": "Ignore it"
+        }
+      ]
+    },
+    {
+      "description": "That's right... Winter... Like November...\n\nYou vaguely recall a part of the passcode...\n\n\"November\"",
+      "choices": [
+        {
+          "description": "Continue...",
+          "complete": true
+        }
+      ]
+    }
+  ]
+}
