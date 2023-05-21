@@ -16,13 +16,14 @@ func _ready():
 		fog_tilemap(tilemap)
 
 
-func save_tilemap_data(tilemap) -> void:
+func save_tilemap_data(tilemap: TileMap) -> void:
 	var tilemap_data = {}
 	
 	var used_cells = tilemap.get_used_cells()
 	for cell in used_cells:
 		var tile = tilemap.get_cellv(cell)
-		tilemap_data[cell] = tile
+		var atlas = tilemap.get_cell_autotile_coord(cell.x, cell.y)
+		tilemap_data[cell] = [tile, atlas]
 	
 	tilemaps_data.append(tilemap_data)
 
@@ -42,7 +43,7 @@ func fog_tilemap(tilemap) -> void:
 
 func _on_unfog_cell(global_pos, radius) -> void:
 	for i in range(tilemaps.size()):
-		var tilemap = tilemaps[i]
+		var tilemap: TileMap = tilemaps[i]
 		var tilemap_data = tilemaps_data[i]
 		
 		var local_pos = tilemap.to_local(global_pos)
@@ -60,4 +61,6 @@ func _on_unfog_cell(global_pos, radius) -> void:
 				if manhattan_distance >= radius:
 					continue
 				
-				tilemap.set_cellv(cell, tilemap_data[cell])
+				var tile_id = tilemap_data[cell][0]
+				var subtile_id = tilemap_data[cell][1]
+				tilemap.set_cellv(cell, tile_id, false, false, false, subtile_id)
