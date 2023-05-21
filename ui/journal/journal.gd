@@ -2,6 +2,7 @@ extends TextureRect
 
 
 signal load_game(index)
+signal journal_activated(open)
 
 
 export(String) var unselected_text := "Choose an entry from the index."
@@ -35,6 +36,8 @@ func show() -> void:
 		_audio_open.play()
 	else:
 		_audio_close.play()
+		
+	emit_signal("journal_activated", visible)
 
 
 func set_content_text(text: String) -> void:

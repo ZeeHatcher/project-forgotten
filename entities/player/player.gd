@@ -139,3 +139,7 @@ func _on_Tween_tween_all_completed():
 		_on_EventDetector_body_entered(body)
 	
 	emit_signal("reached", position)
+
+
+func _on_Journal_journal_activated(open):
+	get_tree().paused = open

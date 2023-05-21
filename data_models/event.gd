@@ -2,7 +2,15 @@ class_name Event
 extends Resource
 
 
-const EVENT_IMAGE_DIR := "res://assets/events/"
+const event_images := {
+	"Bunker_inside.png": "res://assets/events/Bunker_inside.png",
+	"Bunker_outside.png": "res://assets/events/Bunker_outside.png",
+	"Car_close.png": "res://assets/events/Car_close.png",
+	"Car_far.png": "res://assets/events/Car_far.png",
+	"Heli_crash.png": "res://assets/events/Heli_crash.png",
+	"pickup.png": "res://assets/events/pickup.png",
+	"Watchtower.png": "res://assets/events/Watchtower.png"
+}
 
 var id: String
 var title: String
@@ -29,9 +37,9 @@ class Page:
 	
 	func populate_from_json(json: Dictionary) -> void:
 		description = json.get("description", "")
-		var image_file = EVENT_IMAGE_DIR + json.get("image", "")
-		var dir := Directory.new()
-		if dir.file_exists(image_file):
+		var image_file_name = json.get("image", "")
+		if not image_file_name.empty():
+			var image_file = event_images[image_file_name]
 			image = load(image_file)
 	
 		for raw_choice in json.get("choices", []):
