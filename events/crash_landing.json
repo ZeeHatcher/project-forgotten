@@ -1,0 +1,65 @@
+{
+  "title": "Crash Landing",
+  "pages": [
+    {
+      "description": "You wake to a scene of debris and destruction, the helicopter in smithereens.\n\nYou feel dazed, and as you try to get your bearings, a sharp pain pierces the side of your head. Seems you've badly hit your head.",
+      "image": "Heli_crash.png",
+      "choices": [
+        {
+          "description": "Continue...",
+          "next_page": 1
+        }
+      ]
+    },
+    {
+      "description": "As you glance around, you notice the pilot, laying motionless on his seat, blood flowing from his head. He was not as lucky as you were.",
+      "image": "Heli_crash.png",
+      "choices": [
+        {
+          "description": "Continue...",
+          "next_page": 2
+        }
+      ]
+    },
+    {
+      "description": "You try to reminisce about your times with him, but oddly, you can't seem to think of anything.\n\nIn fact, as you try and remember your past life and previous interactions, you can't quite recall anything at all.\n\n",
+      "image": "Heli_crash.png",
+      "choices": [
+        {
+          "description": "Continue...",
+          "next_page": 3
+        }
+      ]
+    },
+    {
+      "description": "The hit on your head was worse than you thought.\n\nTo make things worse, you are stranded, with no one knowing of your current situation.\n\n",
+      "image": "Heli_crash.png",
+      "choices": [
+        {
+          "description": "Continue...",
+          "next_page": 4
+        }
+      ]
+    },
+    {
+      "description": "You assess your situation, and decide the best course of action is to figure out a way to call for help, while surviving out in the wilderness.\n\nThe memories will, hopefully, come back with time.",
+      "image": "Heli_crash.png",
+      "choices": [
+        {
+          "description": "Continue...",
+          "next_page": 5
+        }
+      ]
+    },
+    {
+      "description": "Luckily, the area around you contains remnants of modern civilization. Perhaps you'll be able to find something that can help.\n\nNoticing your situation was not as bleak as you thought, you pick yourself up with new-found courage, and set off on your way.",
+      "image": "Heli_crash.png",
+      "choices": [
+        {
+          "description": "Set off",
+          "complete": true
+        }
+      ]
+    }
+  ]
+}

@@ -1,8 +1,7 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scenes/heli_crash/heli_crash.gd" type="Script" id=1]
 [ext_resource path="res://assets/sfx/Intro_scene_Crash_sfx.mp3" type="AudioStream" id=2]
-[ext_resource path="res://assets/events/Heli_crash.png" type="Texture" id=3]
 [ext_resource path="res://assets/sfx/UX_snow_player_movement_4.mp3" type="AudioStream" id=4]
 [ext_resource path="res://assets/sfx/UX_snow_player_movement_1.mp3" type="AudioStream" id=5]
 
@@ -94,14 +93,6 @@ script = ExtResource( 1 )
 stream = ExtResource( 2 )
 autoplay = true
 bus = "SFX"
-
-[node name="TextureRect" type="TextureRect" parent="."]
-margin_left = 434.0
-margin_top = -4.0
-margin_right = 1524.0
-margin_bottom = 1086.0
-texture = ExtResource( 3 )
-expand = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 2 )

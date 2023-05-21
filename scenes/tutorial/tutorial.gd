@@ -24,6 +24,8 @@ func _ready():
 	_inventory.set_process_input(false)
 	_journal.set_process_input(false)
 	_map.set_process_input(false)
+	
+	_event_service.start_event("crash_landing")
 
 
 func _on_EventTiles_event_triggered(event_name: String):
