@@ -11,5 +11,5 @@ dest_files=[ "res://.import/UI_map.mp3-7e6240f99e01892e1f8b291c45fe541a.mp3str" 
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

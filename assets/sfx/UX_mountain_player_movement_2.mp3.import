@@ -11,5 +11,5 @@ dest_files=[ "res://.import/UX_mountain_player_movement_2.mp3-c95023facae16eb079
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

@@ -11,5 +11,5 @@ dest_files=[ "res://.import/UX_forest_player_movement_1.mp3-c5c411da96a5af8dd1cd
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

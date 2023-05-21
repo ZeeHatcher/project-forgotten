@@ -11,5 +11,5 @@ dest_files=[ "res://.import/UI_Bag_Open.mp3-35c1e7c786538ddee11746afe989a4e7.mp3
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

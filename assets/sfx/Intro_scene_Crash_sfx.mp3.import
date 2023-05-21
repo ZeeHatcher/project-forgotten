@@ -11,5 +11,5 @@ dest_files=[ "res://.import/Intro_scene_Crash_sfx.mp3-7dcee0fdb287b7cdc21fa95bac
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

@@ -29,7 +29,6 @@ corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
 [node name="InventoryList" type="ItemList"]
-visible = false
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0

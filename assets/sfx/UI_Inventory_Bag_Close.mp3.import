@@ -11,5 +11,5 @@ dest_files=[ "res://.import/UI_Inventory_Bag_Close.mp3-3045509f182b570228032d89c
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

@@ -11,5 +11,5 @@ dest_files=[ "res://.import/UX_snow_player_movement_6.mp3-511a0de260a83df29c944d
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

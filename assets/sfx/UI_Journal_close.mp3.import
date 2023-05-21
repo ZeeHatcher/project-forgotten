@@ -11,5 +11,5 @@ dest_files=[ "res://.import/UI_Journal_close.mp3-915dcaafc8c56e2be9cee8579358cd3
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0
