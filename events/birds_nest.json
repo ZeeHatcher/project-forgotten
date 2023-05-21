@@ -1,0 +1,39 @@
+{
+  "title": "Birds Nest",
+  "pages": [
+    {
+      "description": "With hunger gnawing at your stomache you spot a birds nest.\n\nThe trunk doen'st seem to thick, but it will probably hold you...",
+      "choices": [
+        {
+          "description": "Ascend for eggs",
+          "next_page": 1
+        },
+        {
+          "description": "Don't risk it"
+        }
+      ]
+    },
+    {
+      "description": "Slender branches sway. Bough bowing under your weight. Yet it manages to hold and you find a few eggs in the nest.",
+      "choices": [
+        {
+          "description": "Sunny side up",
+          "next_page": 2
+        }
+      ]
+    },
+    {
+      "description": "Just out of grasp. You need to climb a little higher...\n\n*SNAP*\n\nthe branch breaks at its apex!\n\nYou fall down, the powdered snow cushioning the death blow.\n\n\n\n -5 Health",
+      "choices": [
+        {
+          "description": "Let's walk that one off",
+          "outcome": {
+            "stats": {
+              "health": -5
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

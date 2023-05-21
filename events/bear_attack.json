@@ -1,0 +1,69 @@
+{
+  "title": "Wildest Encounter",
+  "pages": [
+    {
+      "description": "Your veins run ice cold as the sound hits your ears all too close.\n\nA growl that rattles your core. Chomping from jaws who sound as though they could easily break bones.\n\nA bear! This close, hard to tell how it will react... ",
+      "choices": [
+        {
+          "conditions": {
+            "items": {
+              "Hunting Rifle": ">1"
+            }
+          },
+          "description": "Shoot it down",
+          "next_page": 1
+        },
+        {
+          "description": "Throw half your food and run",
+          "next_page": 2
+        },
+        {
+          "description": "Triangle choke the bear",
+          "next_page": 3
+        }
+      ]
+    },
+    {
+      "description": "The shot lands, but it's not enough to stop the beast. Angered, it attacks you before going down.\n\n\n\n -6 health",
+      "choices": [
+        {
+          "description": "Leave defeated",
+          "outcome": {
+            "stats": {
+              "health": -6
+            },
+            "items": {
+              "Hunting Rifle": -1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "description": "With the food on the ground, looks like it has no intention of chasing you.\n\n\n\n -6 food",
+      "choices": [
+        {
+          "description": "Run away",
+          "outcome": {
+            "stats": {
+              "food": -6
+            }
+          }
+        }
+      ]
+    },
+    {
+      "description": "The beast instantly charges, and tears you apart. Everyone saw this coming...\n\n\n\n +death",
+      "choices": [
+        {
+          "description": "Run away",
+          "outcome": {
+            "stats": {
+              "health": -100
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

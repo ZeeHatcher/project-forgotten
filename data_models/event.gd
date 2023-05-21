@@ -9,7 +9,8 @@ const event_images := {
 	"Car_far.png": "res://assets/events/Car_far.png",
 	"Heli_crash.png": "res://assets/events/Heli_crash.png",
 	"pickup.png": "res://assets/events/pickup.png",
-	"Watchtower.png": "res://assets/events/Watchtower.png"
+	"Watchtower.png": "res://assets/events/Watchtower.png",
+	"Village.png": "res://assets/events/Village.png"
 }
 
 var id: String

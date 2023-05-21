@@ -1,0 +1,30 @@
+{
+  "title": "Hunting Rifle",
+  "pages": [
+    {
+      "description": "Something's poking out from the snow.\n\nIt's an old hunting rifle, most likely deserted by illegal hunters.\n\nStill, it might come in handy...",
+      "choices": [
+        {
+          "description": "Pick up the weapon.",
+          "next_page": 1
+        },
+        {
+          "description": "Best not get involved"
+        }
+      ]
+    },
+    {
+      "description": "It's old and rusty, but functional. Looks like its got one bullet left.\n\nBetter make it count",
+      "choices": [
+        {
+          "description": "Keep it in the bagpack",
+          "outcome": {
+            "items": {
+              "Hunting Rifle": 1
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

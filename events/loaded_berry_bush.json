@@ -2,13 +2,13 @@
   "title": "Loaded Berries",
   "pages": [
     {
-      "description": "Loaded bushes, briming with juicy fruit! These bushes are fresh and pristine, untouched, eager for de-fruiting...",
+      "description": "Loaded bushes, briming with juicy fruit! These bushes are fresh and pristine, untouched, eager for de-fruiting...\n\n\n\n +3 Food",
       "choices": [
         {
           "description": "Take the berries",
           "outcome": {
             "stats": {
-              "food": 8
+              "food": 3
             }
           }
         }

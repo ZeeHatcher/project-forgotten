@@ -1,0 +1,62 @@
+{
+  "title": "Wild Predator",
+  "pages": [
+    {
+      "description": "You spot a lone wolf stalking you, not too far away.\n\nA deep growl suggests hostility.",
+      "choices": [
+        {
+          "conditions": {
+            "items": {
+              "Hunting Rifle": ">1"
+            }
+          },
+          "description": "Shoot it down",
+          "next_page": 1
+        },
+        {
+          "description": "Throw down some food and run",
+          "next_page": 2
+        },
+        {
+          "description": "I used to be a blackbelt",
+          "next_page": 3
+        }
+      ]
+    },
+    {
+      "description": "The shot lands and kills the creature. Your marksmanship is remarkable.",
+      "choices": [
+        {
+          "description": "Keep going",
+          "outcome": {
+            "items": {
+              "Hunting Rifle": -1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "description": "With the food on the ground, looks like it has no intention of chasing you.\n\n\n\n -3 food",
+      "choices": [
+        {
+          "description": "Run away",
+          "outcome": {
+            "stats": {
+              "food": -3
+            }
+          }
+        }
+      ]
+    },
+    {
+
+      "description": "As you approach the creature, it runs off into the distance. Perhaps you were intimidating... or it went to gather it's pack.\n\n\n\nA howl screeches in the distance...\n\n\n\n +death",
+      "choices": [
+        {
+          "description": "... let's keep going"
+        }
+      ]
+    }
+  ]
+}

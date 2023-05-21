@@ -248,7 +248,6 @@ anims/fade_out = SubResource( 3 )
 [connection signal="moved" from="Player" to="." method="_on_Player_moved"]
 [connection signal="moved" from="Player" to="Terrain" method="_on_Player_moved"]
 [connection signal="moved" from="Player" to="GameSaveService" method="_on_Player_moved"]
-[connection signal="temperature_updated" from="Player" to="CanvasLayer/TemperatureBar" method="_on_Player_temperature_updated"]
 [connection signal="inventory_button_pressed" from="CanvasLayer/HUD" to="CanvasLayer/InventoryList" method="_on_HUD_inventory_button_pressed"]
 [connection signal="inventory_unlocked" from="CanvasLayer/HUD" to="." method="_on_HUD_inventory_unlocked"]
 [connection signal="journal_button_pressed" from="CanvasLayer/HUD" to="CanvasLayer/Journal" method="_on_JournalButton_pressed"]

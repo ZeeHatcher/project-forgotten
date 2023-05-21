@@ -2,7 +2,7 @@
   "title": "Pine Needles",
   "pages": [
     {
-      "description": "While trekking through the forest, you find some pine trees. They could be used to make some nice tea.",
+      "description": "While trekking through the forest, you find some pine trees. They could be used to make some nice tea.\n\n\n\n +1 Food",
       "choices": [
         {
           "description": "Harvest them",

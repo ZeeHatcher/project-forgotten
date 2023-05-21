@@ -3,7 +3,7 @@
   "pages": [
     {
       "description": "You almost didn't notice it, buried so deep in the snow, structures from a time passed.",
-      "image": "",
+      "image": "Village.png",
       "choices": [
         {
           "description": "Investigate",

@@ -1,0 +1,30 @@
+{
+  "title": "A Shimmer",
+  "pages": [
+    {
+      "description": "Whats that shimmer!\n\n\n\n..........\n\n\n\nOh, just more snow...",
+      "choices": [
+        {
+          "description": "Investigate further",
+          "next_page": 1
+        },
+        {
+          "description": "Leave it alone"
+        }
+      ]
+    },
+    {
+      "description": "Nothing here, what a waste.\n\n\n\n -2 Food",
+      "choices": [
+        {
+          "description": "Leave",
+          "outcome": {
+            "stats": {
+              "food": -2
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
