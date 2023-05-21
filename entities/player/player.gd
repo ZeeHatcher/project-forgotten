@@ -89,7 +89,6 @@ func _animate_movement(dir: Vector2) -> void:
 		position, position + dir,
 		_animation_duration)
 	_tween.start()
-	_event_detector.monitoring = false
 	_sprite.play("walk")
 
 
@@ -97,10 +96,10 @@ func cancel_movement():
 	position = target_position
 	_tween.stop_all()
 	_sprite.play("idle")
-	_event_detector.monitoring = true
 
 
 func _on_EventDetector_body_entered(body: Node) -> void:
+	print("run")
 	if body as EventTiles:
 		body.trigger_event_at(global_position)
 
@@ -135,4 +134,6 @@ func _on_TickTimer_timeout():
 
 func _on_Tween_tween_all_completed():
 	_sprite.play("idle")
-	_event_detector.monitoring = true
+	
+	for body in _event_detector.get_overlapping_bodies():
+		_on_EventDetector_body_entered(body)
