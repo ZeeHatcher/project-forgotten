@@ -20,7 +20,8 @@
 [ext_resource path="res://misc/world_fog/world_fog.tscn" type="PackedScene" id=20]
 [ext_resource path="res://resources/events_tileset.tres" type="TileSet" id=21]
 [ext_resource path="res://misc/event_tiles.gd" type="Script" id=22]
-[ext_resource path="res://ui/inventory_list.gd" type="Script" id=23]
+[ext_resource path="res://ui/inventory/inventory_list.gd" type="Script" id=23]
+
 
 [sub_resource type="StyleBoxEmpty" id=4]
 

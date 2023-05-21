@@ -12,6 +12,8 @@ var selected := 0
 onready var _item_list := $LeftPage/ItemList
 onready var _load_button := $Control/LoadButton
 onready var _content_text := $Control/RightPage/ContentText
+onready var _audio_open := $AudioOpen
+onready var _audio_close := $AudioClose
 
 
 func _ready():
@@ -28,6 +30,11 @@ func show() -> void:
 	_load_button.visible = false
 	_content_text.text = unselected_text
 	_content_text.bbcode_text = unselected_text
+	
+	if visible:
+		_audio_open.play()
+	else:
+		_audio_close.play()
 
 
 func _load_save(index: int) -> void:
