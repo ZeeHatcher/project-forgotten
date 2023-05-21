@@ -16,6 +16,7 @@ export(Dictionary) var terrain
 export(Dictionary) var event_tiles
 export(Dictionary) var event_flags
 export(Dictionary) var event_completed
+export(Dictionary) var new_completed_events
 
 
 # For a safe alternative, see the function write/load_as_json() below.
@@ -28,11 +29,9 @@ static func save_exists(index: int) -> bool:
 
 
 static func load_savegame(index: int) -> Resource:
-	print_debug("loading save")
 	var save_path := get_save_path(index)
 	if ResourceLoader.has_cached(save_path):
 		# Once the resource caching bug is fixed, you will only need this line of code to load the save game.
-		print_debug("loading from cache")
 		return ResourceLoader.load(save_path, "", true)
 
 	var file := File.new()
@@ -40,7 +39,6 @@ static func load_savegame(index: int) -> Resource:
 		printerr("Couldn't read file " + save_path)
 		return null
 		
-	print_debug("loading from file")
 	var data := file.get_buffer(file.get_len())
 	file.close()
 

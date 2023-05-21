@@ -7,6 +7,7 @@ const EVENT_IMAGE_DIR := "res://assets/events/"
 var id: String
 var title: String
 var pages: Array
+var journal_entry: String
 
 
 func populate_from_json(json: Dictionary) -> void:
@@ -16,6 +17,8 @@ func populate_from_json(json: Dictionary) -> void:
 		var page := Page.new()
 		page.populate_from_json(raw_page)
 		pages.append(page)
+		
+	journal_entry = json.get("journal_entry", "")
 
 
 class Page:

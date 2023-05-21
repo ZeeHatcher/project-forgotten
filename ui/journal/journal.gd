@@ -8,6 +8,7 @@ export(String) var unselected_text := "Choose an entry from the index."
 export(String) var uneventful_text := "Nothing important happened."
 
 var selected := 0
+var _saves := []
 
 onready var _item_list := $LeftPage/ItemList
 onready var _load_button := $Control/LoadButton
@@ -28,13 +29,17 @@ func _input(event: InputEvent) -> void:
 func show() -> void:
 	visible = !visible
 	_load_button.visible = false
-	_content_text.text = unselected_text
-	_content_text.bbcode_text = unselected_text
+	set_content_text(unselected_text)
 	
 	if visible:
 		_audio_open.play()
 	else:
 		_audio_close.play()
+
+
+func set_content_text(text: String) -> void:
+	_content_text.text = text
+	_content_text.bbcode_text = text
 
 
 func _load_save(index: int) -> void:
@@ -47,15 +52,25 @@ func _on_ItemList_item_selected(index):
 	selected = index
 	_load_button.visible = true
 	
-	_content_text.text = uneventful_text
-	_content_text.bbcode_text = uneventful_text
+	var content = ""
+	for event in _saves[index].new_completed_events:
+		var e = EventRepository.get_event(event)
+		if not e.empty():
+			content += e.journal_entry + "\n\n"
+	
+	if content.empty():
+		set_content_text(uneventful_text)
+	else:
+		set_content_text(content)
 
 
-func _on_GameSaveService_update_saves(save_count):
+func _on_GameSaveService_update_saves(saves):
 	_item_list.clear()
-	for i in range(save_count):
+	for i in range(saves.size()):
 		_item_list.add_item("Week " + str(i))
 		_item_list.set_item_tooltip_enabled(i, false)
+	
+	_saves = saves
 
 
 func _on_GameSaveService_show_journal():
