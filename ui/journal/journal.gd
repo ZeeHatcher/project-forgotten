@@ -55,8 +55,8 @@ func _on_ItemList_item_selected(index):
 	var content = ""
 	for event in _saves[index].new_completed_events:
 		var e = EventRepository.get_event(event)
-		print(e.journal_entry)
-		content += e.journal_entry + "\n\n"
+		if not e.empty():
+			content += e.journal_entry + "\n\n"
 	
 	if content.empty():
 		set_content_text(uneventful_text)

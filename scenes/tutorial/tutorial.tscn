@@ -218,6 +218,7 @@ tilemap_paths = [ NodePath("../EventTiles"), NodePath("../Terrain") ]
 [node name="GameSaveService" type="Node" parent="."]
 pause_mode = 2
 script = ExtResource( 7 )
+save_after_tiles_moved = 28
 player = NodePath("../Player")
 terrain = NodePath("../Terrain")
 event_tiles = NodePath("../EventTiles")
