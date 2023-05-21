@@ -2,6 +2,12 @@ class_name RandomEventTiles
 extends TileMap
 
 
+const VALID_TILES = [
+	"trees",
+	"snow_trees",
+	"forest",
+]
+
 export(int, 0, 100) var trigger_chance
 export(NodePath) var _audio_player_path
 export(Array, String) var random_events := []
@@ -63,7 +69,12 @@ onready var _audio_player: AudioStreamPlayer = get_node(_audio_player_path)
 
 
 func trigger_event_at(global_pos: Vector2) -> void:
-	if not _can_trigger():
+	var local_position := to_local(global_pos)
+	var map_position := world_to_map(local_position)
+	var tile_id := get_cellv(map_position)
+	var tile_type := tile_set.tile_get_name(tile_id)
+	
+	if not tile_type in VALID_TILES or not _can_trigger():
 		return
 	
 	var event_name := _random_event()
