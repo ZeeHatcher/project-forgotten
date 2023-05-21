@@ -20,7 +20,7 @@ func _ready() -> void:
 
 
 func is_event_completed(event_id: String) -> bool:
-	return _completed.has(event)
+	return _completed.has(event_id)
 
 
 func start_event(event_name: String):
