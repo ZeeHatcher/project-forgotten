@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://resources/events_tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://ui/event_board/event_board.tscn" type="PackedScene" id=2]
@@ -19,6 +19,7 @@
 [ext_resource path="res://misc/gamesave_service.gd" type="Script" id=17]
 [ext_resource path="res://ui/journal/journal.tscn" type="PackedScene" id=18]
 [ext_resource path="res://assets/music/Hell_or_High_Water_Master_Edit_1_Export_1.mp3" type="AudioStream" id=19]
+[ext_resource path="res://ui/code_guess/code_guess.tscn" type="PackedScene" id=20]
 
 [sub_resource type="Animation" id=1]
 length = 0.001
@@ -204,6 +205,9 @@ visible = false
 
 [node name="Map" parent="CanvasLayer" instance=ExtResource( 11 )]
 
+[node name="CodeGuess" parent="CanvasLayer" instance=ExtResource( 20 )]
+visible = false
+
 [node name="EventService" type="Node" parent="."]
 script = ExtResource( 5 )
 player = NodePath("../Player")
@@ -240,6 +244,7 @@ script = ExtResource( 14 )
 wait_time = 30.0
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
 color = Color( 0, 0, 0, 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -263,6 +268,8 @@ anims/fade_out = SubResource( 3 )
 [connection signal="choice_selected" from="CanvasLayer/EventBoard" to="EventService" method="apply_outcome"]
 [connection signal="event_ended" from="CanvasLayer/EventBoard" to="EventService" method="end_event"]
 [connection signal="event_ended" from="CanvasLayer/EventBoard" to="GameOverService" method="_on_EventBoard_event_ended"]
+[connection signal="completed" from="CanvasLayer/CodeGuess" to="." method="_on_CodeGuess_completed"]
+[connection signal="code_guess_triggered" from="EventService" to="." method="_on_EventService_code_guess_triggered"]
 [connection signal="outcome_applied" from="EventService" to="Terrain" method="_on_EventService_outcome_applied"]
 [connection signal="game_over" from="GameOverService" to="." method="_on_GameOverService_game_over"]
 [connection signal="won" from="GameOverService" to="." method="_on_GameOverService_won"]

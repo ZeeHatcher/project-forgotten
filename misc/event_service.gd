@@ -4,6 +4,7 @@ extends Node
 
 signal outcome_applied(outcome)
 signal event_function_call(function_name)
+signal code_guess_triggered
 
 export(NodePath) var player
 export(NodePath) var board
@@ -37,6 +38,10 @@ func start_event(event_name: String):
 
 
 func end_event(event: Event, complete: bool):
+	if event.id == "call_for_help" and complete:
+		emit_signal("code_guess_triggered")
+		return
+	
 	if complete:
 		_completed[event.id] = true
 	get_tree().paused = false

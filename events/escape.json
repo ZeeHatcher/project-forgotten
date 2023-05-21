@@ -1,8 +1,8 @@
 {
-  "title": "Drop Point",
+  "title": "Evacuation",
   "pages": [
     {
-      "description": "Beleaguered, exhausted, and near death you crest the hill. Its chain link exterior signs of humanity.",
+      "description": "Worn to the bone, you thumb the salvaged walkie-talkie. ",
       "image": "pickup.png",
       "choices": [
         {
@@ -12,7 +12,7 @@
       ]
     },
     {
-      "description": "Worn to the bone, you thumb the salvaged walkie-talkie. ",
+      "description": "\"Papa, Indiana, November, Echo.\"\n\nYou rasp out the code, radioing the current watcher.\n\nMoments drag on as your heart pounds. ",
       "image": "pickup.png",
       "choices": [
         {
@@ -22,7 +22,7 @@
       ]
     },
     {
-      "description": "\"Papa, Indiana, November, Echo.\"\n\nYou rasp out the code, radioing the current watcher.\n\nMoments drag on as your heart pounds. ",
+      "description": "\"Papa, Indiana, November, Echo.\"\n\nYou repeat the passphrase. Seconds pass as an eternity...",
       "image": "pickup.png",
       "choices": [
         {
@@ -32,22 +32,12 @@
       ]
     },
     {
-      "description": "\"Papa, Indiana, November, Echo.\"\n\nYou repeat the passphrase. Seconds pass as an eternity...",
-      "image": "pickup.png",
-      "choices": [
-        {
-          "description": "Continue...",
-          "next_page": 4
-        }
-      ]
-    },
-    {
       "description": "Static crackles-\n\n\"Oscar, Alpha, Kilo.\", comes the reply. ",
       "image": "pickup.png",
       "choices": [
         {
           "description": "Call for evacuation",
-          "next_page": 5
+          "next_page": 4
         }
       ]
     },

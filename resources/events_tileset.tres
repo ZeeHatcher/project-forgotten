@@ -279,7 +279,7 @@ resource_local_to_scene = true
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 23/z_index = 0
-24/name = "escape"
+24/name = "call_for_help"
 24/texture = ExtResource( 2 )
 24/tex_offset = Vector2( 0, -26 )
 24/modulate = Color( 1, 1, 1, 1 )
