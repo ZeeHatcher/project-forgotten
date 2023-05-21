@@ -1,0 +1,18 @@
+{
+  "title": "Taking a break",
+  "pages": [
+    {
+      "description": "Struggling against the cold, you find a comfortable spot to warm up and rest.\n\n\n\n +5 Health",
+      "choices": [
+        {
+          "description": "We've got long to go",
+          "outcome": {
+            "stats": {
+              "health": 5
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

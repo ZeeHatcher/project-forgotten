@@ -15,6 +15,11 @@
         },
         {
           "description": "Throw half your food and run",
+          "conditions": {
+            "stats": {
+              "food": ">5"
+            }
+          },
           "next_page": 2
         },
         {
