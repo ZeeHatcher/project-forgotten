@@ -14,7 +14,6 @@ border_width_bottom = 5
 border_color = Color( 0.27451, 0.27451, 0.27451, 1 )
 
 [node name="Journal" type="TextureRect"]
-pause_mode = 2
 margin_left = 293.0
 margin_top = 100.0
 margin_right = 1643.0
