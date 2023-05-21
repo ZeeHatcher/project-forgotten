@@ -99,7 +99,6 @@ func cancel_movement():
 
 
 func _on_EventDetector_body_entered(body: Node) -> void:
-	print("run")
 	if body as EventTiles:
 		body.trigger_event_at(global_position)
 
