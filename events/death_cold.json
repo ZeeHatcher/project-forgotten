@@ -1,0 +1,14 @@
+{
+  "title": "Coldness",
+  "pages": [
+    {
+      "description": "These mountains have claimed the souls of many who have come to tame its vast frontiers. Desolate lands yield similar results to those ill-equipped to combat the frigid tundra. You now join those poor folk who have succumbed to the harsh frost. Your grave shallow, a corpse obelisk preserved in ice, a testament to brutal realities of forgotten in civilized times...",
+      "choices": [
+        {
+          "description": "Pass on",
+          "complete": true
+        }
+      ]
+    }
+  ]
+}

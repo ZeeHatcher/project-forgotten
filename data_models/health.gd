@@ -22,5 +22,5 @@ func set_value(val: int) -> void:
 
 
 func hit(val: int, source: String) -> void:
-	self.value += val
 	last_hit_by = source
+	self.value += val

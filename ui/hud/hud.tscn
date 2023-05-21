@@ -25,6 +25,7 @@ margin_right = 1904.0
 margin_bottom = 460.0
 
 [node name="HealthBar" parent="VBoxContainer" instance=ExtResource( 5 )]
+unique_name_in_owner = true
 margin_right = 1888.0
 margin_bottom = 64.0
 

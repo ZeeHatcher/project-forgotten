@@ -1,0 +1,14 @@
+{
+  "title": "Starvation",
+  "pages": [
+    {
+      "description": "In this environment, it is a constant battle to survive. Barren lands holding frost, forest and death. Struggling for the most menial amount of resources, in the end, yielded little fruit. You slump, hallow, haggard to the bone. You drift off, wasting away... into the clutches of death...",
+      "choices": [
+        {
+          "description": "Pass on",
+          "complete": true
+        }
+      ]
+    }
+  ]
+}

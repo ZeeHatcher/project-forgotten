@@ -12,6 +12,9 @@ onready var _event_tiles := $EventTiles
 onready var _event_service := $EventService
 onready var _gamesave_service := $GameSaveService
 onready var _journal := $CanvasLayer/Journal
+onready var _inventory := $CanvasLayer/InventoryList
+onready var _map := $CanvasLayer/Map
+onready var _hud := $CanvasLayer/HUD
 
 
 func _ready():
@@ -38,5 +41,28 @@ func _on_Player_moved(new_pos):
 
 
 func _on_Player_dead():
+	var reason: String = _player.health.last_hit_by
+	var event := "death_%s" % reason
+	
+	_event_service.start_event(event)
+	
+
+func _on_GameOverService_game_over():
+	get_tree().paused = true
 	_gamesave_service.set_process_input(false)
 	_journal.show()
+	
+	_inventory.set_process_input(false)
+	_journal.set_process_input(false)
+	_map.set_process_input(false)
+	_hud.hide_all()
+
+
+func _on_Journal_load_game(index):
+	get_tree().paused = false
+	_gamesave_service.set_process_input(true)
+	
+	_inventory.set_process_input(true)
+	_journal.set_process_input(true)
+	_map.set_process_input(true)
+	_hud.unlock_all()

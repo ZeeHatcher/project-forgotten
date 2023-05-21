@@ -6,4 +6,4 @@
 script = ExtResource( 1 )
 counter = 10
 max_value = 12
-value = 5
+value = 1

@@ -7,5 +7,5 @@ script = ExtResource( 1 )
 cold_tickrate = 1
 damage_tickrate = 5
 max_value = 10
-value = 10
+value = 1
 percentage = 0

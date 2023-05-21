@@ -1,0 +1,14 @@
+{
+  "title": "Defeated",
+  "pages": [
+    {
+      "description": "Big or small, no matter the creature, in this world, you must fight. An incessant struggle to live. Our bodies fight against the very universe as gravity tugs unending. With all combat, there is a victor and defeated. Here, stakes are life or death. You fought througout your life, but as is natural, the old fade. You could fight on no longer... ",
+      "choices": [
+        {
+          "description": "Pass on",
+          "complete": true
+        }
+      ]
+    }
+  ]
+}

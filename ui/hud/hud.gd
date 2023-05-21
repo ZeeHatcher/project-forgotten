@@ -10,11 +10,21 @@ signal journal_unlocked
 
 
 func hide_all():
+	$"%HealthBar".visible = false
 	$"%MapButton".visible = false
 	$"%JournalButton".visible = false
 	$"%InventoryButton".visible = false
 	$"%TemperatureBar".visible = false
 	$"%FoodCounter".visible = false
+
+
+func unlock_all():
+	$"%HealthBar".visible = true
+	$"%MapButton".visible = true
+	$"%JournalButton".visible = true
+	$"%InventoryButton".visible = true
+	$"%TemperatureBar".visible = true
+	$"%FoodCounter".visible = true
 
 
 func unlock_map():
@@ -38,6 +48,10 @@ func unlock_temperature():
 
 func unlock_food():
 	$"%FoodCounter".visible = true
+
+
+func unlock_health():
+	$"%HealthBar".visible = true
 
 
 func _on_MapButton_pressed():

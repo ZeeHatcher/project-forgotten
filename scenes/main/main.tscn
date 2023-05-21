@@ -88,6 +88,7 @@ margin_bottom = -344.0
 items = [ "Item 0", null, false, "Item 1", null, false, "Climbing Gear", null, false, "Car Battery", null, false ]
 
 [node name="Journal" parent="CanvasLayer" instance=ExtResource( 18 )]
+pause_mode = 2
 visible = false
 
 [node name="EventBoard" parent="CanvasLayer" instance=ExtResource( 2 )]
@@ -141,11 +142,13 @@ wait_time = 30.0
 [connection signal="inventory_button_pressed" from="CanvasLayer/HUD" to="CanvasLayer/InventoryList" method="_on_HUD_inventory_button_pressed"]
 [connection signal="journal_button_pressed" from="CanvasLayer/HUD" to="CanvasLayer/Journal" method="_on_JournalButton_pressed"]
 [connection signal="map_button_pressed" from="CanvasLayer/HUD" to="CanvasLayer/Map" method="_on_HUD_map_button_pressed"]
+[connection signal="load_game" from="CanvasLayer/Journal" to="." method="_on_Journal_load_game"]
 [connection signal="load_game" from="CanvasLayer/Journal" to="GameSaveService" method="_on_Journal_load_game"]
 [connection signal="choice_selected" from="CanvasLayer/EventBoard" to="EventService" method="apply_outcome"]
 [connection signal="event_ended" from="CanvasLayer/EventBoard" to="EventService" method="end_event"]
 [connection signal="event_ended" from="CanvasLayer/EventBoard" to="GameOverService" method="_on_EventBoard_event_ended"]
 [connection signal="outcome_applied" from="EventService" to="Terrain" method="_on_EventService_outcome_applied"]
+[connection signal="game_over" from="GameOverService" to="." method="_on_GameOverService_game_over"]
 [connection signal="update_saves" from="GameSaveService" to="CanvasLayer/Journal" method="_on_GameSaveService_update_saves"]
 [connection signal="finished" from="MusicPlayer" to="MusicPlayer" method="_on_MusicPlayer_finished"]
 [connection signal="timeout" from="MusicPlayer/Timer" to="MusicPlayer" method="_on_Timer_timeout"]

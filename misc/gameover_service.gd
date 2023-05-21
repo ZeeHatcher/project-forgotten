@@ -3,6 +3,7 @@ extends Node
 
 
 signal won
+signal game_over
 
 export var final_event_name: String
 
@@ -15,6 +16,10 @@ func _win() -> void:
 
 
 func _on_EventBoard_event_ended(event: Event, complete: bool) -> void:
+	if event.id.begins_with("death_"):
+		emit_signal("game_over")
+		return
+	
 	if not _final_event:
 		return
 	
