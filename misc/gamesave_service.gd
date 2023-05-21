@@ -1,7 +1,7 @@
 extends Node
 
 
-signal update_saves(save_count)
+signal update_saves(saves)
 
 var _save
 var save_index := 0
@@ -33,11 +33,13 @@ func save_game():
 	
 	_save.event_flags = _event_service._flags
 	_save.event_completed = _event_service._completed
-
+	_save.new_completed_events = get_new_completed_events()
+	
+	
 	_save.write_savegame(save_index)
 	save_index += 1
 	
-	emit_signal("update_saves", get_save_count())
+	emit_signal("update_saves", get_all_saves())
 
 
 func load_game(index):
@@ -63,7 +65,7 @@ func load_game(index):
 	_event_service._flags = _save.event_flags
 	_event_service._completed = _save.event_completed
 	
-	emit_signal("update_saves", get_save_count())
+	emit_signal("update_saves", get_all_saves())
 	
 	set_process_input(true)
 
@@ -79,8 +81,25 @@ func get_tilemap_data(tilemap) -> Dictionary:
 	return tilemap_data
 
 
-func get_save_count() -> int:
-	return save_index
+func get_all_saves() -> Array:
+	var saves = []
+	for i in range(save_index):
+		 saves.append(SaveGame.load_savegame(i))
+	
+	return saves
+
+
+func get_new_completed_events() -> Dictionary:
+	if save_index == 0:
+		return {}
+	
+	var prev_save = SaveGame.load_savegame(save_index - 1)
+	var new_completed_events = {}
+	for event_completed in _event_service._completed:
+		if not prev_save.event_completed.has(event_completed):
+			new_completed_events[event_completed] = _event_service._completed[event_completed]
+
+	return new_completed_events
 
 
 func _on_Journal_load_game(index):
