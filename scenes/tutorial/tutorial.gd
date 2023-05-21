@@ -15,6 +15,7 @@ onready var _journal := $"%Journal"
 onready var _inventory := $"%InventoryList"
 onready var _map := $"%Map"
 onready var _hud := $"%HUD"
+onready var _animation_player := $AnimationPlayer
 
 
 func _ready():
@@ -26,6 +27,7 @@ func _ready():
 	_map.set_process_input(false)
 	
 	_event_service.start_event("crash_landing")
+	_animation_player.play("fade_in")
 
 
 func _on_EventTiles_event_triggered(event_name: String):
@@ -54,7 +56,7 @@ func _on_EventService_event_function_call(function_name):
 
 
 func load_next_level():
-	get_tree().change_scene("res://scenes/main/main.tscn")
+	_animation_player.play("fade_out")
 
 
 func _on_HUD_journal_unlocked():
@@ -67,3 +69,9 @@ func _on_HUD_inventory_unlocked():
 
 func _on_HUD_map_unlocked():
 	_map.set_process_input(true)
+
+
+func _on_AnimationPlayer_animation_finished(anim_name):
+	match anim_name:
+		"fade_out":
+			get_tree().change_scene("res://scenes/main/main.tscn")

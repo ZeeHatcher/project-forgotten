@@ -15,11 +15,13 @@ onready var _journal := $CanvasLayer/Journal
 onready var _inventory := $CanvasLayer/InventoryList
 onready var _map := $CanvasLayer/Map
 onready var _hud := $CanvasLayer/HUD
+onready var _animation_player := $AnimationPlayer
 
 
 func _ready():
 	unfog_tilemap(_player.global_position, 3)
 	_gamesave_service.save_game()
+	_animation_player.play("fade_in")
 
 
 func _on_EventTiles_event_triggered(event_name: String):
@@ -66,3 +68,13 @@ func _on_Journal_load_game(index):
 	_journal.set_process_input(true)
 	_map.set_process_input(true)
 	_hud.unlock_all()
+
+
+func _on_GameOverService_won():
+	_animation_player.play("fade_out")
+
+
+func _on_AnimationPlayer_animation_finished(anim_name):
+	match anim_name:
+		"fade_out":
+			get_tree().change_scene("res://scenes/game_end/game_end.tscn")

@@ -11,7 +11,6 @@ onready var _final_event := EventRepository.get_event(final_event_name)
 
 
 func _win() -> void:
-	get_tree().change_scene("res://scenes/game_end/game_end.tscn")
 	emit_signal("won")
 
 
