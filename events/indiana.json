@@ -2,7 +2,7 @@
   "title": "Memory 2",
   "pages": [
     {
-      "description": "Wild frontier. This seems like Indian country, to you... That tickles the brain...",
+      "description": "Wild frontier. This seems like Indian country to you...\n\nThat tickles the brain...",
       "choices": [
         {
           "description": "Keep thinking",
@@ -26,7 +26,7 @@
       ]
     },
     {
-      "description": "Indiana! The second part of the passcode!",
+      "description": "Indiana! Another part of the mysterious passcode!",
       "choices": [
         {
           "description": "Continue...",

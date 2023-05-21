@@ -2,7 +2,7 @@
   "title": "Memory 1",
   "pages": [
     {
-      "description": "Cold and hungry you think back to comfortable times, with the grandkids. They used to call you Papa...\n\n\"Papa\"... It rings a bell... Something about helicopters....",
+      "description": "Cold and hungry, you think back to comfortable times, with the grandkids. They used to call you Papa...\n\n\"Papa\"... It rings a bell... Something about a certain procedure....",
       "choices": [
         {
           "description": "Focus on the word",
@@ -19,7 +19,7 @@
       ]
     },
     {
-      "description": "After a while, you remember, \"Papa\" was the first part of the passcode.",
+      "description": "After a while, you remember, \"Papa\" is part of a passcode.\n\nBut passcode for what?",
       "choices": [
         {
           "description": "Continue...",
