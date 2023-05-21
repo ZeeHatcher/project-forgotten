@@ -398,7 +398,7 @@ resource_local_to_scene = true
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 21/z_index = 0
-22/name = "crash_site_3"
+22/name = "crash_site_4"
 22/texture = ExtResource( 2 )
 22/tex_offset = Vector2( 0, -24 )
 22/modulate = Color( 1, 1, 1, 1 )
@@ -419,7 +419,7 @@ resource_local_to_scene = true
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 22/z_index = 0
-23/name = "crash_site_4"
+23/name = "crash_site_3"
 23/texture = ExtResource( 2 )
 23/tex_offset = Vector2( 0, 0 )
 23/modulate = Color( 1, 1, 1, 1 )
