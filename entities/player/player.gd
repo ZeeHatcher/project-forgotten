@@ -6,6 +6,7 @@ signal moved(new_pos)
 signal event_triggered(event_name)
 signal dead
 signal temperature_updated(temp_percentage)
+signal reached(pos)
 
 const INPUTS = {
 	"move_up": Vector2.UP,
@@ -136,3 +137,5 @@ func _on_Tween_tween_all_completed():
 	
 	for body in _event_detector.get_overlapping_bodies():
 		_on_EventDetector_body_entered(body)
+	
+	emit_signal("reached", position)
