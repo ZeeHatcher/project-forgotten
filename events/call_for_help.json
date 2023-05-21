@@ -1,0 +1,36 @@
+{
+  "title": "Call For Help",
+  "pages": [
+    {
+      "description": "The reception here is good, and you might be able to call out to any nearby watchtowers with your walkie-talkie.",
+      "choices": [
+        {
+          "description": "Call for help",
+          "conditions": {
+            "items": {
+              "car_battery": "=1",
+              "alternator": "=1"
+            }
+          },
+          "help_text": "Requires car battery and alternator",
+          "next_page": 1
+        },
+        {
+          "description": "Come back later"
+        }
+      ]
+    },
+    {
+      "description": "As you reach for your walkie-talkie, you suddenly remember that a passcode is required to establish a communication channel with the nearby watchtowers.\n\nWhat was that passcode again?",
+      "choices": [
+        {
+          "description": "Try to recall",
+          "complete": true
+        },
+        {
+          "description": "Come back later"
+        }
+      ]
+    }
+  ]
+}

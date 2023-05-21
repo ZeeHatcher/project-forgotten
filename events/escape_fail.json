@@ -1,0 +1,24 @@
+{
+  "title": "Static",
+  "pages": [
+    {
+      "description": "Worn to the bone, you thumb the salvaged walkie-talkie, rasping out the code.",
+      "image": "pickup.png",
+      "choices": [
+        {
+          "description": "Continue...",
+          "next_page": 1
+        }
+      ]
+    },
+    {
+      "description": "Moments pass without a reply. You repeat the code once more...\n\n...\n\n...\n\nStatic silence. Your heart sinks as you figure that you used the wrong code.",
+      "image": "pickup.png",
+      "choices": [
+        {
+          "description": "Continue..."
+        }
+      ]
+    }
+  ]
+}

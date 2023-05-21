@@ -16,6 +16,7 @@ onready var _inventory := $CanvasLayer/InventoryList
 onready var _map := $CanvasLayer/Map
 onready var _hud := $CanvasLayer/HUD
 onready var _animation_player := $AnimationPlayer
+onready var _code_guess := $CanvasLayer/CodeGuess
 
 
 func _ready():
@@ -72,9 +73,33 @@ func _on_Journal_load_game(index):
 
 func _on_GameOverService_won():
 	_animation_player.play("fade_out")
+	_player.set_process(false)
 
 
 func _on_AnimationPlayer_animation_finished(anim_name):
 	match anim_name:
 		"fade_out":
 			get_tree().change_scene("res://scenes/game_end/game_end.tscn")
+
+
+func _on_EventService_code_guess_triggered():
+	_code_guess.reset()
+	_code_guess.visible = true
+	
+	get_tree().paused = true
+	_inventory.set_process_input(false)
+	_journal.set_process_input(false)
+	_map.set_process_input(false)
+	_hud.hide_all()
+
+
+func _on_CodeGuess_completed(success: bool):
+	_code_guess.visible = false
+	get_tree().paused = false
+	_inventory.set_process_input(true)
+	_journal.set_process_input(true)
+	_map.set_process_input(true)
+	_hud.unlock_all()
+	
+	var event := "escape" if success else "escape_fail"
+	_event_service.start_event(event)
