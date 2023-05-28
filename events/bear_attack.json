@@ -7,7 +7,7 @@
         {
           "conditions": {
             "items": {
-              "Hunting Rifle": ">1"
+              "Hunting Rifle": ">0"
             }
           },
           "description": "Shoot it down",
